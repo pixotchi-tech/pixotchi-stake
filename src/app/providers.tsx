@@ -17,7 +17,7 @@ export const wagmiConfig = createConfig({
   transports: {
     [baseSepolia.id]: fallback([
       webSocket(process.env.NEXT_PUBLIC_RPC_SERVER_WS),
-      http(process.env.NEXT_PUBLIC_RPC_SERVER),
+      http(process.env.NEXT_PUBLIC_RPC_SERVER, {batch: true}),
     ])
   },
 });
@@ -28,9 +28,9 @@ const privyConfig: PrivyClientConfig = {
   embeddedWallets: {
     createOnLogin: 'users-without-wallets',
     requireUserPasswordOnCreate: false,
-    noPromptOnSignature: false,
+    noPromptOnSignature: true,
   },
-  loginMethods: ['wallet', 'email', 'sms'],
+  loginMethods: ['wallet', 'email'],
   appearance: {
     showWalletLoginFirst: true,
   },
