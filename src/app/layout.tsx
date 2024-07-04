@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { IBM_Plex_Mono } from 'next/font/google';
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import Providers from "./providers";
 
 const fontHeading = IBM_Plex_Mono({
   weight: ['400'], // Add this line
@@ -34,7 +35,9 @@ export default function RootLayout({
         fontHeading.variable,
         fontBody.variable
       )}>
-        {children}
+
+      <Providers>{children}</Providers>
+
       </body>
     </html>
   );

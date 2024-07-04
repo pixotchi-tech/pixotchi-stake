@@ -22,8 +22,26 @@ import { Button } from "@/components/ui/button"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
+import {usePrivy, useWallets} from "@privy-io/react-auth";
+import {useAccount, useDisconnect} from "wagmi";
+import {useSetActiveWallet} from "@privy-io/wagmi";
 
 export function StakeComponent() {
+
+
+  // Privy hooks
+  const {ready, user, authenticated, login, connectWallet, logout, linkWallet} = usePrivy();
+  const {wallets, ready: walletsReady} = useWallets();
+
+  // WAGMI hooks
+  const {address, isConnected, isConnecting, isDisconnected} = useAccount();
+  const {disconnect} = useDisconnect();
+  const {setActiveWallet} = useSetActiveWallet();
+
+  if (!ready) {
+    return null;
+  }
+
   return (
     <div className="flex min-h-screen w-full flex-col bg-background text-foreground">
       <header className="sticky top-0 z-20 border-b bg-background px-4 py-3 sm:px-6">
