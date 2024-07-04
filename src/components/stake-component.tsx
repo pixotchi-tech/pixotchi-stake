@@ -26,8 +26,10 @@ import { Input } from "@/components/ui/input"
 import {usePrivy, useWallets} from "@privy-io/react-auth";
 import {useAccount, useDisconnect} from "wagmi";
 import {useSetActiveWallet} from "@privy-io/wagmi";
-import { useReadErc20 } from '../generated'
-import { formatEther } from "viem"; // Add this import for formatting
+import { useReadErc20, useReadErc20Allowance, useReadErc20BalanceOf, useWriteErc20Approve } from '../generated';
+import { formatEther, parseEther } from "viem"; // Add this import for formatting
+import { useState } from "react";
+import { useWriteStakeContractStake } from '../generated';
 
 // Add these constants for token addresses (replace with actual addresses)
 const SEED_TOKEN_ADDRESS = process.env.NEXT_PUBLIC_SEED_TOKEN!;
@@ -36,6 +38,11 @@ const STAKING_CONTRACT_ADDRESS = process.env.NEXT_PUBLIC_STAKING_CONTRACT;
 
 export function StakeComponent() {
 
+  const [stakeAmount, setStakeAmount] = useState("");
+
+  // Move this hook to the top level of the component
+  const { writeContract, isPending } = useWriteStakeContractStake({
+  });
 
   // Privy hooks
   const {ready, user, authenticated, login, connectWallet, logout} = usePrivy();
@@ -47,17 +54,24 @@ export function StakeComponent() {
   const {setActiveWallet} = useSetActiveWallet();
 
   // Fetch SEED token balance
-  const { data: seedBalance } = useReadErc20({
+  const { data: seedBalance } = useReadErc20BalanceOf({
     address: SEED_TOKEN_ADDRESS as `0x${string}`,
-    functionName: 'balanceOf',
     args: [address as `0x${string}`],
   });
 
   // Fetch LEAF token balance
-  const { data: leafBalance } = useReadErc20({
+  const { data: leafBalance } = useReadErc20BalanceOf({
     address: LEAF_TOKEN_ADDRESS as `0x${string}`,
-    functionName: 'balanceOf',
     args: [address as `0x${string}`],
+  });
+
+  // Add these new hooks
+  const { data: seedAllowance } = useReadErc20Allowance({
+    address: SEED_TOKEN_ADDRESS as `0x${string}`,
+    args: [address as `0x${string}`, STAKING_CONTRACT_ADDRESS as `0x${string}`],
+  });
+
+  const { writeContract: approveToken, isPending: isApproving } = useWriteErc20Approve({
   });
 
   if (!ready) {
@@ -81,6 +95,41 @@ export function StakeComponent() {
   const formatBalanceWithoutDecimals = (balance: bigint | undefined) => {
     if (!balance) return '0';
     return Math.floor(parseFloat(formatEther(balance))).toString();
+  };
+
+  const handleStake = async () => {
+    if (!stakeAmount || parseFloat(stakeAmount) <= 0) {
+      alert("Please enter a valid amount to stake");
+      return;
+    }
+    
+    const amountToStake = parseEther(stakeAmount);
+
+    // Check if allowance is sufficient
+    if (seedAllowance && seedAllowance < amountToStake) {
+      // If not, request approval first
+      try {
+        await approveToken({
+          address: SEED_TOKEN_ADDRESS as `0x${string}`,
+          args: [STAKING_CONTRACT_ADDRESS as `0x${string}`, amountToStake]
+        });
+        // Wait for the approval transaction to be mined
+        // You might want to add a way to check for the transaction status here
+      } catch (error) {
+        console.error("Approval failed:", error);
+        alert("Failed to approve token spending. Please try again.");
+        return;
+      }
+    }
+
+    // Now proceed with staking
+    writeContract({ args: [amountToStake] });
+  };
+
+  const handleMaxStake = () => {
+    if (seedBalance) {
+      setStakeAmount(formatEther(seedBalance));
+    }
   };
 
   return (
@@ -115,14 +164,29 @@ export function StakeComponent() {
                 <div className="grid gap-2">
                   <Label htmlFor="stake-amount">Amount to Stake</Label>
                   <div className="flex items-center gap-2">
-                    <Input id="stake-amount" type="number" placeholder="0" min="0" step="0.01" className="flex-1" />
-                    <Button variant="outline">MAX</Button>
+                    <Input
+                      id="stake-amount"
+                      type="number"
+                      placeholder="0"
+                      min="0"
+                      step="0.01"
+                      className="flex-1"
+                      value={stakeAmount}
+                      onChange={(e) => setStakeAmount(e.target.value)}
+                    />
+                    <Button variant="outline" onClick={handleMaxStake}>MAX</Button>
                   </div>
                 </div>
                 <div className="text-sm">
                   Available SEED: {formatBalanceWithoutDecimals(seedBalance)} SEED
                 </div>
-                <Button className="w-full">Stake</Button>
+                <Button
+                  className="w-full"
+                  onClick={handleStake}
+                  disabled={isPending || isApproving || !stakeAmount || parseFloat(stakeAmount) <= 0}
+                >
+                  {isApproving ? "Approving..." : isPending ? "Staking..." : "Stake"}
+                </Button>
               </div>
             </CardContent>
           </Card>
