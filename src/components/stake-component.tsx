@@ -26,6 +26,13 @@ import { Input } from "@/components/ui/input"
 import {usePrivy, useWallets} from "@privy-io/react-auth";
 import {useAccount, useDisconnect} from "wagmi";
 import {useSetActiveWallet} from "@privy-io/wagmi";
+import { useReadErc20 } from '../generated'
+import { formatEther } from "viem"; // Add this import for formatting
+
+// Add these constants for token addresses (replace with actual addresses)
+const SEED_TOKEN_ADDRESS = process.env.NEXT_PUBLIC_SEED_TOKEN!;
+const LEAF_TOKEN_ADDRESS = process.env.NEXT_PUBLIC_LEAF_TOKEN!;
+const STAKING_CONTRACT_ADDRESS = process.env.NEXT_PUBLIC_STAKING_CONTRACT;
 
 export function StakeComponent() {
 
@@ -38,6 +45,20 @@ export function StakeComponent() {
   const {address, isConnected, isConnecting, isDisconnected} = useAccount();
   const {disconnect} = useDisconnect();
   const {setActiveWallet} = useSetActiveWallet();
+
+  // Fetch SEED token balance
+  const { data: seedBalance } = useReadErc20({
+    address: SEED_TOKEN_ADDRESS as `0x${string}`,
+    functionName: 'balanceOf',
+    args: [address as `0x${string}`],
+  });
+
+  // Fetch LEAF token balance
+  const { data: leafBalance } = useReadErc20({
+    address: LEAF_TOKEN_ADDRESS as `0x${string}`,
+    functionName: 'balanceOf',
+    args: [address as `0x${string}`],
+  });
 
   if (!ready) {
     return null;
@@ -54,6 +75,12 @@ export function StakeComponent() {
   const handleDisconnect = () => {
     disconnect();
     logout();
+  };
+
+  // Helper function to format balance without decimals
+  const formatBalanceWithoutDecimals = (balance: bigint | undefined) => {
+    if (!balance) return '0';
+    return Math.floor(parseFloat(formatEther(balance))).toString();
   };
 
   return (
@@ -92,6 +119,9 @@ export function StakeComponent() {
                     <Button variant="outline">MAX</Button>
                   </div>
                 </div>
+                <div className="text-sm">
+                  Available SEED: {formatBalanceWithoutDecimals(seedBalance)} SEED
+                </div>
                 <Button className="w-full">Stake</Button>
               </div>
             </CardContent>
@@ -106,11 +136,13 @@ export function StakeComponent() {
                 <div className="grid gap-2">
                   <div className="flex items-center justify-between">
                     <span>Available LEAF Rewards</span>
-                    <span className="font-medium">10.25 LEAF</span>
+                    <span className="font-medium">10 LEAF</span>
                   </div>
                   <div className="flex items-center justify-between">
                     <span>Total LEAF Balance</span>
-                    <span className="font-medium">25.50 LEAF</span>
+                    <span className="font-medium">
+                      {formatBalanceWithoutDecimals(leafBalance)} LEAF
+                    </span>
                   </div>
                 </div>
                 <Button className="w-full">Claim Rewards</Button>
