@@ -1,9 +1,9 @@
 'use client';
 import { useState, useEffect } from "react";
-import {useAccount, useDisconnect} from "wagmi";
+import { useAccount, useDisconnect } from "wagmi";
 import { usePrivy } from "@privy-io/react-auth";
-import { useMutation, useQueryClient} from '@tanstack/react-query';
-import {formatEther, parseEther, formatUnits} from "viem";
+import { useMutation, useQueryClient } from '@tanstack/react-query';
+import { formatEther, parseEther, formatUnits } from "viem";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { ExclamationTriangleIcon } from "@radix-ui/react-icons"
 import { Header } from "./stake/header";
@@ -11,14 +11,17 @@ import { Footer } from "./stake/footer";
 import { StakeCard } from "./stake/stake-card";
 import { ClaimCard } from "./stake/claim-card";
 import { StakingInfoCard } from "./stake/staking-info-card";
+import { StakeWithdraw } from "./stake/stake-withdraw";
 import {
   useReadErc20Allowance,
   useReadErc20BalanceOf,
   useWriteErc20Approve,
-  useWriteStakeContractStake
+  useWriteStakeContractStake,
+  useWriteStakeContractWithdraw,
+  useReadStakeContractGetStakeInfo
 } from "@/generated";
 import { waitForTransactionReceipt } from '@wagmi/core'
-import {wagmiConfig} from "@/app/providers";
+import { wagmiConfig } from "@/app/providers";
 
 import { formatBalanceWithTwoDecimals, parseBalanceToBigInt } from "@/lib/utils";
 
@@ -31,16 +34,19 @@ export function StakeComponent() {
   const { address } = useAccount();
   
   const [stakeAmount, setStakeAmount] = useState("");
+  const [withdrawAmount, setWithdrawAmount] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
   const [isApproving, setIsApproving] = useState(false);
   const [isStaking, setIsStaking] = useState(false);
+  const [isWithdrawing, setIsWithdrawing] = useState(false);
   const [isStakeSuccess, setIsStakeSuccess] = useState(false);
 
   const queryClient = useQueryClient();
 
   const { writeContractAsync: approveToken } = useWriteErc20Approve();
   const { writeContractAsync: stakeTokens } = useWriteStakeContractStake();
+  const { writeContractAsync: withdrawTokens } = useWriteStakeContractWithdraw();
 
   const { data: seedAllowance, queryKey: allowanceQueryKey } = useReadErc20Allowance({
     address: SEED_TOKEN_ADDRESS as `0x${string}`,
@@ -54,6 +60,11 @@ export function StakeComponent() {
 
   const { data: leafBalance, queryKey: leafBalanceQueryKey } = useReadErc20BalanceOf({
     address: LEAF_TOKEN_ADDRESS as `0x${string}`,
+    args: address ? [address as `0x${string}`] : undefined,
+  });
+
+  const { data: stakeInfo, queryKey: stakeInfoQueryKey } = useReadStakeContractGetStakeInfo({
+    address: STAKING_CONTRACT_ADDRESS as `0x${string}`,
     args: address ? [address as `0x${string}`] : undefined,
   });
 
@@ -159,6 +170,48 @@ export function StakeComponent() {
     }
   };
 
+  const handleWithdraw = async () => {
+    if (!address) {
+      setError("Please connect your wallet.");
+      return;
+    }
+
+    const amountToWithdraw = withdrawAmount ? parseBalanceToBigInt(withdrawAmount) : null;
+    
+    if (!amountToWithdraw) {
+      setError("Please enter a valid amount to withdraw.");
+      return;
+    }
+
+    try {
+      setError(null);
+      setSuccessMessage(null);
+      setIsWithdrawing(true);
+
+      const withdrawTx = await withdrawTokens({ args: [amountToWithdraw] });
+      
+      // Wait for withdraw transaction
+      await waitForTransactionReceipt(wagmiConfig, { hash: withdrawTx });
+
+      setIsWithdrawing(false);
+      setWithdrawAmount("");
+
+      // Refetch balances and stake info
+      await Promise.all([
+        queryClient.invalidateQueries({ queryKey: seedBalanceQueryKey }),
+        queryClient.invalidateQueries({ queryKey: leafBalanceQueryKey }),
+        queryClient.invalidateQueries({ queryKey: stakeInfoQueryKey })
+      ]);
+
+      setSuccessMessage("Withdrawal successful!");
+    } catch (error) {
+      console.error("Withdrawal failed:", error);
+      setError("Failed to withdraw. Please try again.");
+    } finally {
+      setIsWithdrawing(false);
+    }
+  };
+
   useEffect(() => {
     if (isStakeSuccess) {
       const timer = setTimeout(() => {
@@ -227,6 +280,14 @@ export function StakeComponent() {
             onStake={handleStake}
             onMaxStake={() => setStakeAmount(formattedBalance)}
             onRemoveAllowance={handleRemoveAllowance}
+          />
+          <StakeWithdraw
+            withdrawAmount={withdrawAmount}
+            setWithdrawAmount={setWithdrawAmount}
+            stakedBalance={stakeInfo?.[0]}
+            isWithdrawing={isWithdrawing}
+            onWithdraw={handleWithdraw}
+            onMaxWithdraw={() => setWithdrawAmount(formatBalanceWithTwoDecimals(stakeInfo?.[0]))}
           />
           <ClaimCard leafBalance={leafBalance} />
           <StakingInfoCard />
