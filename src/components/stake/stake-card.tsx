@@ -34,6 +34,12 @@ export function StakeCard({
     setShowRemoveAllowance(Boolean(seedAllowance && seedAllowance > 0));
   }, [seedAllowance]);
 
+  useEffect(() => {
+    if (seedBalance) {
+      setStakeAmount(formatBalanceWithTwoDecimals(seedBalance));
+    }
+  }, [seedBalance, setStakeAmount]);
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value.replace(/[^0-9.]/g, '');
     setStakeAmount(value);
