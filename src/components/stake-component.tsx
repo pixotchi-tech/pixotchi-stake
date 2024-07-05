@@ -173,7 +173,7 @@ export function StakeComponent() {
           </Alert>
         )}
         {successMessage && (
-          <Alert variant="success">
+          <Alert variant="default">
             <AlertTitle>Success</AlertTitle>
             <AlertDescription>{successMessage}</AlertDescription>
           </Alert>

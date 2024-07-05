@@ -26,7 +26,7 @@ export function ClaimCard({ leafBalance, onClaim, isClaiming = false }: ClaimCar
           <Button 
             className="w-full" 
             onClick={onClaim}
-            disabled={!leafBalance || leafBalance === 0n || isClaiming}
+            disabled={!leafBalance || leafBalance == BigInt(0) || isClaiming}
           >
             {isClaiming ? 'Claiming...' : 'Claim Rewards'}
           </Button>
