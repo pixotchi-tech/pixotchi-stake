@@ -31,7 +31,7 @@ export function StakeCard({
   const [showRemoveAllowance, setShowRemoveAllowance] = useState(false);
 
   useEffect(() => {
-    setShowRemoveAllowance(seedAllowance && seedAllowance > 0);
+    setShowRemoveAllowance(Boolean(seedAllowance && seedAllowance > 0));
   }, [seedAllowance]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {

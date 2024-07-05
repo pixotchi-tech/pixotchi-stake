@@ -139,7 +139,7 @@ export function StakeComponent() {
 
       const approveTx = await approveToken({
         address: SEED_TOKEN_ADDRESS as `0x${string}`,
-        args: [STAKING_CONTRACT_ADDRESS as `0x${string}`, 0n]
+        args: [STAKING_CONTRACT_ADDRESS as `0x${string}`, BigInt(0)]
       });
 
       // Wait for approval transaction
