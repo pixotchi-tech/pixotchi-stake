@@ -124,7 +124,8 @@ export function StakeComponent() {
       await Promise.all([
         queryClient.invalidateQueries({ queryKey: seedBalanceQueryKey }),
         queryClient.invalidateQueries({ queryKey: leafBalanceQueryKey }),
-        queryClient.invalidateQueries({ queryKey: allowanceQueryKey })
+        queryClient.invalidateQueries({ queryKey: allowanceQueryKey }),
+        queryClient.invalidateQueries({ queryKey: stakeInfoQueryKey })
       ]);
 
       setSuccessMessage("Staking successful!");
