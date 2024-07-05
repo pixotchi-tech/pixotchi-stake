@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
@@ -13,6 +14,7 @@ interface StakeCardProps {
   isStaking: boolean;
   onStake: () => void;
   onMaxStake: () => void;
+  onRemoveAllowance: () => void;
 }
 
 export function StakeCard({
@@ -23,8 +25,15 @@ export function StakeCard({
   isApproving,
   isStaking,
   onStake,
-  onMaxStake
+  onMaxStake,
+  onRemoveAllowance
 }: StakeCardProps) {
+  const [showRemoveAllowance, setShowRemoveAllowance] = useState(false);
+
+  useEffect(() => {
+    setShowRemoveAllowance(seedAllowance && seedAllowance > 0);
+  }, [seedAllowance]);
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value.replace(/[^0-9.]/g, '');
     setStakeAmount(value);
@@ -55,7 +64,14 @@ export function StakeCard({
           </div>
           <div className="flex justify-between text-sm">
             <span>Balance: {formattedBalance} SEED</span>
-            <span>Allowance: {formattedAllowance} SEED</span>
+            <span>
+              Allowance: {formattedAllowance} SEED
+              {showRemoveAllowance && (
+                <span className="underline cursor-pointer ml-1" onClick={onRemoveAllowance}>
+                  remove
+                </span>
+              )}
+            </span>
           </div>
           <Button
             className="w-full"

@@ -57,8 +57,6 @@ export function StakeComponent() {
     args: address ? [address as `0x${string}`] : undefined,
   });
 
-
-
   const handleStake = async () => {
     if (!address) {
       setError("Please connect your wallet.");
@@ -87,9 +85,19 @@ export function StakeComponent() {
         // Wait for approval transaction
         await waitForTransactionReceipt(wagmiConfig, { hash: approveTx });
         
+        // Refetch allowance
+        await queryClient.invalidateQueries({ queryKey: allowanceQueryKey });
+        
         setIsApproving(false);
       }
       
+      // Re-check allowance after approval
+      const updatedAllowance = await queryClient.fetchQuery<bigint>({ queryKey: allowanceQueryKey });
+      if (!updatedAllowance || updatedAllowance < amountToStake) {
+        setError("Allowance is insufficient after approval. Please try again.");
+        return;
+      }
+
       // Proceed with staking
       setIsStaking(true);
       const stakeTx = await stakeTokens({ args: [amountToStake] });
@@ -118,6 +126,39 @@ export function StakeComponent() {
     }
   };
 
+  const handleRemoveAllowance = async () => {
+    if (!address) {
+      setError("Please connect your wallet.");
+      return;
+    }
+
+    try {
+      setError(null);
+      setSuccessMessage(null);
+      setIsApproving(true);
+
+      const approveTx = await approveToken({
+        address: SEED_TOKEN_ADDRESS as `0x${string}`,
+        args: [STAKING_CONTRACT_ADDRESS as `0x${string}`, 0n]
+      });
+
+      // Wait for approval transaction
+      await waitForTransactionReceipt(wagmiConfig, { hash: approveTx });
+
+      setIsApproving(false);
+
+      // Refetch allowance
+      await queryClient.invalidateQueries({ queryKey: allowanceQueryKey });
+
+      setSuccessMessage("Allowance removed successfully!");
+    } catch (error) {
+      console.error("Removing allowance failed:", error);
+      setError("Failed to remove allowance. Please try again.");
+    } finally {
+      setIsApproving(false);
+    }
+  };
+
   useEffect(() => {
     if (isStakeSuccess) {
       const timer = setTimeout(() => {
@@ -133,8 +174,8 @@ export function StakeComponent() {
   //const {wallets, ready: walletsReady} = useWallets();
 
   // WAGMI hooks
-  const { isConnected, isConnecting, isDisconnected, connector} = useAccount();
-  const {disconnect} = useDisconnect();
+  const { isConnected, isConnecting, isDisconnected, connector } = useAccount();
+  const { disconnect } = useDisconnect();
   //const {setActiveWallet} = useSetActiveWallet();
 
   const handleConnectWallet = () => {
@@ -150,17 +191,14 @@ export function StakeComponent() {
     logout();
   };
 
-  const handleMaxStake = () => {
-    if (seedBalance) {
-      setStakeAmount(formatBalanceWithTwoDecimals(seedBalance));
-    }
-  };
+  const formattedBalance = seedBalance ? formatBalanceWithTwoDecimals(seedBalance) : "0.00";
+  const formattedAllowance = seedAllowance ? formatBalanceWithTwoDecimals(seedAllowance) : "0.00";
 
   return (
     <div className="flex min-h-screen w-full flex-col bg-background text-foreground">
       <Header 
         isConnected={isConnected} 
-        address={address} 
+        address={address}
         onConnect={handleConnectWallet} 
         onDisconnect={handleDisconnect} 
       />
@@ -187,7 +225,8 @@ export function StakeComponent() {
             isApproving={isApproving}
             isStaking={isStaking}
             onStake={handleStake}
-            onMaxStake={handleMaxStake}
+            onMaxStake={() => setStakeAmount(formattedBalance)}
+            onRemoveAllowance={handleRemoveAllowance}
           />
           <ClaimCard leafBalance={leafBalance} />
           <StakingInfoCard />
