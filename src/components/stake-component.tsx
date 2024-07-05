@@ -30,6 +30,12 @@ import { useReadErc20, useReadErc20Allowance, useReadErc20BalanceOf, useWriteErc
 import { formatEther, parseEther } from "viem"; // Add this import for formatting
 import { useState } from "react";
 import { useWriteStakeContractStake } from '../generated';
+import { useQueryClient } from '@tanstack/react-query';
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
+import { ExclamationTriangleIcon } from "@radix-ui/react-icons"
+import { getWalletClient, waitForTransactionReceipt } from '@wagmi/core'
+import {wagmiConfig} from "@/app/providers";
+
 
 // Add these constants for token addresses (replace with actual addresses)
 const SEED_TOKEN_ADDRESS = process.env.NEXT_PUBLIC_SEED_TOKEN!;
@@ -39,22 +45,21 @@ const STAKING_CONTRACT_ADDRESS = process.env.NEXT_PUBLIC_STAKING_CONTRACT;
 export function StakeComponent() {
 
   const [stakeAmount, setStakeAmount] = useState("");
-
-  // Move this hook to the top level of the component
-  const { writeContract, isPending } = useWriteStakeContractStake({
-  });
+  const [error, setError] = useState<string | null>(null);
+  const {  writeContractAsync: writeContract, isPending } = useWriteStakeContractStake({});
+  const queryClient = useQueryClient();
 
   // Privy hooks
   const {ready, user, authenticated, login, connectWallet, logout} = usePrivy();
   const {wallets, ready: walletsReady} = useWallets();
 
   // WAGMI hooks
-  const {address, isConnected, isConnecting, isDisconnected} = useAccount();
+  const {address, isConnected, isConnecting, isDisconnected, connector} = useAccount();
   const {disconnect} = useDisconnect();
   const {setActiveWallet} = useSetActiveWallet();
 
   // Fetch SEED token balance
-  const { data: seedBalance } = useReadErc20BalanceOf({
+  const { data: seedBalance, queryKey: seedBalanceQueryKey } = useReadErc20BalanceOf({
     address: SEED_TOKEN_ADDRESS as `0x${string}`,
     args: [address as `0x${string}`],
   });
@@ -66,13 +71,12 @@ export function StakeComponent() {
   });
 
   // Add these new hooks
-  const { data: seedAllowance } = useReadErc20Allowance({
+  const { data: seedAllowance, queryKey: seedAllowanceQueryKey } = useReadErc20Allowance({
     address: SEED_TOKEN_ADDRESS as `0x${string}`,
     args: [address as `0x${string}`, STAKING_CONTRACT_ADDRESS as `0x${string}`],
   });
 
-  const { writeContract: approveToken, isPending: isApproving } = useWriteErc20Approve({
-  });
+  const { writeContractAsync: approveToken, isPending: isApproving,  } = useWriteErc20Approve({});
 
   if (!ready) {
     return null;
@@ -97,38 +101,81 @@ export function StakeComponent() {
     return Math.floor(parseFloat(formatEther(balance))).toString();
   };
 
+  // Add this helper function near the top of your component
+  const formatBalance = (balance: bigint | undefined) => {
+    if (!balance) return '0';
+    return formatEther(balance);
+  };
+
   const handleStake = async () => {
     if (!stakeAmount || parseFloat(stakeAmount) <= 0) {
-      alert("Please enter a valid amount to stake");
+      setError("Please enter a valid amount to stake.");
       return;
     }
     
     const amountToStake = parseEther(stakeAmount);
 
+    console.log("Seed Allowance:", seedAllowance);
+    console.log("Amount to Stake:", amountToStake);
+
     // Check if allowance is sufficient
-    if (seedAllowance && seedAllowance < amountToStake) {
-      // If not, request approval first
+    if (!seedAllowance || seedAllowance < amountToStake) {
       try {
-        await approveToken({
+        console.log("Approving token...");
+        const approveTx = await approveToken({
           address: SEED_TOKEN_ADDRESS as `0x${string}`,
           args: [STAKING_CONTRACT_ADDRESS as `0x${string}`, amountToStake]
         });
-        // Wait for the approval transaction to be mined
-        // You might want to add a way to check for the transaction status here
+        console.log("Approval transaction sent");
+
+        const receipt = await waitForTransactionReceipt(wagmiConfig, { hash: approveTx });
+        console.log("Token approved successfully", receipt);
       } catch (error) {
         console.error("Approval failed:", error);
-        alert("Failed to approve token spending. Please try again.");
+        setError("Failed to approve token spending. Please try again.");
         return;
       }
     }
 
     // Now proceed with staking
-    writeContract({ args: [amountToStake] });
+    try {
+      console.log("Staking tokens...");
+      const stakeTx = await writeContract({ args: [amountToStake] });
+      console.log("Staking transaction sent:", stakeTx);
+      
+      // Wait for the transaction receipt
+      const receipt = await waitForTransactionReceipt(wagmiConfig, { hash: stakeTx })
+      console.log("Tokens staked successfully, receipt:", receipt);
+
+      // Invalidate the balance and allowance queries
+      queryClient.invalidateQueries({ queryKey: seedBalanceQueryKey });
+      queryClient.invalidateQueries({ queryKey: seedAllowanceQueryKey });
+      
+      setStakeAmount(""); // Clear the input field after successful staking
+      setError(null); // Clear any previous errors
+    } catch (error) {
+      console.error("Staking failed:", error);
+      setError("Failed to stake. Please try again.");
+    }
   };
 
   const handleMaxStake = () => {
     if (seedBalance) {
       setStakeAmount(formatEther(seedBalance));
+    }
+  };
+
+  const handleRemoveAllowance = async () => {
+    try {
+      await approveToken({
+        address: SEED_TOKEN_ADDRESS as `0x${string}`,
+        args: [STAKING_CONTRACT_ADDRESS as `0x${string}`, BigInt(0)]
+      });
+      // Invalidate the allowance query to refresh the data
+      queryClient.invalidateQueries({ queryKey: seedAllowanceQueryKey });
+    } catch (error) {
+      console.error("Failed to remove allowance:", error);
+      setError("Failed to remove allowance. Please try again.");
     }
   };
 
@@ -153,6 +200,13 @@ export function StakeComponent() {
         </div>
       </header>
       <main className="flex-1 px-4 py-8 sm:px-6">
+        {error && (
+          <Alert variant="destructive" className="mb-4">
+            <ExclamationTriangleIcon className="h-4 w-4" />
+            <AlertTitle>Error</AlertTitle>
+            <AlertDescription>{error}</AlertDescription>
+          </Alert>
+        )}
         <div className="container mx-auto grid max-w-4xl grid-cols-1 gap-8 md:grid-cols-2">
           <Card>
             <CardHeader>
@@ -179,6 +233,15 @@ export function StakeComponent() {
                 </div>
                 <div className="text-sm">
                   Available SEED: {formatBalanceWithoutDecimals(seedBalance)} SEED
+                  <br />
+                  Allowed to stake: {formatBalance(seedAllowance)} SEED
+                  {" "}
+                  <span 
+                    className="text-primary underline cursor-pointer" 
+                    onClick={handleRemoveAllowance}
+                  >
+                    remove allowance
+                  </span>
                 </div>
                 <Button
                   className="w-full"
