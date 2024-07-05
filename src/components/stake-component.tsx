@@ -43,9 +43,10 @@ const LEAF_TOKEN_ADDRESS = process.env.NEXT_PUBLIC_LEAF_TOKEN!;
 const STAKING_CONTRACT_ADDRESS = process.env.NEXT_PUBLIC_STAKING_CONTRACT;
 
 export function StakeComponent() {
-
   const [stakeAmount, setStakeAmount] = useState("");
   const [error, setError] = useState<string | null>(null);
+  const [stakingState, setStakingState] = useState<'idle' | 'approving' | 'staking' | 'removing'>('idle');
+
   const {  writeContractAsync: writeContract, isPending } = useWriteStakeContractStake({});
   const queryClient = useQueryClient();
 
@@ -121,6 +122,7 @@ export function StakeComponent() {
     // Check if allowance is sufficient
     if (!seedAllowance || seedAllowance < amountToStake) {
       try {
+        setStakingState('approving');
         console.log("Approving token...");
         const approveTx = await approveToken({
           address: SEED_TOKEN_ADDRESS as `0x${string}`,
@@ -130,15 +132,20 @@ export function StakeComponent() {
 
         const receipt = await waitForTransactionReceipt(wagmiConfig, { hash: approveTx });
         console.log("Token approved successfully", receipt);
+        
+        // Invalidate the allowance query to refresh the data
+        queryClient.invalidateQueries({ queryKey: seedAllowanceQueryKey });
       } catch (error) {
         console.error("Approval failed:", error);
         setError("Failed to approve token spending. Please try again.");
+        setStakingState('idle');
         return;
       }
     }
 
     // Now proceed with staking
     try {
+      setStakingState('staking');
       console.log("Staking tokens...");
       const stakeTx = await writeContract({ args: [amountToStake] });
       console.log("Staking transaction sent:", stakeTx);
@@ -156,6 +163,8 @@ export function StakeComponent() {
     } catch (error) {
       console.error("Staking failed:", error);
       setError("Failed to stake. Please try again.");
+    } finally {
+      setStakingState('idle');
     }
   };
 
@@ -167,15 +176,25 @@ export function StakeComponent() {
 
   const handleRemoveAllowance = async () => {
     try {
-      await approveToken({
+      setStakingState('removing');
+      setError(null);
+      const tx = await approveToken({
         address: SEED_TOKEN_ADDRESS as `0x${string}`,
         args: [STAKING_CONTRACT_ADDRESS as `0x${string}`, BigInt(0)]
       });
+      console.log("Remove allowance transaction sent:", tx);
+
+      // Wait for the transaction receipt
+      const receipt = await waitForTransactionReceipt(wagmiConfig, { hash: tx });
+      console.log("Allowance removed successfully, receipt:", receipt);
+
       // Invalidate the allowance query to refresh the data
       queryClient.invalidateQueries({ queryKey: seedAllowanceQueryKey });
     } catch (error) {
       console.error("Failed to remove allowance:", error);
       setError("Failed to remove allowance. Please try again.");
+    } finally {
+      setStakingState('idle');
     }
   };
 
@@ -235,20 +254,28 @@ export function StakeComponent() {
                   Available SEED: {formatBalanceWithoutDecimals(seedBalance)} SEED
                   <br />
                   Allowed to stake: {formatBalance(seedAllowance)} SEED
-                  {" "}
-                  <span 
-                    className="text-primary underline cursor-pointer" 
-                    onClick={handleRemoveAllowance}
-                  >
-                    remove allowance
-                  </span>
+                  {seedAllowance && seedAllowance > BigInt(0) && (
+                    <>
+                      {" "}
+                      <span 
+                        className="text-primary underline cursor-pointer" 
+                        onClick={handleRemoveAllowance}
+                        style={{ pointerEvents: stakingState !== 'idle' ? 'none' : 'auto' }}
+                      >
+                        {stakingState === 'removing' ? 'Removing...' : 'remove allowance'}
+                      </span>
+                    </>
+                  )}
                 </div>
                 <Button
                   className="w-full"
                   onClick={handleStake}
-                  disabled={isPending || isApproving || !stakeAmount || parseFloat(stakeAmount) <= 0}
+                  disabled={stakingState !== 'idle' || !stakeAmount || parseFloat(stakeAmount) <= 0}
                 >
-                  {isApproving ? "Approving..." : isPending ? "Staking..." : "Stake"}
+                  {stakingState === 'approving' ? "Approving..." : 
+                   stakingState === 'staking' ? "Staking..." : 
+                   stakingState === 'removing' ? "Removing Allowance..." :
+                   "Stake"}
                 </Button>
               </div>
             </CardContent>
