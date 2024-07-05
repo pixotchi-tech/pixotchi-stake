@@ -22,6 +22,12 @@ export function StakeWithdraw({
   onWithdraw,
   onMaxWithdraw
 }: StakeWithdrawProps) {
+  useEffect(() => {
+    if (stakedBalance) {
+      setWithdrawAmount(formatBalanceWithTwoDecimals(stakedBalance));
+    }
+  }, [stakedBalance, setWithdrawAmount]);
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value.replace(/[^0-9.]/g, '');
     setWithdrawAmount(value);
