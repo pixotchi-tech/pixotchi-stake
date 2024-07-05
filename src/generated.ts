@@ -4302,7 +4302,7 @@ export const useReadStakeContractGetRoleMemberCount =
 export const useReadStakeContractGetStakeInfo =
   /*#__PURE__*/ createUseReadContract({
     abi: stakeContractAbi,
-    address: stakeContractAddress,
+    //address: stakeContractAddress,
     functionName: 'getStakeInfo',
   })
 
