@@ -16,7 +16,7 @@ export const wagmiConfig = createConfig({
   chains: [baseSepolia],
   transports: {
     [baseSepolia.id]: fallback([
-      webSocket(process.env.NEXT_PUBLIC_RPC_SERVER_WS),
+      webSocket(process.env.NEXT_PUBLIC_RPC_SERVER_WS, {reconnect: true, retryCount: 100 }),
       http(process.env.NEXT_PUBLIC_RPC_SERVER, {batch: true}),
     ])
   },
