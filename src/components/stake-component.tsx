@@ -26,6 +26,7 @@ import { wagmiConfig } from "@/app/providers";
 import { useBlockNumber } from 'wagmi';
 
 import { formatBalanceWithTwoDecimals, parseBalanceToBigInt } from "@/lib/utils";
+import {useIdle, useWindowsFocus} from "@reactuses/core";
 
 // Add these constants for token addresses (replace with actual addresses)
 const SEED_TOKEN_ADDRESS = process.env.NEXT_PUBLIC_SEED_TOKEN!;
@@ -67,8 +68,10 @@ export function StakeComponent() {
     args: address ? [address as `0x${string}`] : undefined,
   });
 
+  const isWindowFocused = useWindowsFocus();
+
   const { data: blockNumber } = useBlockNumber({
-    watch: wagmiIsConnected,
+    watch: isWindowFocused && wagmiIsConnected,
   });
 
   const { data: stakeDetails, queryKey: stakeDetailsQueryKey, refetch: refetchStakeDetails } = useReadStakeContractGetStakeInfo({
@@ -77,10 +80,10 @@ export function StakeComponent() {
   });
 
   useEffect(() => {
-    if (wagmiIsConnected && blockNumber) {
+    if (isWindowFocused && wagmiIsConnected && blockNumber) {
       refetchStakeDetails();
     }
-  }, [wagmiIsConnected, blockNumber, refetchStakeDetails]);
+  }, [isWindowFocused, wagmiIsConnected, blockNumber, refetchStakeDetails]);
 
   const handleStake = async () => {
     if (!address) {
