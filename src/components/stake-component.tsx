@@ -18,7 +18,8 @@ import {
   useWriteErc20Approve,
   useWriteStakeContractStake,
   useWriteStakeContractWithdraw,
-  useReadStakeContractGetStakeInfo
+  useReadStakeContractGetStakeInfo,
+  useWriteStakeContractClaimRewards
 } from "@/generated";
 import { waitForTransactionReceipt } from '@wagmi/core'
 import { wagmiConfig } from "@/app/providers";
@@ -41,12 +42,14 @@ export function StakeComponent() {
   const [isStaking, setIsStaking] = useState(false);
   const [isWithdrawing, setIsWithdrawing] = useState(false);
   const [isStakeSuccess, setIsStakeSuccess] = useState(false);
+  const [isClaiming, setIsClaiming] = useState(false);
 
   const queryClient = useQueryClient();
 
   const { writeContractAsync: approveToken } = useWriteErc20Approve();
   const { writeContractAsync: stakeTokens } = useWriteStakeContractStake();
   const { writeContractAsync: withdrawTokens } = useWriteStakeContractWithdraw();
+  const { writeContractAsync: claimRewards } = useWriteStakeContractClaimRewards();
 
   const { data: seedAllowance, queryKey: allowanceQueryKey } = useReadErc20Allowance({
     address: SEED_TOKEN_ADDRESS as `0x${string}`,
@@ -64,6 +67,11 @@ export function StakeComponent() {
   });
 
   const { data: stakeInfo, queryKey: stakeInfoQueryKey } = useReadStakeContractGetStakeInfo({
+    address: STAKING_CONTRACT_ADDRESS as `0x${string}`,
+    args: address ? [address as `0x${string}`] : undefined,
+  });
+
+  const { data: stakeDetails, queryKey: stakeDetailsQueryKey } = useReadStakeContractGetStakeInfo({
     address: STAKING_CONTRACT_ADDRESS as `0x${string}`,
     args: address ? [address as `0x${string}`] : undefined,
   });
@@ -120,12 +128,13 @@ export function StakeComponent() {
       setIsStakeSuccess(true);
       setStakeAmount("");
 
-      // Refetch balances and allowance
+      // Refetch balances, allowance, and stake info
       await Promise.all([
         queryClient.invalidateQueries({ queryKey: seedBalanceQueryKey }),
         queryClient.invalidateQueries({ queryKey: leafBalanceQueryKey }),
         queryClient.invalidateQueries({ queryKey: allowanceQueryKey }),
-        queryClient.invalidateQueries({ queryKey: stakeInfoQueryKey })
+        queryClient.invalidateQueries({ queryKey: stakeInfoQueryKey }),
+        queryClient.invalidateQueries({ queryKey: stakeDetailsQueryKey })
       ]);
 
       setSuccessMessage("Staking successful!");
@@ -201,7 +210,8 @@ export function StakeComponent() {
       await Promise.all([
         queryClient.invalidateQueries({ queryKey: seedBalanceQueryKey }),
         queryClient.invalidateQueries({ queryKey: leafBalanceQueryKey }),
-        queryClient.invalidateQueries({ queryKey: stakeInfoQueryKey })
+        queryClient.invalidateQueries({ queryKey: stakeInfoQueryKey }),
+        queryClient.invalidateQueries({ queryKey: stakeDetailsQueryKey })
       ]);
 
       setSuccessMessage("Withdrawal successful!");
@@ -210,6 +220,36 @@ export function StakeComponent() {
       setError("Failed to withdraw. Please try again.");
     } finally {
       setIsWithdrawing(false);
+    }
+  };
+
+  const handleClaim = async () => {
+    if (!address) {
+      setError("Please connect your wallet.");
+      return;
+    }
+
+    try {
+      setError(null);
+      setSuccessMessage(null);
+      setIsClaiming(true);
+
+      const claimTx = await claimRewards({ args: [] }); // Pass necessary arguments here
+      
+      // Wait for claim transaction
+      await waitForTransactionReceipt(wagmiConfig, { hash: claimTx });
+
+      setIsClaiming(false);
+
+      // Refetch balances
+      await queryClient.invalidateQueries({ queryKey: leafBalanceQueryKey });
+
+      setSuccessMessage("Claim successful!");
+    } catch (error) {
+      console.error("Claiming rewards failed:", error);
+      setError("Failed to claim rewards. Please try again.");
+    } finally {
+      setIsClaiming(false);
     }
   };
 
@@ -285,13 +325,20 @@ export function StakeComponent() {
           <StakeWithdraw
             withdrawAmount={withdrawAmount}
             setWithdrawAmount={setWithdrawAmount}
-            stakedBalance={stakeInfo?.[0]}
+            stakedBalance={stakeDetails?.[0]}
             isWithdrawing={isWithdrawing}
             onWithdraw={handleWithdraw}
-            onMaxWithdraw={() => setWithdrawAmount(formatBalanceWithTwoDecimals(stakeInfo?.[0]))}
+            onMaxWithdraw={() => setWithdrawAmount(formatBalanceWithTwoDecimals(stakeDetails?.[0]))}
           />
-          <ClaimCard leafBalance={leafBalance} />
-          <StakingInfoCard />
+          <ClaimCard 
+            leafBalance={leafBalance} 
+            onClaim={handleClaim} 
+            isClaiming={isClaiming} 
+          />
+          <StakingInfoCard 
+            stakedBalance={stakeDetails?.[0] ?? BigInt(0)}
+            rewards={stakeDetails?.[1] ?? BigInt(0)}
+          />
         </div>
       </main>
       <Footer />

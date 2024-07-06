@@ -1,6 +1,11 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
-export function StakingInfoCard() {
+interface StakingInfoCardProps {
+  stakedBalance: bigint;
+  rewards: bigint;
+}
+
+export function StakingInfoCard({ stakedBalance, rewards }: StakingInfoCardProps) {
   return (
     <Card>
       <CardHeader>
@@ -13,6 +18,8 @@ export function StakingInfoCard() {
           <li>Rewards are distributed daily</li>
           <li>No lock-up period - unstake anytime</li>
           <li>APY varies based on total staked amount</li>
+          <li>Tokens Staked: {stakedBalance}</li>
+          <li>Rewards: {rewards}</li>
         </ul>
       </CardContent>
     </Card>

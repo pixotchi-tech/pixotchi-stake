@@ -1,6 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { formatBalanceWithTwoDecimals } from "@/lib/utils"
+import { useWriteStakeContractClaimRewards } from "@/generated";
 
 interface ClaimCardProps {
   leafBalance: bigint | undefined;
@@ -9,6 +10,20 @@ interface ClaimCardProps {
 }
 
 export function ClaimCard({ leafBalance, onClaim, isClaiming = false }: ClaimCardProps) {
+  const { writeContractAsync: claimRewards } = useWriteStakeContractClaimRewards();
+
+  const handleClaim = async () => {
+    if (onClaim) {
+      onClaim();
+    } else {
+      try {
+        await claimRewards({ args: [] }); // Pass necessary arguments here
+      } catch (error) {
+        console.error("Claiming rewards failed:", error);
+      }
+    }
+  };
+
   const formattedBalance = formatBalanceWithTwoDecimals(leafBalance);
 
   return (
@@ -25,7 +40,7 @@ export function ClaimCard({ leafBalance, onClaim, isClaiming = false }: ClaimCar
           </div>
           <Button 
             className="w-full" 
-            onClick={onClaim}
+            onClick={handleClaim}
             disabled={!leafBalance || leafBalance == BigInt(0) || isClaiming}
           >
             {isClaiming ? 'Claiming...' : 'Claim Rewards'}
