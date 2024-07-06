@@ -23,6 +23,7 @@ import {
 } from "@/generated";
 import { waitForTransactionReceipt } from '@wagmi/core'
 import { wagmiConfig } from "@/app/providers";
+import { useBlockNumber } from 'wagmi';
 
 import { formatBalanceWithTwoDecimals, parseBalanceToBigInt } from "@/lib/utils";
 
@@ -32,7 +33,7 @@ const LEAF_TOKEN_ADDRESS = process.env.NEXT_PUBLIC_LEAF_TOKEN!;
 const STAKING_CONTRACT_ADDRESS = process.env.NEXT_PUBLIC_STAKING_CONTRACT;
 
 export function StakeComponent() {
-  const { address } = useAccount();
+  const { address, isConnected: wagmiIsConnected } = useAccount();
   
   const [stakeAmount, setStakeAmount] = useState("");
   const [withdrawAmount, setWithdrawAmount] = useState("");
@@ -66,15 +67,20 @@ export function StakeComponent() {
     args: address ? [address as `0x${string}`] : undefined,
   });
 
-  // const { data: stakeInfo, queryKey: stakeInfoQueryKey } = useReadStakeContractGetStakeInfo({
-  //   address: STAKING_CONTRACT_ADDRESS as `0x${string}`,
-  //   args: address ? [address as `0x${string}`] : undefined,
-  // });
+  const { data: blockNumber } = useBlockNumber({
+    watch: wagmiIsConnected,
+  });
 
-  const { data: stakeDetails, queryKey: stakeDetailsQueryKey } = useReadStakeContractGetStakeInfo({
+  const { data: stakeDetails, queryKey: stakeDetailsQueryKey, refetch: refetchStakeDetails } = useReadStakeContractGetStakeInfo({
     address: STAKING_CONTRACT_ADDRESS as `0x${string}`,
     args: address ? [address as `0x${string}`] : undefined,
   });
+
+  useEffect(() => {
+    if (wagmiIsConnected && blockNumber) {
+      refetchStakeDetails();
+    }
+  }, [wagmiIsConnected, blockNumber, refetchStakeDetails]);
 
   const handleStake = async () => {
     if (!address) {
@@ -133,7 +139,6 @@ export function StakeComponent() {
         queryClient.invalidateQueries({ queryKey: seedBalanceQueryKey }),
         queryClient.invalidateQueries({ queryKey: leafBalanceQueryKey }),
         queryClient.invalidateQueries({ queryKey: allowanceQueryKey }),
-        //queryClient.invalidateQueries({ queryKey: stakeInfoQueryKey }),
         queryClient.invalidateQueries({ queryKey: stakeDetailsQueryKey })
       ]);
 
@@ -210,7 +215,6 @@ export function StakeComponent() {
       await Promise.all([
         queryClient.invalidateQueries({ queryKey: seedBalanceQueryKey }),
         queryClient.invalidateQueries({ queryKey: leafBalanceQueryKey }),
-        //queryClient.invalidateQueries({ queryKey: stakeInfoQueryKey }),
         queryClient.invalidateQueries({ queryKey: stakeDetailsQueryKey })
       ]);
 
@@ -268,7 +272,6 @@ export function StakeComponent() {
   //const {wallets, ready: walletsReady} = useWallets();
 
   // WAGMI hooks
-  const { isConnected, isConnecting, isDisconnected, connector } = useAccount();
   const { disconnect } = useDisconnect();
   //const {setActiveWallet} = useSetActiveWallet();
 
@@ -291,7 +294,7 @@ export function StakeComponent() {
   return (
     <div className="flex min-h-screen w-full flex-col bg-background text-foreground">
       <Header 
-        isConnected={isConnected} 
+        isConnected={wagmiIsConnected} 
         address={address}
         onConnect={handleConnectWallet} 
         onDisconnect={handleDisconnect} 
