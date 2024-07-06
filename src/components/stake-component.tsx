@@ -24,9 +24,9 @@ import {
 import { waitForTransactionReceipt } from '@wagmi/core'
 import { wagmiConfig } from "@/app/providers";
 import { useBlockNumber } from 'wagmi';
+import {useWindowsFocus, useIdle } from '@reactuses/core';
 
 import { formatBalanceWithTwoDecimals, parseBalanceToBigInt } from "@/lib/utils";
-import {useIdle, useWindowsFocus} from "@reactuses/core";
 
 // Add these constants for token addresses (replace with actual addresses)
 const SEED_TOKEN_ADDRESS = process.env.NEXT_PUBLIC_SEED_TOKEN!;
@@ -69,9 +69,11 @@ export function StakeComponent() {
   });
 
   const isWindowFocused = useWindowsFocus();
+  const isIdle = useIdle(30000); // 30 seconds idle timeout
+  const isTabActive = isWindowFocused && !isIdle;
 
   const { data: blockNumber } = useBlockNumber({
-    watch: isWindowFocused && wagmiIsConnected,
+    watch: isTabActive && wagmiIsConnected,
   });
 
   const { data: stakeDetails, queryKey: stakeDetailsQueryKey, refetch: refetchStakeDetails } = useReadStakeContractGetStakeInfo({
@@ -80,10 +82,10 @@ export function StakeComponent() {
   });
 
   useEffect(() => {
-    if (isWindowFocused && wagmiIsConnected && blockNumber) {
+    if (isTabActive && wagmiIsConnected && blockNumber) {
       refetchStakeDetails();
     }
-  }, [isWindowFocused, wagmiIsConnected, blockNumber, refetchStakeDetails]);
+  }, [isTabActive, wagmiIsConnected, blockNumber, refetchStakeDetails]);
 
   const handleStake = async () => {
     if (!address) {
@@ -352,3 +354,4 @@ export function StakeComponent() {
     </div>
   )
 }
+
