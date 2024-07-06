@@ -5,11 +5,12 @@ import { useWriteStakeContractClaimRewards } from "@/generated";
 
 interface ClaimCardProps {
   leafBalance: bigint | undefined;
+  leafClaimable: bigint | undefined;
   onClaim?: () => void;
   isClaiming?: boolean;
 }
 
-export function ClaimCard({ leafBalance, onClaim, isClaiming = false }: ClaimCardProps) {
+export function ClaimCard({ leafBalance, leafClaimable, onClaim, isClaiming = false }: ClaimCardProps) {
   const { writeContractAsync: claimRewards } = useWriteStakeContractClaimRewards();
 
   const handleClaim = async () => {
@@ -25,6 +26,7 @@ export function ClaimCard({ leafBalance, onClaim, isClaiming = false }: ClaimCar
   };
 
   const formattedBalance = formatBalanceWithTwoDecimals(leafBalance);
+  const formattedClaimable = formatBalanceWithTwoDecimals(leafClaimable);
 
   return (
     <Card>
@@ -35,13 +37,15 @@ export function ClaimCard({ leafBalance, onClaim, isClaiming = false }: ClaimCar
       <CardContent>
         <div className="space-y-4">
           <div className="text-center">
-            <p className="text-2xl font-bold">{formattedBalance} LEAF</p>
+            <p className="text-2xl font-bold">{formattedClaimable} LEAF</p>
             <p className="text-sm text-muted-foreground">Available to claim</p>
+            <p className="text-xl font-bold">{formattedBalance} LEAF</p>
+            <p className="text-xs text-muted-foreground">Balance</p>
           </div>
           <Button 
             className="w-full" 
             onClick={handleClaim}
-            disabled={!leafBalance || leafBalance == BigInt(0) || isClaiming}
+            disabled={!leafClaimable || leafClaimable <= (leafBalance ?? BigInt(0)) || isClaiming}
           >
             {isClaiming ? 'Claiming...' : 'Claim Rewards'}
           </Button>

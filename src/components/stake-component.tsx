@@ -66,10 +66,10 @@ export function StakeComponent() {
     args: address ? [address as `0x${string}`] : undefined,
   });
 
-  const { data: stakeInfo, queryKey: stakeInfoQueryKey } = useReadStakeContractGetStakeInfo({
-    address: STAKING_CONTRACT_ADDRESS as `0x${string}`,
-    args: address ? [address as `0x${string}`] : undefined,
-  });
+  // const { data: stakeInfo, queryKey: stakeInfoQueryKey } = useReadStakeContractGetStakeInfo({
+  //   address: STAKING_CONTRACT_ADDRESS as `0x${string}`,
+  //   args: address ? [address as `0x${string}`] : undefined,
+  // });
 
   const { data: stakeDetails, queryKey: stakeDetailsQueryKey } = useReadStakeContractGetStakeInfo({
     address: STAKING_CONTRACT_ADDRESS as `0x${string}`,
@@ -133,7 +133,7 @@ export function StakeComponent() {
         queryClient.invalidateQueries({ queryKey: seedBalanceQueryKey }),
         queryClient.invalidateQueries({ queryKey: leafBalanceQueryKey }),
         queryClient.invalidateQueries({ queryKey: allowanceQueryKey }),
-        queryClient.invalidateQueries({ queryKey: stakeInfoQueryKey }),
+        //queryClient.invalidateQueries({ queryKey: stakeInfoQueryKey }),
         queryClient.invalidateQueries({ queryKey: stakeDetailsQueryKey })
       ]);
 
@@ -210,7 +210,7 @@ export function StakeComponent() {
       await Promise.all([
         queryClient.invalidateQueries({ queryKey: seedBalanceQueryKey }),
         queryClient.invalidateQueries({ queryKey: leafBalanceQueryKey }),
-        queryClient.invalidateQueries({ queryKey: stakeInfoQueryKey }),
+        //queryClient.invalidateQueries({ queryKey: stakeInfoQueryKey }),
         queryClient.invalidateQueries({ queryKey: stakeDetailsQueryKey })
       ]);
 
@@ -332,6 +332,7 @@ export function StakeComponent() {
           />
           <ClaimCard 
             leafBalance={leafBalance} 
+            leafClaimable={stakeDetails?.[1]}
             onClaim={handleClaim} 
             isClaiming={isClaiming} 
           />
