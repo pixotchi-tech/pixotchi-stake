@@ -343,10 +343,7 @@ export function StakeComponent() {
             onClaim={handleClaim} 
             isClaiming={isClaiming} 
           />
-          <StakingInfoCard 
-            stakedBalance={stakeDetails?.[0] ?? BigInt(0)}
-            rewards={stakeDetails?.[1] ?? BigInt(0)}
-          />
+          <StakingInfoCard/>
         </div>
       </main>
       <Footer />
