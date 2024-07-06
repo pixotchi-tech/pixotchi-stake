@@ -24,7 +24,7 @@ import {
 import { waitForTransactionReceipt } from '@wagmi/core'
 import { wagmiConfig } from "@/app/providers";
 import { useBlockNumber } from 'wagmi';
-import {useWindowsFocus, useIdle } from '@reactuses/core';
+import { useIdle } from '@reactuses/core';
 
 import { formatBalanceWithTwoDecimals, parseBalanceToBigInt } from "@/lib/utils";
 
@@ -68,9 +68,8 @@ export function StakeComponent() {
     args: address ? [address as `0x${string}`] : undefined,
   });
 
-  const isWindowFocused = useWindowsFocus();
   const isIdle = useIdle(30000); // 30 seconds idle timeout
-  const isTabActive = isWindowFocused && !isIdle;
+  const isTabActive = !isIdle;
 
   const { data: blockNumber } = useBlockNumber({
     watch: isTabActive && wagmiIsConnected,
