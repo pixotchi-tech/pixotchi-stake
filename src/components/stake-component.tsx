@@ -34,7 +34,7 @@ const LEAF_TOKEN_ADDRESS = process.env.NEXT_PUBLIC_LEAF_TOKEN!;
 const STAKING_CONTRACT_ADDRESS = process.env.NEXT_PUBLIC_STAKING_CONTRACT;
 
 export function StakeComponent() {
-  const { address, isConnected: wagmiIsConnected } = useAccount();
+  const { address, isConnected } = useAccount();
   
   const [stakeAmount, setStakeAmount] = useState("");
   const [withdrawAmount, setWithdrawAmount] = useState("");
@@ -72,7 +72,7 @@ export function StakeComponent() {
   const isTabActive = !isIdle;
 
   const { data: blockNumber } = useBlockNumber({
-    watch: isTabActive && wagmiIsConnected,
+    watch: isTabActive && isConnected,
   });
 
   const { data: stakeDetails, queryKey: stakeDetailsQueryKey, refetch: refetchStakeDetails } = useReadStakeContractGetStakeInfo({
@@ -81,10 +81,10 @@ export function StakeComponent() {
   });
 
   useEffect(() => {
-    if (isTabActive && wagmiIsConnected && blockNumber) {
+    if (isTabActive && isConnected && blockNumber) {
       refetchStakeDetails();
     }
-  }, [isTabActive, wagmiIsConnected, blockNumber, refetchStakeDetails]);
+  }, [isTabActive, isConnected, blockNumber, refetchStakeDetails]);
 
   const handleStake = async () => {
     if (!address) {
@@ -297,57 +297,63 @@ export function StakeComponent() {
 
   return (
     <div className="flex min-h-screen w-full flex-col bg-background text-foreground">
-      <Header 
-        isConnected={wagmiIsConnected} 
-        address={address}
-        onConnect={handleConnectWallet} 
-        onDisconnect={handleDisconnect} 
-      />
-      <main className="flex-1 px-4 py-8 sm:px-6">
-        {error && (
-          <Alert variant="destructive">
-            <ExclamationTriangleIcon className="h-4 w-4" />
-            <AlertTitle>Error</AlertTitle>
-            <AlertDescription>{error}</AlertDescription>
-          </Alert>
-        )}
-        {successMessage && (
-          <Alert variant="default">
-            <AlertTitle>Success</AlertTitle>
-            <AlertDescription>{successMessage}</AlertDescription>
-          </Alert>
-        )}
-        <div className="container mx-auto grid max-w-4xl grid-cols-1 gap-8 md:grid-cols-2">
-          <StakeCard 
-            stakeAmount={stakeAmount}
-            setStakeAmount={setStakeAmount}
-            seedBalance={seedBalance}
-            seedAllowance={seedAllowance}
-            isApproving={isApproving}
-            isStaking={isStaking}
-            onStake={handleStake}
-            onMaxStake={() => setStakeAmount(formattedBalance)}
-            onRemoveAllowance={handleRemoveAllowance}
-          />
-          <StakeWithdraw
-            withdrawAmount={withdrawAmount}
-            setWithdrawAmount={setWithdrawAmount}
-            stakedBalance={stakeDetails?.[0]}
-            isWithdrawing={isWithdrawing}
-            onWithdraw={handleWithdraw}
-            onMaxWithdraw={() => setWithdrawAmount(formatBalanceWithTwoDecimals(stakeDetails?.[0]))}
-          />
-          <ClaimCard 
-            leafBalance={leafBalance} 
-            leafClaimable={stakeDetails?.[1]}
-            onClaim={handleClaim} 
-            isClaiming={isClaiming} 
-          />
-          <StakingInfoCard/>
-        </div>
-      </main>
-      <Footer />
+        <Header 
+            isConnected={isConnected} 
+            address={address}
+            onConnect={handleConnectWallet} 
+            onDisconnect={handleDisconnect} 
+        />
+        <main className="flex-1 px-4 py-8 sm:px-6">
+            {error && (
+                <div className="mb-4"> {/* Add margin-bottom for spacing */}
+                    <Alert variant="destructive">
+                        <ExclamationTriangleIcon className="h-4 w-4" />
+                        <AlertTitle>Error</AlertTitle>
+                        <AlertDescription>{error}</AlertDescription>
+                    </Alert>
+                </div>
+            )}
+            {successMessage && (
+                <div className="mb-4"> {/* Add margin-bottom for spacing */}
+                    <Alert variant="default">
+                        <AlertTitle>Success</AlertTitle>
+                        <AlertDescription>{successMessage}</AlertDescription>
+                    </Alert>
+                </div>
+            )}
+            <div className="container mx-auto grid max-w-4xl grid-cols-1 gap-8 md:grid-cols-2">
+                <StakeCard 
+                    stakeAmount={stakeAmount}
+                    setStakeAmount={setStakeAmount}
+                    isConnected={isConnected}
+                    seedBalance={seedBalance}
+                    seedAllowance={seedAllowance}
+                    isApproving={isApproving}
+                    isStaking={isStaking}
+                    onStake={handleStake}
+                    onMaxStake={() => setStakeAmount(formattedBalance)}
+                    onRemoveAllowance={handleRemoveAllowance}
+                />
+                <StakeWithdraw
+                    withdrawAmount={withdrawAmount}
+                    setWithdrawAmount={setWithdrawAmount}
+                    isConnected={isConnected}
+                    stakedBalance={stakeDetails?.[0]}
+                    isWithdrawing={isWithdrawing}
+                    onWithdraw={handleWithdraw}
+                    onMaxWithdraw={() => setWithdrawAmount(formatBalanceWithTwoDecimals(stakeDetails?.[0]))}
+                />
+                <ClaimCard 
+                    isConnected={isConnected}
+                    leafBalance={leafBalance} 
+                    leafClaimable={stakeDetails?.[1]}
+                    onClaim={handleClaim} 
+                    isClaiming={isClaiming} 
+                />
+                <StakingInfoCard/>
+            </div>
+        </main>
+        <Footer />
     </div>
-  )
+)
 }
-

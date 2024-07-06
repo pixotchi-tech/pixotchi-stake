@@ -12,6 +12,7 @@ interface StakeWithdrawProps {
   isWithdrawing: boolean;
   onWithdraw: () => void;
   onMaxWithdraw: () => void;
+  isConnected: boolean;
 }
 
 export function StakeWithdraw({
@@ -20,7 +21,8 @@ export function StakeWithdraw({
   stakedBalance,
   isWithdrawing,
   onWithdraw,
-  onMaxWithdraw
+  onMaxWithdraw,
+  isConnected
 }: StakeWithdrawProps) {
   useEffect(() => {
     if (stakedBalance) {
@@ -51,8 +53,9 @@ export function StakeWithdraw({
                 placeholder="0.0"
                 value={withdrawAmount}
                 onChange={handleInputChange}
+                disabled={!isConnected}
               />
-              <Button variant="outline" onClick={onMaxWithdraw}>Max</Button>
+              <Button variant="outline" onClick={onMaxWithdraw} disabled={!isConnected}>Max</Button>
             </div>
           </div>
           <div className="flex justify-between text-sm">
@@ -61,7 +64,7 @@ export function StakeWithdraw({
           <Button
             className="w-full"
             onClick={onWithdraw}
-            disabled={isWithdrawing}
+            disabled={isWithdrawing || !isConnected}
           >
             {isWithdrawing ? 'Withdrawing...' : 'Withdraw'}
           </Button>

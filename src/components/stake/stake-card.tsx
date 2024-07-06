@@ -15,6 +15,7 @@ interface StakeCardProps {
   onStake: () => void;
   onMaxStake: () => void;
   onRemoveAllowance: () => void;
+  isConnected: boolean;
 }
 
 export function StakeCard({
@@ -26,7 +27,8 @@ export function StakeCard({
   isStaking,
   onStake,
   onMaxStake,
-  onRemoveAllowance
+  onRemoveAllowance,
+  isConnected
 }: StakeCardProps) {
   const [showRemoveAllowance, setShowRemoveAllowance] = useState(false);
 
@@ -64,8 +66,9 @@ export function StakeCard({
                 placeholder="0.0"
                 value={stakeAmount}
                 onChange={handleInputChange}
+                disabled={!isConnected}
               />
-              <Button variant="outline" onClick={onMaxStake}>Max</Button>
+              <Button variant="outline" onClick={onMaxStake} disabled={!isConnected}>Max</Button>
             </div>
           </div>
           <div className="flex justify-between text-sm">
@@ -82,7 +85,7 @@ export function StakeCard({
           <Button
             className="w-full"
             onClick={onStake}
-            disabled={isApproving || isStaking}
+            disabled={isApproving || isStaking || !isConnected}
           >
             {isApproving ? 'Approving...' : isStaking ? 'Staking...' : 'Stake'}
           </Button>

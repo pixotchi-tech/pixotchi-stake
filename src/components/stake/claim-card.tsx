@@ -8,9 +8,10 @@ interface ClaimCardProps {
   leafClaimable: bigint | undefined;
   onClaim?: () => void;
   isClaiming?: boolean;
+  isConnected: boolean;
 }
 
-export function ClaimCard({ leafBalance, leafClaimable, onClaim, isClaiming = false }: ClaimCardProps) {
+export function ClaimCard({ leafBalance, leafClaimable, onClaim, isClaiming = false, isConnected }: ClaimCardProps) {
   const { writeContractAsync: claimRewards } = useWriteStakeContractClaimRewards();
 
   const handleClaim = async () => {
@@ -45,7 +46,7 @@ export function ClaimCard({ leafBalance, leafClaimable, onClaim, isClaiming = fa
           <Button 
             className="w-full" 
             onClick={handleClaim}
-            disabled={leafClaimable === BigInt(0) || isClaiming}
+            disabled={leafClaimable === BigInt(0) || isClaiming || !isConnected}
           >
             {isClaiming ? 'Claiming...' : 'Claim Rewards'}
           </Button>
