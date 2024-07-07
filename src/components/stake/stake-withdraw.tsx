@@ -38,12 +38,12 @@ export function StakeWithdraw({
   const formattedStakedBalance = formatBalanceWithTwoDecimals(stakedBalance);
 
   return (
-    <Card>
+    <Card className="flex flex-col h-full">
       <CardHeader>
         <CardTitle>Withdraw SEED</CardTitle>
         <CardDescription>Withdraw your staked SEED tokens</CardDescription>
       </CardHeader>
-      <CardContent>
+      <CardContent className="flex-grow flex flex-col justify-between">
         <div className="space-y-4">
           <div className="space-y-2">
             <Label htmlFor="withdraw-amount">Withdraw Amount</Label>
@@ -61,14 +61,14 @@ export function StakeWithdraw({
           <div className="flex justify-between text-sm">
             <span>Staked Balance: {formattedStakedBalance} SEED</span>
           </div>
-          <Button
-            className="w-full"
-            onClick={onWithdraw}
-            disabled={isWithdrawing || !isConnected}
-          >
-            {isWithdrawing ? 'Withdrawing...' : 'Withdraw'}
-          </Button>
         </div>
+        <Button
+          className="w-full mt-4"
+          onClick={onWithdraw}
+          disabled={isWithdrawing || !isConnected}
+        >
+          {isWithdrawing ? 'Withdrawing...' : 'Withdraw'}
+        </Button>
       </CardContent>
     </Card>
   )

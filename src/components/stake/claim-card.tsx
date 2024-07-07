@@ -30,27 +30,29 @@ export function ClaimCard({ leafBalance, leafClaimable, onClaim, isClaiming = fa
   const formattedClaimable = formatBalanceWithTwoDecimals(leafClaimable);
 
   return (
-    <Card>
+    <Card className="flex flex-col h-full">
       <CardHeader>
         <CardTitle>Claim LEAF</CardTitle>
         <CardDescription>Claim your earned LEAF rewards</CardDescription>
       </CardHeader>
-      <CardContent>
-        <div className="space-y-4">
+      <CardContent className="flex-grow flex flex-col justify-center">
+        <div className="space-y-8">
           <div className="text-center">
             <p className="text-2xl font-bold">{formattedClaimable} LEAF</p>
             <p className="text-sm text-muted-foreground">Available to claim</p>
+          </div>
+          <div className="text-center">
             <p className="text-xl font-bold">{formattedBalance} LEAF</p>
             <p className="text-xs text-muted-foreground">Balance</p>
           </div>
-          <Button 
-            className="w-full" 
-            onClick={handleClaim}
-            disabled={leafClaimable === BigInt(0) || isClaiming || !isConnected}
-          >
-            {isClaiming ? 'Claiming...' : 'Claim Rewards'}
-          </Button>
         </div>
+        <Button 
+          className="w-full mt-8" 
+          onClick={handleClaim}
+          disabled={leafClaimable === BigInt(0) || isClaiming || !isConnected}
+        >
+          {isClaiming ? 'Claiming...' : 'Claim Rewards'}
+        </Button>
       </CardContent>
     </Card>
   )
