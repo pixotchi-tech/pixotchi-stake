@@ -8,9 +8,9 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["var(--font-sans)", ...fontFamily.sans],
-        heading: ['var(--font-heading)', ...fontFamily.mono],
-        body: ['var(--font-body)', ...fontFamily.mono]
+        sans: ['pixelmix', 'Adelle Sans', ...fontFamily.sans],
+        heading: ['pixelmix', 'Adelle Sans', ...fontFamily.mono],
+        body: ['pixelmix', 'Adelle Sans', ...fontFamily.mono]
       },
       colors: {
         border: 'hsl(var(--border))',

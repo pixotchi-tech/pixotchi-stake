@@ -9,7 +9,7 @@ export default function BtnTemplate({logo = BtnNavy, text, action, lightText = t
     <div className={`relative ${extraClass}`}  onClick={() => action()}>
         <Image alt="" src={logo}  />
         <h1 className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
-         text-sm md:text-xl lg:text-xl
+         text-xs md:text-xl lg:text-xl
          ${lightText? "text-white" : redText? "text-red-500" : ""}`} >
             {text}
         </h1>
