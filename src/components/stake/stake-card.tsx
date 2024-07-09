@@ -4,8 +4,7 @@ import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { formatBalanceWithTwoDecimals } from "@/lib/utils"
-import Image from "next/image";
-import { BtnNavy  } from "../../../public/icons";
+import BtnTemplate2 from "@/components/ui/btnTemplate2"
 
 interface StakeCardProps {
   stakeAmount: string;
@@ -88,13 +87,7 @@ export function StakeCard({
             className="w-full grid justify-items-center"
             onClick={onStake}
             disabled={isApproving || isStaking || !isConnected} >
-            <div className={`relative w-1/3`}>
-                <Image alt="" src={BtnNavy}  />
-                <h1 className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
-                text-xs md:text-sm lg:text-sm text-white`} >
-                    {isApproving ? 'Approving...' : isStaking ? 'Staking...' : 'Stake'}
-                </h1>
-            </div>
+            <BtnTemplate2 text={isApproving ? 'Approving...' : isStaking ? 'Staking...' : 'Stake'} />
           </button>
         </div>
       </CardContent>

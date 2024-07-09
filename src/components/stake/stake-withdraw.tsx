@@ -4,6 +4,7 @@ import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { formatBalanceWithTwoDecimals } from "@/lib/utils"
+import BtnTemplate2 from "@/components/ui/btnTemplate2"
 
 interface StakeWithdrawProps {
   withdrawAmount: string;
@@ -62,13 +63,13 @@ export function StakeWithdraw({
             <span>Staked Balance: {formattedStakedBalance} SEED</span>
           </div>
         </div>
-        <Button
-          className="w-full mt-4"
+        <button
+          className="w-full mt-4 grid justify-items-center"
           onClick={onWithdraw}
           disabled={isWithdrawing || !isConnected}
         >
-          {isWithdrawing ? 'Withdrawing...' : 'Withdraw'}
-        </Button>
+        <BtnTemplate2 text={isWithdrawing ? 'Withdrawing...' : 'Withdraw'} />
+        </button>
       </CardContent>
     </Card>
   )

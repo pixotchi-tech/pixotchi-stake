@@ -2,6 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button"
 import { formatBalanceWithTwoDecimals } from "@/lib/utils"
 import { useWriteStakeContractClaimRewards } from "@/generated";
+import BtnTemplate2 from "@/components/ui/btnTemplate2"
 
 interface ClaimCardProps {
   leafBalance: bigint | undefined;
@@ -46,13 +47,13 @@ export function ClaimCard({ leafBalance, leafClaimable, onClaim, isClaiming = fa
             <p className="text-xs text-muted-foreground">Balance</p>
           </div>
         </div>
-        <Button 
-          className="w-full mt-8" 
+        <button 
+          className="w-full mt-8 grid justify-items-center" 
           onClick={handleClaim}
           disabled={leafClaimable === BigInt(0) || isClaiming || !isConnected}
         >
-          {isClaiming ? 'Claiming...' : 'Claim Rewards'}
-        </Button>
+          <BtnTemplate2 text={isClaiming ? 'Claiming...' : 'Claim'} />
+        </button>
       </CardContent>
     </Card>
   )
