@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { LeafIcon } from "./leaf-icon"
+import BtnTemplate from "../ui/btnTemplate";
 
 interface HeaderProps {
   isConnected: boolean;
@@ -24,7 +25,10 @@ export function Header({ isConnected, address, onConnect, onDisconnect }: Header
               <Button variant="outline" onClick={onDisconnect}>Disconnect</Button>
             </>
           ) : (
-            <Button variant="outline" onClick={onConnect}>Connect Wallet</Button>
+            // <Button variant="outline" onClick={onConnect}>Connect Wallet</Button>
+            <div className="grid justify-items-end max-w-28">
+            <BtnTemplate text={"ENTER"} action={onConnect} />
+            </div>
           )}
         </div>
       </div>
