@@ -1,7 +1,8 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { LeafIcon } from "./leaf-icon"
+import Image from "next/image";
 import BtnTemplate from "../ui/btnTemplate";
+import { Logo  } from "../../../public/icons";
 
 interface HeaderProps {
   isConnected: boolean;
@@ -15,8 +16,8 @@ export function Header({ isConnected, address, onConnect, onDisconnect }: Header
     <header className="sticky top-0 z-20 border-b bg-background px-4 py-3 sm:px-6">
       <div className="container mx-auto flex items-center justify-between">
         <Link href="#" className="flex items-center gap-2" prefetch={false}>
-          <LeafIcon className="h-6 w-6 text-primary" />
-          <span className="font-bold">SEED Staking</span>
+          <Image src={Logo} alt=""  className="h-10 w-10 text-primary" />
+          <span className="font-bold">SEED STAKING</span>
         </Link>
         <div className="flex items-center gap-4">
           {isConnected ? (

@@ -296,7 +296,7 @@ export function StakeComponent() {
   const formattedAllowance = seedAllowance ? formatBalanceWithTwoDecimals(seedAllowance) : "0.00";
 
   return (
-    <div className="flex min-h-screen w-full flex-col bg-background text-foreground">
+    <div className="flex min-h-screen w-full flex-col bg-background text-foreground uppercase ">
         <Header 
             isConnected={isConnected} 
             address={address}
