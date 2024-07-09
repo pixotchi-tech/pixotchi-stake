@@ -5,6 +5,8 @@ import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { formatBalanceWithTwoDecimals } from "@/lib/utils"
 import BtnTemplate2 from "@/components/ui/btnTemplate2"
+import Image from "next/image";
+import { BtnBlue } from "../../../public/icons";
 
 interface StakeCardProps {
   stakeAmount: string;
@@ -67,9 +69,19 @@ export function StakeCard({
                 placeholder="0.0"
                 value={stakeAmount}
                 onChange={handleInputChange}
-                disabled={!isConnected}
+                disabled={!isConnected} 
+                className='w-full'
               />
-              <Button variant="outline" onClick={onMaxStake} disabled={!isConnected}>Max</Button>
+              <button onClick={onMaxStake} disabled={!isConnected}
+              className="w-1/3 grid justify-items-center" >
+                <div className={`relative w-full`}>
+                    <Image alt="" src={BtnBlue} />
+                    <h1 className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
+                    text-xs md:text-sm lg:text-sm text-white`} >
+                        MAX
+                    </h1>
+                </div>
+              </button>
             </div>
           </div>
           <div className="flex justify-between text-xs">
