@@ -321,7 +321,7 @@ export function StakeComponent() {
                     </Alert>
                 </div>
             )}
-            <div className="container mx-auto grid max-w-4xl grid-cols-1 gap-8 md:grid-cols-2">
+            <div className="container mx-auto grid max-w-4xl grid-cols-1 gap-2 md:grid-cols-2">
                 <StakeCard 
                     stakeAmount={stakeAmount}
                     setStakeAmount={setStakeAmount}

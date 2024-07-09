@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button"
 import { formatBalanceWithTwoDecimals } from "@/lib/utils"
 import { useWriteStakeContractClaimRewards } from "@/generated";
 import BtnTemplate2 from "@/components/ui/btnTemplate2"
+import { BorderTemplate } from '../ui/borderTemplate';
 
 interface ClaimCardProps {
   leafBalance: bigint | undefined;
@@ -31,30 +32,32 @@ export function ClaimCard({ leafBalance, leafClaimable, onClaim, isClaiming = fa
   const formattedClaimable = formatBalanceWithTwoDecimals(leafClaimable);
 
   return (
-    <Card className="flex flex-col h-full">
-      <CardHeader>
-        <CardTitle>Claim LEAF</CardTitle>
-        <CardDescription>Claim your earned LEAF rewards</CardDescription>
-      </CardHeader>
-      <CardContent className="flex-grow flex flex-col justify-center">
-        <div className="space-y-8">
-          <div className="text-center">
-            <p className="text-lg font-bold">{formattedClaimable} LEAF</p>
-            <p className="text-sm text-muted-foreground">Available to claim</p>
+    <BorderTemplate>
+      <Card className="flex flex-col h-full">
+        <CardHeader>
+          <CardTitle>Claim LEAF</CardTitle>
+          <CardDescription>Claim your earned LEAF rewards</CardDescription>
+        </CardHeader>
+        <CardContent className="flex-grow flex flex-col justify-center">
+          <div className="space-y-8">
+            <div className="text-center">
+              <p className="text-lg font-bold">{formattedClaimable} LEAF</p>
+              <p className="text-sm text-muted-foreground">Available to claim</p>
+            </div>
+            <div className="text-center">
+              <p className="text-md font-bold">{formattedBalance} LEAF</p>
+              <p className="text-xs text-muted-foreground">Balance</p>
+            </div>
           </div>
-          <div className="text-center">
-            <p className="text-md font-bold">{formattedBalance} LEAF</p>
-            <p className="text-xs text-muted-foreground">Balance</p>
-          </div>
-        </div>
-        <button 
-          className="w-full mt-8 grid justify-items-center" 
-          onClick={handleClaim}
-          disabled={leafClaimable === BigInt(0) || isClaiming || !isConnected}
-        >
-          <BtnTemplate2 text={isClaiming ? 'Claiming...' : 'Claim'} />
-        </button>
-      </CardContent>
-    </Card>
+          <button 
+            className="w-full mt-10 grid justify-items-center" 
+            onClick={handleClaim}
+            disabled={leafClaimable === BigInt(0) || isClaiming || !isConnected}
+          >
+            <BtnTemplate2 text={isClaiming ? 'Claiming...' : 'Claim'} />
+          </button>
+        </CardContent>
+      </Card>
+    </BorderTemplate>
   )
 }
