@@ -39,11 +39,11 @@ export function ClaimCard({ leafBalance, leafClaimable, onClaim, isClaiming = fa
       <CardContent className="flex-grow flex flex-col justify-center">
         <div className="space-y-8">
           <div className="text-center">
-            <p className="text-2xl font-bold">{formattedClaimable} LEAF</p>
+            <p className="text-lg font-bold">{formattedClaimable} LEAF</p>
             <p className="text-sm text-muted-foreground">Available to claim</p>
           </div>
           <div className="text-center">
-            <p className="text-xl font-bold">{formattedBalance} LEAF</p>
+            <p className="text-md font-bold">{formattedBalance} LEAF</p>
             <p className="text-xs text-muted-foreground">Balance</p>
           </div>
         </div>

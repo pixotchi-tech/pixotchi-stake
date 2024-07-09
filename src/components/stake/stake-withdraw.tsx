@@ -44,8 +44,8 @@ export function StakeWithdraw({
         <CardTitle>Withdraw SEED</CardTitle>
         <CardDescription>Withdraw your staked SEED tokens</CardDescription>
       </CardHeader>
-      <CardContent className="flex-grow flex flex-col justify-between">
-        <div className="space-y-4">
+      <CardContent className="flex-grow flex flex-col justify-between ">
+        <div className="space-y-4 mt-1">
           <div className="space-y-2">
             <Label htmlFor="withdraw-amount">Withdraw Amount</Label>
             <div className="flex items-center space-x-2">
@@ -59,12 +59,12 @@ export function StakeWithdraw({
               <Button variant="outline" onClick={onMaxWithdraw} disabled={!isConnected}>Max</Button>
             </div>
           </div>
-          <div className="flex justify-between text-sm">
+          <div className="flex justify-between text-xs">
             <span>Staked Balance: {formattedStakedBalance} SEED</span>
           </div>
         </div>
         <button
-          className="w-full mt-4 grid justify-items-center"
+          className="w-full grid justify-items-center mt-4"
           onClick={onWithdraw}
           disabled={isWithdrawing || !isConnected}
         >

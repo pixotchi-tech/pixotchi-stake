@@ -72,7 +72,7 @@ export function StakeCard({
               <Button variant="outline" onClick={onMaxStake} disabled={!isConnected}>Max</Button>
             </div>
           </div>
-          <div className="flex justify-between text-sm">
+          <div className="flex justify-between text-xs">
             <span>Balance: {formattedBalance} SEED</span>
             <span>
               Allowance: {formattedAllowance} SEED
