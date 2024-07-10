@@ -4,6 +4,10 @@ import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { formatBalanceWithTwoDecimals } from "@/lib/utils"
+import BtnTemplate2 from "@/components/ui/btnTemplate2"
+import Image from "next/image";
+import { BtnBlue } from "../../../public/icons";
+import { BorderTemplate } from '../ui/borderTemplate';
 
 interface StakeCardProps {
   stakeAmount: string;
@@ -51,46 +55,57 @@ export function StakeCard({
   const formattedAllowance = formatBalanceWithTwoDecimals(seedAllowance);
 
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Stake SEED</CardTitle>
-        <CardDescription>Stake your SEED tokens to earn LEAF rewards</CardDescription>
-      </CardHeader>
-      <CardContent>
-        <div className="space-y-4">
-          <div className="space-y-2">
-            <Label htmlFor="stake-amount">Stake Amount</Label>
-            <div className="flex items-center space-x-2">
-              <Input
-                id="stake-amount"
-                placeholder="0.0"
-                value={stakeAmount}
-                onChange={handleInputChange}
-                disabled={!isConnected}
-              />
-              <Button variant="outline" onClick={onMaxStake} disabled={!isConnected}>Max</Button>
+    <BorderTemplate>
+      <Card>
+        <CardHeader>
+          <CardTitle>Stake SEED</CardTitle>
+          <CardDescription>Stake your SEED tokens to earn LEAF rewards</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-4">
+            <div className="space-y-2">
+              <Label htmlFor="stake-amount">Amount</Label>
+              <div className="flex items-center space-x-2">
+                <Input
+                  id="stake-amount"
+                  placeholder="0.0"
+                  value={stakeAmount}
+                  onChange={handleInputChange}
+                  disabled={!isConnected} 
+                  className='w-full'
+                />
+                <button onClick={onMaxStake} disabled={!isConnected}
+                className="w-1/3 grid justify-items-center" >
+                  <div className={`relative w-full`}>
+                      <Image alt="" src={BtnBlue} />
+                      <h1 className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
+                      text-xs md:text-sm lg:text-sm text-white`} >
+                          MAX
+                      </h1>
+                  </div>
+                </button>
+              </div>
             </div>
+            <div className="flex justify-between text-xs">
+              <span>Balance: {formattedBalance} SEED</span>
+              <span>
+                Allowance: {formattedAllowance} SEED
+                {showRemoveAllowance && (
+                  <span className="underline cursor-pointer ml-1" onClick={onRemoveAllowance}>
+                    remove
+                  </span>
+                )}
+              </span>
+            </div>
+            <button
+              className="w-full grid justify-items-center"
+              onClick={onStake}
+              disabled={isApproving || isStaking || !isConnected} >
+              <BtnTemplate2 text={isApproving ? 'Approving...' : isStaking ? 'Staking...' : 'Stake'} />
+            </button>
           </div>
-          <div className="flex justify-between text-sm">
-            <span>Balance: {formattedBalance} SEED</span>
-            <span>
-              Allowance: {formattedAllowance} SEED
-              {showRemoveAllowance && (
-                <span className="underline cursor-pointer ml-1" onClick={onRemoveAllowance}>
-                  remove
-                </span>
-              )}
-            </span>
-          </div>
-          <Button
-            className="w-full"
-            onClick={onStake}
-            disabled={isApproving || isStaking || !isConnected}
-          >
-            {isApproving ? 'Approving...' : isStaking ? 'Staking...' : 'Stake'}
-          </Button>
-        </div>
-      </CardContent>
-    </Card>
+        </CardContent>
+      </Card>
+    </BorderTemplate>
   )
 }

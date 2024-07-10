@@ -39,4 +39,31 @@
     h1, h2, h3, h4, h5, h6 {
         @apply font-heading;
     }
+
+    @font-face {
+        font-family: "pixelmix";
+        src: local("pixelmix"),
+        url("/fonts/pixelmix.ttf") format("truetype");
+        font-style: normal;
+        font-display: swap;
+        font-weight: 300;
+      }
+    
+      /* semibold */
+      @font-face {
+        font-family: "pixelmix";
+        src: local("pixelmix"),
+        url("/fonts/pixelmix.ttf") format("truetype");
+        font-style: normal;
+        font-display: swap;
+        font-weight: 600;
+      }
+    
+      @font-face {
+        font-family: "Adelle Sans";
+        src: url("/fonts/AdelleSans-Regular.woff2") format("woff2");
+        font-style: normal;
+        font-display: swap;
+        font-weight: 300;
+      }
 }
