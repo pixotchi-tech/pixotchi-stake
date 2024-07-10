@@ -82,7 +82,7 @@ export function StakeWithdraw({
             onClick={onWithdraw}
             disabled={isWithdrawing || !isConnected}
           >
-          <BtnTemplate2 text={isWithdrawing ? 'Withdrawing...' : 'Withdraw'} />
+          <BtnTemplate2 text={isWithdrawing ? 'Unstaking...' : 'Unstake'} />
           </button>
         </CardContent>
       </Card>

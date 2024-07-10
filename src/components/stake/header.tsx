@@ -28,7 +28,7 @@ export function Header({ isConnected, address, onConnect, onDisconnect }: Header
           ) : (
             // <Button variant="outline" onClick={onConnect}>Connect Wallet</Button>
             <div className="grid justify-items-end max-w-28">
-            <BtnTemplate text={"ENTER"} action={onConnect} />
+            <BtnTemplate text={"CONNECT"} action={onConnect} />
             </div>
           )}
         </div>
