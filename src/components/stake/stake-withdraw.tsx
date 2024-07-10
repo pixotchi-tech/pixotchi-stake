@@ -80,8 +80,7 @@ export function StakeWithdraw({
           <button
             className="w-full grid justify-items-center mt-6"
             onClick={onWithdraw}
-            disabled={isWithdrawing || !isConnected}
-          >
+            disabled={isWithdrawing || !isConnected} >
           <BtnTemplate2 text={isWithdrawing ? 'Unstaking...' : 'Unstake'} />
           </button>
         </CardContent>
