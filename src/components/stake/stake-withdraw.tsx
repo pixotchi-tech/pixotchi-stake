@@ -51,7 +51,7 @@ export function StakeWithdraw({
         <CardContent className="flex-grow flex flex-col justify-between ">
           <div className="space-y-4 mt-1">
             <div className="space-y-2">
-              <Label htmlFor="withdraw-amount">Withdraw Amount</Label>
+              <Label htmlFor="withdraw-amount">Amount</Label>
               <div className="flex items-center space-x-2">
                 <Input
                   id="withdraw-amount"

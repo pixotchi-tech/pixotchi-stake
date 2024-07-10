@@ -64,7 +64,7 @@ export function StakeCard({
         <CardContent>
           <div className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="stake-amount">Stake Amount</Label>
+              <Label htmlFor="stake-amount">Amount</Label>
               <div className="flex items-center space-x-2">
                 <Input
                   id="stake-amount"
