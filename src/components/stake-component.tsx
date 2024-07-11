@@ -8,7 +8,8 @@ import { StakeCard } from "./stake/stake-card";
 import { ClaimCard } from "./stake/claim-card";
 import { StakingInfoCard } from "./stake/staking-info-card";
 import { StakeWithdraw } from "./stake/stake-withdraw";
-import { AlertComponent } from "@/components/AlertComponent";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
+import { ExclamationTriangleIcon } from "@radix-ui/react-icons"
 import { useStakingQueries } from "@/hooks/useStakingQueries";
 import { useStakingMutations } from "@/hooks/useStakingMutations";
 import { formatBalanceWithTwoDecimals, parseBalanceToBigInt } from "@/lib/utils";
@@ -102,7 +103,7 @@ export function StakeComponent() {
   };
 
   return (
-    <div className="flex min-h-screen w-full flex-col bg-background text-foreground">
+    <div className="flex min-h-screen w-full flex-col bg-background text-foreground uppercase">
       <Header 
         isConnected={isConnected} 
         address={address}
@@ -110,8 +111,24 @@ export function StakeComponent() {
         onDisconnect={handleDisconnect} 
       />
       <main className="flex-1 px-4 py-8 sm:px-6">
-        <AlertComponent error={error} successMessage={successMessage} />
-        <div className="container mx-auto grid max-w-4xl grid-cols-1 gap-8 md:grid-cols-2">
+        {error && (
+          <div className="mb-4">
+            <Alert variant="destructive">
+              <ExclamationTriangleIcon className="h-4 w-4" />
+              <AlertTitle>Error</AlertTitle>
+              <AlertDescription>{error}</AlertDescription>
+            </Alert>
+          </div>
+        )}
+        {successMessage && (
+          <div className="mb-4">
+            <Alert variant="default">
+              <AlertTitle>Success</AlertTitle>
+              <AlertDescription>{successMessage}</AlertDescription>
+            </Alert>
+          </div>
+        )}
+        <div className="container mx-auto grid max-w-4xl grid-cols-1 gap-2 md:grid-cols-2">
           <StakeCard 
             stakeAmount={stakeAmount}
             setStakeAmount={setStakeAmount}
