@@ -23,7 +23,10 @@ export function Header({ isConnected, address, onConnect, onDisconnect }: Header
           {isConnected ? (
             <>
               <span className="font-medium">{address && `${address.slice(0, 6)}...${address.slice(-4)}`}</span>
-              <Button variant="outline" onClick={onDisconnect}>Disconnect</Button>
+              {/* <Button variant="outline" onClick={onDisconnect}>Disconnect</Button> */}
+              <div className="grid justify-items-end max-w-28">
+              <BtnTemplate text={"Disconnect"} action={onDisconnect} />
+              </div>
             </>
           ) : (
             // <Button variant="outline" onClick={onConnect}>Connect Wallet</Button>
