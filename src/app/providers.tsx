@@ -12,19 +12,22 @@ import {fallback} from "wagmi";
 
 const queryClient = new QueryClient();
 
-const chain = extractChain({chains: [baseSepolia, base], id: Number(process.env.NEXT_PUBLIC_CHAIN_ID) == 8453 ? 8453 : 84532 })
+const chain = extractChain({
+  chains: [baseSepolia, base], 
+  id: Number(process.env.NEXT_PUBLIC_CHAIN_ID) == 8453 ? 8453 : 84532
+})
 
-export const wagmiConfig = createConfig({ // this needs debuging to change
-  chains: [baseSepolia],
+const ChainOverride = addRpcUrlOverrideToChain(chain, process.env.NEXT_PUBLIC_RPC_SERVER!);
+
+export const wagmiConfig = createConfig({ // this needs testing
+  chains: [ChainOverride],
   transports: {
-    [baseSepolia.id]: fallback([
+    [ChainOverride.id]: fallback([
       webSocket(process.env.NEXT_PUBLIC_RPC_SERVER_WS, {reconnect: true, retryCount: 100 }),
       http(process.env.NEXT_PUBLIC_RPC_SERVER, {batch: true}),
     ])
   },
 });
-
-const ChainOverride = addRpcUrlOverrideToChain(chain, process.env.NEXT_PUBLIC_RPC_SERVER!);
 
 const privyConfig: PrivyClientConfig = {
   embeddedWallets: {
