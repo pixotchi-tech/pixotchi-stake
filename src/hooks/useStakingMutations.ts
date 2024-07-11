@@ -39,6 +39,7 @@ export function useStakingMutations() {
       if (!simulateApprove) throw new Error('Approve simulation failed');
       const parsedAmount = parseEther(amount);
       return approveToken({
+        ...simulateApprove.request,
         address: SEED_TOKEN_ADDRESS,
         args: [STAKING_CONTRACT_ADDRESS, parsedAmount],
       });
@@ -51,8 +52,9 @@ export function useStakingMutations() {
       if (!simulateStake) throw new Error('Stake simulation failed');
       const parsedAmount = parseEther(amount);
       return stakeTokens({
+        ...simulateStake.request,
         args: [parsedAmount],
-    });
+      });
     },
     onSuccess: _stakingInvalidateQueries,
   });
@@ -62,6 +64,7 @@ export function useStakingMutations() {
       if (!simulateWithdraw) throw new Error('Withdraw simulation failed');
       const parsedAmount = parseEther(amount);
       return withdrawTokens({
+        ...simulateWithdraw.request,
         args: [parsedAmount],
       });
     },
@@ -71,7 +74,9 @@ export function useStakingMutations() {
   const stakingClaimMutation = useMutation({
     mutationFn: async () => {
       if (!simulateClaim) throw new Error('Claim simulation failed');
-      return claimRewards({});
+      return claimRewards({
+        ...simulateClaim.request,
+      });
     },
     onSuccess: _stakingInvalidateQueries,
   });
