@@ -23,7 +23,9 @@ const fontBody = IBM_Plex_Mono({
 */
 
 const pixelMix = localFont({ src: './../../public/fonts/pixelmix.ttf',
-
+    display: 'swap',
+    style: 'normal',
+    weight: '600',
 
 })
 
