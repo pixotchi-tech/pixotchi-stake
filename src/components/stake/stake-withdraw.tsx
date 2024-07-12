@@ -6,8 +6,8 @@ import { Button } from "@/components/ui/button"
 import { formatBalanceWithTwoDecimals } from "@/lib/utils"
 import BtnTemplate2 from "@/components/ui/btnTemplate2"
 import Image from "next/image";
-import { BtnBlue } from "../../../public/icons";
 import { BorderTemplate } from '../ui/borderTemplate';
+import { BtnBlue, SeedIcon } from "../../../public/icons";
 
 interface StakeWithdrawProps {
   withdrawAmount: string;
@@ -61,6 +61,13 @@ export function StakeWithdraw({
                   disabled={!isConnected}
                   className='w-full'
                 />
+
+                <div className="flex flex-row ml-2">
+                  <div style={{ width: "30px" }}>
+                    <Image alt="" src={SeedIcon} />
+                  </div>
+                </div>
+
                 <button onClick={onMaxWithdraw} disabled={!isConnected}
                 className="w-1/3 grid justify-items-center cursor-pointer" >
                   <div className={`relative w-full`}>

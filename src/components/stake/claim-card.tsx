@@ -4,6 +4,8 @@ import { formatBalanceWithTwoDecimals } from "@/lib/utils"
 import { useWriteStakeContractClaimRewards } from "@/generated";
 import BtnTemplate2 from "@/components/ui/btnTemplate2"
 import { BorderTemplate } from '../ui/borderTemplate';
+import { leafIcon } from "../../../public/icons";
+import Image from "next/image";
 
 interface ClaimCardProps {
   leafBalance: bigint | undefined;
@@ -40,9 +42,14 @@ export function ClaimCard({ leafBalance, leafClaimable, onClaim, isClaiming = fa
         </CardHeader>
         <CardContent className="flex-grow flex flex-col justify-center">
           <div className="space-y-8">
-            <div className="text-center">
-              <p className="text-lg font-bold">{formattedClaimable} LEAF</p>
-              <p className="text-sm text-muted-foreground">Available to claim</p>
+            <div className="text-center justify-center grid justify-items-center ">
+                <div className="flex flex-row">
+                  <p className="text-lg font-bold">{formattedClaimable}</p>
+                  <div className="ml-2" style={{ width: "30px" }}>
+                    <Image alt="" src={leafIcon} />
+                  </div>
+                </div>
+                <p className="text-sm text-muted-foreground">Available to claim</p>
             </div>
             <div className="text-center">
               <p className="text-md font-bold">{formattedBalance} LEAF</p>
