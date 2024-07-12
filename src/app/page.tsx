@@ -1,3 +1,4 @@
+'use client';
 import {StakeComponent} from "@/components/stake-component";
 
 export default function Home() {
