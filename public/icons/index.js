@@ -4,4 +4,10 @@ import Logo from "./logo.png"
 import SeedIcon from "./SEED.png"
 import leafIcon from "./leaf.png"
 
-export { BtnBlue, BtnNavy, Logo, SeedIcon, leafIcon }
+import landscape from "./landscape.png"
+import portrait from "./portrait.png"
+
+export 
+{ BtnBlue, BtnNavy, Logo, SeedIcon, leafIcon,
+  landscape, portrait
+}
