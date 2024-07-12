@@ -8,15 +8,16 @@ import { StakeCard } from "./stake/stake-card";
 import { ClaimCard } from "./stake/claim-card";
 import { StakingInfoCard } from "./stake/staking-info-card";
 import { StakeWithdraw } from "./stake/stake-withdraw";
-import { AlertComponent } from "@/components/AlertComponent";
+// import { AlertComponent } from "@/components/AlertComponent";
 import { useStakingQueries } from "@/hooks/useStakingQueries";
 import { useStakingMutations } from "@/hooks/useStakingMutations";
 import { formatBalanceWithTwoDecimals, parseBalanceToBigInt } from "@/lib/utils";
+import { toast } from 'react-hot-toast';
 
 export function StakeComponent() {
   const [stakeAmount, setStakeAmount] = useState("");
   const [withdrawAmount, setWithdrawAmount] = useState("");
-  const [error, setError] = useState<string | null>(null);
+  // const [error, setError] = useState<string | null>(null);
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
 
   const { address, isConnected } = useAccount();
@@ -42,7 +43,7 @@ export function StakeComponent() {
 
   const handleStake = async () => {
     if (!address || !stakeAmount) return;
-    setError(null);
+    // setError(null);
     setSuccessMessage(null);
 
     try {
@@ -52,39 +53,45 @@ export function StakeComponent() {
       }
       await stakingStakeMutation.mutateAsync({ amount: stakeAmount });
       setStakeAmount("");
-      setSuccessMessage("Staking successful!");
+      // setSuccessMessage("Staking successful!");
+      toast.success("Staking successful!")
     } catch (error) {
       console.error("Staking failed:", error);
-      setError("Failed to stake. Please try again.");
+      // setError("Failed to stake. Please try again.");
+      toast.error("Failed to stake. Please try again.")
     }
   };
 
   const handleWithdraw = async () => {
     if (!address || !withdrawAmount) return;
-    setError(null);
+    // setError(null);
     setSuccessMessage(null);
 
     try {
       await stakingWithdrawMutation.mutateAsync({ amount: withdrawAmount });
       setWithdrawAmount("");
-      setSuccessMessage("Withdrawal successful!");
+      // setSuccessMessage("Withdrawal successful!");
+      toast.success("Withdrawal successful!")
     } catch (error) {
       console.error("Withdrawal failed:", error);
-      setError("Failed to withdraw. Please try again.");
+      // setError("Failed to withdraw. Please try again.");
+      toast.error("Failed to withdraw. Please try again.")
     }
   };
 
   const handleClaim = async () => {
     if (!address) return;
-    setError(null);
+    // setError(null);
     setSuccessMessage(null);
 
     try {
       await stakingClaimMutation.mutateAsync();
-      setSuccessMessage("Claim successful!");
+      // setSuccessMessage("Claim successful!");
+      toast.success("Claim successful!")
     } catch (error) {
       console.error("Claiming rewards failed:", error);
-      setError("Failed to claim rewards. Please try again.");
+      // setError("Failed to claim rewards. Please try again.");
+      toast.error("Failed to claim rewards. Please try again.")
     }
   };
 
@@ -110,7 +117,7 @@ export function StakeComponent() {
         onDisconnect={handleDisconnect} 
       />
       <main className="flex-1 px-4 py-8 sm:px-6">
-        <AlertComponent error={error} successMessage={successMessage} />
+        {/* <AlertComponent error={error} successMessage={successMessage} /> */}
         <div className="container mx-auto grid max-w-4xl grid-cols-1 gap-2 md:grid-cols-2">
           <StakeCard 
             stakeAmount={stakeAmount}
