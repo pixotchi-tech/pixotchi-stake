@@ -116,41 +116,45 @@ export function StakeComponent() {
         onConnect={handleConnectWallet} 
         onDisconnect={handleDisconnect} 
       />
-      <main className="flex-1 px-4 py-8 sm:px-6">
-        {/* <AlertComponent error={error} successMessage={successMessage} /> */}
-        <div className="container mx-auto grid max-w-4xl grid-cols-1 gap-2 md:grid-cols-2">
-          <StakeCard 
-            stakeAmount={stakeAmount}
-            setStakeAmount={setStakeAmount}
-            isConnected={isConnected}
-            seedBalance={seedBalance}
-            seedAllowance={seedAllowance}
-            isApproving={stakingApproveMutation.isPending}
-            isStaking={stakingStakeMutation.isPending}
-            onStake={handleStake}
-            onMaxStake={() => setStakeAmount(formatBalanceWithTwoDecimals(seedBalance))}
-            onRemoveAllowance={() => stakingApproveMutation.mutate({ amount: "0" })}
-          />
-          <StakeWithdraw
-            withdrawAmount={withdrawAmount}
-            setWithdrawAmount={setWithdrawAmount}
-            isConnected={isConnected}
-            stakedBalance={stakedBalance}
-            isWithdrawing={stakingWithdrawMutation.isPending}
-            onWithdraw={handleWithdraw}
-            onMaxWithdraw={() => setWithdrawAmount(formatBalanceWithTwoDecimals(stakedBalance))}
-          />
-          <ClaimCard 
-            isConnected={isConnected}
-            leafBalance={leafBalance} 
-            leafClaimable={claimableRewards}
-            onClaim={handleClaim} 
-            isClaiming={stakingClaimMutation.isPending} 
-          />
-          <StakingInfoCard/>
-        </div>
-      </main>
-      <Footer />
+      <div className="relative h-screen w-screen bg-cover bg-center" 
+        style={{ backgroundImage: window.innerWidth > 770 ? "url('/icons/landscape.png')" : "url('/icons/portrait.png')" ,
+         backgroundSize: 'cover', backgroundPosition: 'center'}}>
+        <main className="flex-1 px-4 py-8 sm:px-6">
+            {/* <AlertComponent error={error} successMessage={successMessage} /> */}
+            <div className="container mx-auto grid max-w-4xl grid-cols-1 gap-2 md:grid-cols-2">
+              <StakeCard 
+                stakeAmount={stakeAmount}
+                setStakeAmount={setStakeAmount}
+                isConnected={isConnected}
+                seedBalance={seedBalance}
+                seedAllowance={seedAllowance}
+                isApproving={stakingApproveMutation.isPending}
+                isStaking={stakingStakeMutation.isPending}
+                onStake={handleStake}
+                onMaxStake={() => setStakeAmount(formatBalanceWithTwoDecimals(seedBalance))}
+                onRemoveAllowance={() => stakingApproveMutation.mutate({ amount: "0" })}
+              />
+              <StakeWithdraw
+                withdrawAmount={withdrawAmount}
+                setWithdrawAmount={setWithdrawAmount}
+                isConnected={isConnected}
+                stakedBalance={stakedBalance}
+                isWithdrawing={stakingWithdrawMutation.isPending}
+                onWithdraw={handleWithdraw}
+                onMaxWithdraw={() => setWithdrawAmount(formatBalanceWithTwoDecimals(stakedBalance))}
+              />
+              <ClaimCard 
+                isConnected={isConnected}
+                leafBalance={leafBalance} 
+                leafClaimable={claimableRewards}
+                onClaim={handleClaim} 
+                isClaiming={stakingClaimMutation.isPending} 
+              />
+              <StakingInfoCard/>
+            </div>
+        </main>
+      </div>
+      {/* <Footer /> */}
     </div>
   );
 }
