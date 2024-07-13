@@ -2,7 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button"
 import { formatBalanceWithTwoDecimals } from "@/lib/utils"
 import { useWriteStakeContractClaimRewards } from "@/generated";
-import BtnTemplate2 from "@/components/ui/btnTemplate2"
+import BtnTemplate from "@/components/ui/btnTemplate"
 import { BorderTemplate } from '../ui/borderTemplate';
 import { leafIcon } from "../../../public/icons";
 import Image from "next/image";
@@ -56,13 +56,14 @@ export function ClaimCard({ leafBalance, leafClaimable, onClaim, isClaiming = fa
               <p className="text-xs text-muted-foreground">Balance</p>
             </div>
           </div>
-          <button 
-            className="w-full mt-10 grid justify-items-center" 
-            onClick={handleClaim}
-            disabled={leafClaimable === BigInt(0) || isClaiming || !isConnected}
-          >
-            <BtnTemplate2 text={isClaiming ? 'Claiming...' : 'Claim'} />
-          </button>
+          <div className='grid justify-items-center w-full mt-10'>
+            <div className="max-w-28 hover:cursor-pointer">
+              <BtnTemplate
+              action={handleClaim}
+              disabled={leafClaimable === BigInt(0) || isClaiming || !isConnected}
+              text={isClaiming ? 'Claiming...' : 'Claim'} />
+            </div>
+          </div>
         </CardContent>
       </Card>
     </BorderTemplate>

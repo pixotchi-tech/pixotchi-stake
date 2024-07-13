@@ -4,7 +4,7 @@ import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { formatBalanceWithTwoDecimals } from "@/lib/utils"
-import BtnTemplate2 from "@/components/ui/btnTemplate2"
+import BtnTemplate from "@/components/ui/btnTemplate"
 import Image from "next/image";
 import { BtnBlue, SeedIcon } from "../../../public/icons";
 import { BorderTemplate } from '../ui/borderTemplate';
@@ -103,12 +103,14 @@ export function StakeCard({
                 )}
               </span>
             </div>
-            <button
-              className="w-full grid justify-items-center"
-              onClick={onStake}
-              disabled={isApproving || isStaking || !isConnected} >
-              <BtnTemplate2 text={isApproving ? 'Approving...' : isStaking ? 'Staking...' : 'Stake'} />
-            </button>
+            <div className='grid justify-items-center w-full mt-6'>
+              <div className="max-w-28 hover:cursor-pointer">
+                <BtnTemplate
+                action={onStake}
+                disabled={isApproving || isStaking || !isConnected}
+                text={isApproving ? 'Approving...' : isStaking ? 'Staking...' : 'Stake'} />
+              </div>
+            </div>
           </div>
         </CardContent>
       </Card>

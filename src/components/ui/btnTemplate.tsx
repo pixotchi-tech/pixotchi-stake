@@ -1,7 +1,6 @@
 import React, {useState} from "react";
-import { BtnBlue, BtnNavy  } from "../../../public/icons";
 
-export default function BtnTemplate({text, action} : any) {
+export default function BtnTemplate({text, action, disabled = false} : any) {
   const [isHovered, setIsHovered] = useState(false);
   const [isPressed, setIsPressed] = useState(false);
 
@@ -20,6 +19,7 @@ export default function BtnTemplate({text, action} : any) {
       }}
       onMouseDown={() => setIsPressed(true)}
       onMouseUp={() => setIsPressed(false)}
+      disabled={disabled}
     >
     <svg
       xmlns="http://www.w3.org/2000/svg"

@@ -4,7 +4,7 @@ import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { formatBalanceWithTwoDecimals } from "@/lib/utils"
-import BtnTemplate2 from "@/components/ui/btnTemplate2"
+import BtnTemplate from "@/components/ui/btnTemplate"
 import Image from "next/image";
 import { BorderTemplate } from '../ui/borderTemplate';
 import { BtnBlue, SeedIcon } from "../../../public/icons";
@@ -84,12 +84,14 @@ export function StakeWithdraw({
               <span>Staked Balance: {formattedStakedBalance} SEED</span>
             </div>
           </div>
-          <button
-            className="w-full grid justify-items-center mt-6"
-            onClick={onWithdraw}
-            disabled={isWithdrawing || !isConnected} >
-          <BtnTemplate2 text={isWithdrawing ? 'Unstaking...' : 'Unstake'} />
-          </button>
+          <div className='grid justify-items-center w-full mt-6'>
+            <div className="max-w-28 hover:cursor-pointer">
+              <BtnTemplate
+              action={onWithdraw}
+              disabled={isWithdrawing || !isConnected}
+              text={isWithdrawing ? 'Unstaking...' : 'Unstake'} />
+            </div>
+          </div>
         </CardContent>
       </Card>
     </BorderTemplate>
