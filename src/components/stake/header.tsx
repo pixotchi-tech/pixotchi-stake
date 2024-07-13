@@ -17,14 +17,14 @@ export function Header({ isConnected, address, onConnect, onDisconnect }: Header
       <div className="container mx-auto flex items-center justify-between">
         <Link href="#" className="flex items-center gap-2" prefetch={false}>
           <Image src={Logo} alt=""  className="h-10 w-10 text-primary" />
-          <span className="font-bold">SEED STAKING</span>
+          <span className="font-bold text-xs md:text-lg lg:text-lg xl:text-lg">SEED STAKING</span>
         </Link>
         <div className="flex items-center gap-4">
           {isConnected ? (
             <>
-              <span className="font-medium">{address && `${address.slice(0, 6)}...${address.slice(-4)}`}</span>
+              <span className="font-medium text-xs md:text-md lg:text-md xl:text-md">{address && `${address.slice(0, 6)}...${address.slice(-4)}`}</span>
               {/* <Button variant="outline" onClick={onDisconnect}>Disconnect</Button> */}
-              <div className="grid justify-items-end max-w-28 hover:cursor-pointer">
+              <div className="grid justify-items-end max-w-36 md:max-w-28 lg:max-w-28 xl:max-w-28 hover:cursor-pointer">
               <BtnTemplate text={"Disconnect"} action={onDisconnect} />
               </div>
             </>

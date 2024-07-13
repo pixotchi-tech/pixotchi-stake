@@ -66,4 +66,25 @@
         font-display: swap;
         font-weight: 300;
       }
+
+    /* Add this CSS to your stylesheet */
+    .background-image {
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed; /* Ensure the background covers the entire viewport */
+        height: 100%;
+        width: 100%;
+    }
+    
+    /* @media (max-width: 770px) {
+        .background-image {
+        background-image: url('/icons/portrait.png');
+        }
+    } */
+    
+    @media (min-width: 771px) {
+        .background-image {
+        background-image: url('/icons/landscape.png');
+        }
+    }
 }

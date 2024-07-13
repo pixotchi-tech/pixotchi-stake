@@ -116,9 +116,7 @@ export function StakeComponent() {
         onConnect={handleConnectWallet} 
         onDisconnect={handleDisconnect} 
       />
-      {/* <div className="relative h-screen w-screen bg-cover bg-center" 
-        style={{ backgroundImage: window.innerWidth > 770 ? "url('/icons/landscape.png')" : "url('/icons/portrait.png')" ,
-         backgroundSize: 'cover', backgroundPosition: 'center'}}> */}
+      <div className="relative h-screen w-screen background-image">
         <main className="flex-1 px-4 py-8 sm:px-6">
             {/* <AlertComponent error={error} successMessage={successMessage} /> */}
             <div className="container mx-auto grid max-w-4xl grid-cols-1 gap-2 md:grid-cols-2">
@@ -153,7 +151,7 @@ export function StakeComponent() {
               <StakingInfoCard/>
             </div>
         </main>
-      {/* </div> */}
+      </div>
       {/* <Footer /> */}
     </div>
   );
