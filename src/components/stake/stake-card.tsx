@@ -79,17 +79,12 @@ export function StakeCard({
                     <Image alt="" src={SeedIcon} />
                   </div>
                 </div>
-
-                <button onClick={onMaxStake} disabled={!isConnected}
-                className="w-1/3 grid justify-items-center cursor-pointer" >
-                  <div className={`relative w-full`}>
-                      <Image alt="" src={BtnBlue} />
-                      <h1 className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
-                      text-xs md:text-sm lg:text-sm text-white cursor-pointer`} >
-                          MAX
-                      </h1>
-                  </div>
-                </button>
+                <div className="w-1/3 grid justify-items-center cursor-pointer">
+                  <BtnTemplate
+                  action={onMaxStake}
+                  disabled={!isConnected}
+                  text={'MAX'} />
+                </div>
               </div>
             </div>
             <div className="flex justify-between text-xs">
