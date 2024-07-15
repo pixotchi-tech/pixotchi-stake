@@ -1,0 +1,123 @@
+/*
+// custom-nes-ui.scss
+
+// Override variables
+//$cursor-url: url('/path/to/your/custom-cursor.png') !default;
+//$cursor-click-url: url('/path/to/your/custom-click-cursor.png') !default;
+
+// Custom color variables
+$custom-background: #11fa82; // Adapted from --background
+$custom-text: #009e54; // Adapted from --foreground
+$custom-primary: #dddddd; // Adapted from --primary
+$custom-secondary: #e8edf8; // Adapted from --secondary
+$custom-success: #4aa52e; // Kept as is, as there's no direct equivalent
+$custom-warning: #f7d51d; // Kept as is, as there's no direct equivalent
+$custom-error: #e76e55; // Adapted from --destructive
+
+html.nes-ui {
+  font-size: 16px; // Adjust base font size
+
+  * {
+    font-size: inherit; // Use inherited font size for all elements
+  }
+
+  body {
+    font-family: 'Press Start 2P', 'pixelmix', monospace;
+    background-color: $custom-background;
+    color: $custom-text;
+    line-height: 1.6;
+  }
+
+  // Custom button styles
+  .nes-btn {
+    padding: 0.5rem 1rem;
+
+    &.is-primary {
+      background-color: $custom-primary;
+    }
+
+    &.is-success {
+      background-color: $custom-success;
+    }
+
+    &.is-warning {
+      background-color: $custom-warning;
+      color: #212529; // Darker text for better contrast on yellow
+    }
+
+    &.is-error {
+      background-color: $custom-error;
+    }
+  }
+
+  // Custom input styles
+  .nes-input,
+  .nes-textarea {
+    background-color: lighten($custom-background, 10%);
+    color: $custom-text;
+    border-color: $custom-secondary;
+  }
+
+  // Custom container styles
+  .nes-container {
+    background-color: lighten($custom-background, 5%);
+    border-color: $custom-text;
+  }
+
+  // Custom list styles
+  .nes-list {
+    li::before {
+      color: $custom-primary;
+    }
+  }
+
+  // Custom progress bar styles
+  .nes-progress {
+    &::-webkit-progress-bar {
+      background-color: lighten($custom-background, 15%);
+    }
+
+    &::-webkit-progress-value {
+      background-color: $custom-primary;
+    }
+  }
+
+  // Custom table styles
+  .nes-table {
+    border-color: $custom-text;
+
+    thead {
+      background-color: $custom-secondary;
+      color: $custom-background;
+    }
+  }
+
+  // Dark mode specific overrides
+  &.nes-ui-dark-mode {
+    background-color: darken($custom-background, 5%);
+    color: lighten($custom-text, 10%);
+
+    body {
+      background-color: darken($custom-background, 5%);
+      color: lighten($custom-text, 10%);
+    }
+
+    .nes-btn {
+      &.is-primary {
+        background-color: darken($custom-primary, 10%);
+      }
+    }
+
+    .nes-input,
+    .nes-textarea {
+      background-color: darken($custom-background, 15%);
+      border-color: lighten($custom-secondary, 10%);
+    }
+
+    .nes-container {
+      background-color: darken($custom-background, 10%);
+    }
+  }
+}
+
+// Add any additional custom styles or component overrides here*/

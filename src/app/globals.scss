@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import 'nes-ui-react/dist/scss/nes-ui.scss';
+
+
+
+
+
+/*
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+:root {
+  --background: 212.7 50.5% 78.6%;
+  --foreground: 217.5 25% 25.1%;
+  --primary: 0 0% 86.7%;
+  --primary-foreground: 217.5 25% 25.1%;
+  --secondary: 233.3 47.4% 92.5%;
+  --secondary-foreground: 217.5 25% 25.1%;
+  --accent: 17.7 69.4% 55.1%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 17.7 69.4% 55.1%;
+  --destructive-foreground: 0 0% 100%;
+  --muted: 212.7 50.5% 78.6%;
+  --muted-foreground: 217.5 25% 25.1%;
+  --card: 210 50% 96.1%;
+  --card-foreground: 217.5 25% 25.1%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 217.5 25% 25.1%;
+  --border: 214 50% 88.2%;
+  --input: 214 0% 0%;
+  --ring: 218 0% 0%;
+  --radius: 0rem;
+}
+
+html.nes-ui {
+  font-size: 1rem; // Increased from 0.75rem
+  padding: 0%;
+  margin: 0%;
+  font-family: 'pixelmix', monospace;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 400;
+  line-height: 1.5;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+
+  * {
+    font-size: 1rem; // Increased from 0.75rem
+  }
+
+  body {
+    padding: 0;
+    margin: 0;
+    font-family: 'pixelmix', monospace;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 400;
+    line-height: 1.5;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+  }
+
+  &.nes-ui-dark-mode {
+    --background: 0 0% 20%; // Dark background
+    --foreground: 0 0% 80%; // Light text for dark mode
+
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+
+    body {
+      background-color: hsl(var(--background));
+      color: hsl(var(--foreground));
+    }
+  }
+}
+
+// Overwrite NES UI components to make them bigger
+.nes-ui {
+  .nes-btn {
+    padding: 1rem 1.5rem;
+    font-size: 1.2rem;
+  }
+
+  .nes-input,
+  .nes-textarea {
+    font-size: 1.2rem;
+    padding: 0.8rem;
+  }
+
+  .nes-container {
+    padding: 1.5rem;
+    font-size: 1.2rem;
+  }
+
+  .nes-progress,
+  .nes-badge {
+    font-size: 1.2rem;
+  }
+
+  .nes-table {
+    font-size: 1.1rem;
+  }
+
+  .nes-text {
+    font-size: 1.2rem;
+  }
+}*/

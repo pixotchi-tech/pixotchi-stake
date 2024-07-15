@@ -1,8 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Label } from "@/components/ui/label"
-import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
+import {Container, Heading, Input, Button, Colors} from 'nes-ui-react';
 import { formatBalanceWithTwoDecimals } from "@/lib/utils"
 
 interface StakeCardProps {
@@ -51,46 +48,43 @@ export function StakeCard({
   const formattedAllowance = formatBalanceWithTwoDecimals(seedAllowance);
 
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Stake SEED</CardTitle>
-        <CardDescription>Stake your SEED tokens to earn LEAF rewards</CardDescription>
-      </CardHeader>
-      <CardContent>
-        <div className="space-y-4">
-          <div className="space-y-2">
-            <Label htmlFor="stake-amount">Stake Amount</Label>
-            <div className="flex items-center space-x-2">
-              <Input
-                id="stake-amount"
-                placeholder="0.0"
-                value={stakeAmount}
-                onChange={handleInputChange}
-                disabled={!isConnected}
-              />
-              <Button variant="outline" onClick={onMaxStake} disabled={!isConnected}>Max</Button>
-            </div>
-          </div>
-          <div className="flex justify-between text-sm">
-            <span>Balance: {formattedBalance} SEED</span>
-            <span>
-              Allowance: {formattedAllowance} SEED
-              {showRemoveAllowance && (
-                <span className="underline cursor-pointer ml-1" onClick={onRemoveAllowance}>
-                  remove
-                </span>
-              )}
-            </span>
-          </div>
-          <Button
-            className="w-full"
-            onClick={onStake}
-            disabled={isApproving || isStaking || !isConnected}
-          >
-            {isApproving ? 'Approving...' : isStaking ? 'Staking...' : 'Stake'}
-          </Button>
+    <Container  style={{ backgroundColor: Colors.color3D, color: Colors.color01 }} title="Stake SEED" roundedCorners>
+      <Heading size="medium">Stake your SEED tokens to earn LEAF rewards</Heading>
+      
+      <Container align="left">
+        <Heading size="small">Stake Amount</Heading>
+        <div className="flex items-center space-x-2">
+          <Input
+            type="text"
+            id="stake-amount"
+            value={stakeAmount}
+            onChange={handleInputChange}
+            disabled={!isConnected}
+          />
+          <Button onClick={onMaxStake} disabled={!isConnected}>Max</Button>
         </div>
-      </CardContent>
-    </Card>
+      </Container>
+      
+      <Container align="left">
+        <div className="flex justify-between text-sm">
+          <span>Balance: {formattedBalance} SEED</span>
+          <span>
+            Allowance: {formattedAllowance} SEED
+            {showRemoveAllowance && (
+              <span className="underline cursor-pointer ml-1" onClick={onRemoveAllowance}>
+                remove
+              </span>
+            )}
+          </span>
+        </div>
+      </Container>
+      
+      <Button
+        onClick={onStake}
+        disabled={isApproving || isStaking || !isConnected}
+      >
+        {isApproving ? 'Approving...' : isStaking ? 'Staking...' : 'Stake'}
+      </Button>
+    </Container>
   )
 }

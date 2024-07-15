@@ -1,6 +1,7 @@
 
 import type { Metadata } from "next";
-import "./globals.css";
+import "./globals.scss";
+import "./custom-nes-ui.scss"
 import { cn } from "@/lib/utils";
 import Providers from "./providers";
 import localFont from 'next/font/local';
@@ -26,6 +27,7 @@ const pixelMix = localFont({ src: './../../public/fonts/pixelmix.ttf',
     display: 'swap',
     style: 'normal',
     weight: '600',
+    
 
 })
 
@@ -42,7 +44,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cn(
-        "min-h-screen bg-background antialiased",
+        "min-h-screen bg-background antialiased nes-ui",
         /*fontHeading.variable,
         fontBody.variable,*/
           pixelMix.className,

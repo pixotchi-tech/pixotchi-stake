@@ -12,6 +12,7 @@ import { AlertComponent } from "@/components/AlertComponent";
 import { useStakingQueries } from "@/hooks/useStakingQueries";
 import { useStakingMutations } from "@/hooks/useStakingMutations";
 import { formatBalanceWithTwoDecimals, parseBalanceToBigInt } from "@/lib/utils";
+import {Colors} from "nes-ui-react";
 
 export function StakeComponent() {
   const [stakeAmount, setStakeAmount] = useState("");
@@ -96,13 +97,13 @@ export function StakeComponent() {
     }
   };
 
-  const handleDisconnect = () => {
+  const handleDisconnect = async () => {
     disconnect();
-    logout();
+    await logout();
   };
 
   return (
-    <div className="flex min-h-screen w-full flex-col bg-background text-foreground">
+    <div  style={{ backgroundColor: Colors.color31, color: Colors.color01 }} className="flex min-h-screen w-full flex-col bg-background text-foreground">
       <Header 
         isConnected={isConnected} 
         address={address}
