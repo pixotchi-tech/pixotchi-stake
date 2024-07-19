@@ -35,6 +35,23 @@ button {
     }
   }
 
+  &.shadow-destructive {
+    &::after {
+      box-shadow: inset -4px -4px hsl(var(--destructive-foreground));
+    }
+    &:active::after {
+      box-shadow: inset 4px 4px hsl(var(--destructive-foreground));
+    }
+  }
+
+  &.shadow-outline {
+    &::after {
+      box-shadow: inset -4px -4px hsl(var(--foreground));
+    }
+    &:active::after {
+      box-shadow: inset 4px 4px hsl(var(--foreground));
+    }
+  }
 
 }
 

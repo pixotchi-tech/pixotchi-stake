@@ -103,6 +103,7 @@ export function StakeCard({
             className="w-full"
             wrapperClassName="w-full"
             onClick={onStake}
+            variant="destructive"
             disabled={isApproving || isStaking || !isConnected}
           >
             {isApproving ? 'Approving...' : isStaking ? 'Staking...' : 'Stake'}
