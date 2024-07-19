@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
-import { formatBalanceWithTwoDecimals } from "@/lib/utils"
+import { Button } from '@/components/ui';
+import { formatBalanceWithTwoDecimals } from '@/lib/utils';
 
 interface StakeWithdrawProps {
   withdrawAmount: string;
@@ -22,7 +22,7 @@ export function StakeWithdraw({
   isWithdrawing,
   onWithdraw,
   onMaxWithdraw,
-  isConnected
+  isConnected,
 }: StakeWithdrawProps) {
   useEffect(() => {
     if (stakedBalance) {
@@ -55,7 +55,13 @@ export function StakeWithdraw({
                 onChange={handleInputChange}
                 disabled={!isConnected}
               />
-              <Button variant="outline" onClick={onMaxWithdraw} disabled={!isConnected}>Max</Button>
+              <Button
+                variant="outline"
+                onClick={onMaxWithdraw}
+                disabled={!isConnected}
+              >
+                Max
+              </Button>
             </div>
           </div>
           <div className="flex justify-between text-sm">
@@ -63,7 +69,8 @@ export function StakeWithdraw({
           </div>
         </div>
         <Button
-          className="w-full mt-4"
+          className="w-full"
+          wrapperClassName="w-full mt-4"
           onClick={onWithdraw}
           disabled={isWithdrawing || !isConnected}
         >
@@ -71,5 +78,5 @@ export function StakeWithdraw({
         </Button>
       </CardContent>
     </Card>
-  )
+  );
 }

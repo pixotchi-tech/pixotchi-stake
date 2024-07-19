@@ -1,7 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { formatBalanceWithTwoDecimals } from "@/lib/utils"
-import { useWriteStakeContractClaimRewards } from "@/generated";
+import { Button } from '@/components/ui';
+import { formatBalanceWithTwoDecimals } from '@/lib/utils';
+import { useWriteStakeContractClaimRewards } from '@/generated';
 
 interface ClaimCardProps {
   leafBalance: bigint | undefined;
@@ -11,8 +11,15 @@ interface ClaimCardProps {
   isConnected: boolean;
 }
 
-export function ClaimCard({ leafBalance, leafClaimable, onClaim, isClaiming = false, isConnected }: ClaimCardProps) {
-  const { writeContractAsync: claimRewards } = useWriteStakeContractClaimRewards();
+export function ClaimCard({
+  leafBalance,
+  leafClaimable,
+  onClaim,
+  isClaiming = false,
+  isConnected,
+}: ClaimCardProps) {
+  const { writeContractAsync: claimRewards } =
+    useWriteStakeContractClaimRewards();
 
   const handleClaim = async () => {
     if (onClaim) {
@@ -21,7 +28,7 @@ export function ClaimCard({ leafBalance, leafClaimable, onClaim, isClaiming = fa
       try {
         await claimRewards({ args: [] }); // Pass necessary arguments here
       } catch (error) {
-        console.error("Claiming rewards failed:", error);
+        console.error('Claiming rewards failed:', error);
       }
     }
   };
@@ -46,8 +53,9 @@ export function ClaimCard({ leafBalance, leafClaimable, onClaim, isClaiming = fa
             <p className="text-xs text-muted-foreground">Balance</p>
           </div>
         </div>
-        <Button 
-          className="w-full mt-8" 
+        <Button
+          className="w-full"
+          wrapperClassName="w-full mt-8"
           onClick={handleClaim}
           disabled={leafClaimable === BigInt(0) || isClaiming || !isConnected}
         >
@@ -55,5 +63,5 @@ export function ClaimCard({ leafBalance, leafClaimable, onClaim, isClaiming = fa
         </Button>
       </CardContent>
     </Card>
-  )
+  );
 }

@@ -1,9 +1,15 @@
 import { useState, useEffect } from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Label } from "@/components/ui/label"
-import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
-import { formatBalanceWithTwoDecimals } from "@/lib/utils"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
+import { Label } from '@/components/ui/label';
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui';
+import { formatBalanceWithTwoDecimals } from '@/lib/utils';
 
 interface StakeCardProps {
   stakeAmount: string;
@@ -28,7 +34,7 @@ export function StakeCard({
   onStake,
   onMaxStake,
   onRemoveAllowance,
-  isConnected
+  isConnected,
 }: StakeCardProps) {
   const [showRemoveAllowance, setShowRemoveAllowance] = useState(false);
 
@@ -54,7 +60,9 @@ export function StakeCard({
     <Card>
       <CardHeader>
         <CardTitle>Stake SEED</CardTitle>
-        <CardDescription>Stake your SEED tokens to earn LEAF rewards</CardDescription>
+        <CardDescription>
+          Stake your SEED tokens to earn LEAF rewards
+        </CardDescription>
       </CardHeader>
       <CardContent>
         <div className="space-y-4">
@@ -68,7 +76,13 @@ export function StakeCard({
                 onChange={handleInputChange}
                 disabled={!isConnected}
               />
-              <Button variant="outline" onClick={onMaxStake} disabled={!isConnected}>Max</Button>
+              <Button
+                variant="outline"
+                onClick={onMaxStake}
+                disabled={!isConnected}
+              >
+                Max
+              </Button>
             </div>
           </div>
           <div className="flex justify-between text-sm">
@@ -76,7 +90,10 @@ export function StakeCard({
             <span>
               Allowance: {formattedAllowance} SEED
               {showRemoveAllowance && (
-                <span className="underline cursor-pointer ml-1" onClick={onRemoveAllowance}>
+                <span
+                  className="underline cursor-pointer ml-1"
+                  onClick={onRemoveAllowance}
+                >
                   remove
                 </span>
               )}
@@ -84,6 +101,7 @@ export function StakeCard({
           </div>
           <Button
             className="w-full"
+            wrapperClassName="w-full"
             onClick={onStake}
             disabled={isApproving || isStaking || !isConnected}
           >
@@ -92,5 +110,5 @@ export function StakeCard({
         </div>
       </CardContent>
     </Card>
-  )
+  );
 }
