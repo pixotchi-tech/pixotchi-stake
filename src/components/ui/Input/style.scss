@@ -3,4 +3,8 @@ input {
   border-image-width: 1;
   border-image-outset: 0;
   border-image-source: var(--pixel-borders-image-1-color-black-absolute);
+
+  &.error {
+    border-image-source: var(--pixel-borders-image-1-error-color-normal);
+  }
 }

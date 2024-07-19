@@ -1,28 +1,30 @@
 'use client';
-import { useState } from "react";
-import { useAccount, useDisconnect } from "wagmi";
-import { usePrivy } from "@privy-io/react-auth";
-import { Header } from "./stake/header";
-import { Footer } from "./stake/footer";
-import { StakeCard } from "./stake/stake-card";
-import { ClaimCard } from "./stake/claim-card";
-import { StakingInfoCard } from "./stake/staking-info-card";
-import { StakeWithdraw } from "./stake/stake-withdraw";
-import { AlertComponent } from "@/components/AlertComponent";
-import { useStakingQueries } from "@/hooks/useStakingQueries";
-import { useStakingMutations } from "@/hooks/useStakingMutations";
-import { formatBalanceWithTwoDecimals, parseBalanceToBigInt } from "@/lib/utils";
+import { useEffect, useState } from 'react';
+import { useAccount, useDisconnect } from 'wagmi';
+import { usePrivy } from '@privy-io/react-auth';
+import { Header } from './stake/header';
+import { Footer } from './stake/footer';
+import { StakeCard } from './stake/stake-card';
+import { ClaimCard } from './stake/claim-card';
+import { StakingInfoCard } from './stake/staking-info-card';
+import { StakeWithdraw } from './stake/stake-withdraw';
+import { AlertComponent } from '@/components/AlertComponent';
+import { useStakingQueries } from '@/hooks/useStakingQueries';
+import { useStakingMutations } from '@/hooks/useStakingMutations';
+import {
+  formatBalanceWithTwoDecimals,
+  parseBalanceToBigInt,
+} from '@/lib/utils';
 
 export function StakeComponent() {
-  const [stakeAmount, setStakeAmount] = useState("");
-  const [withdrawAmount, setWithdrawAmount] = useState("");
+  const [stakeAmount, setStakeAmount] = useState('');
+  const [withdrawAmount, setWithdrawAmount] = useState('');
   const [error, setError] = useState<string | null>(null);
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
 
   const { address, isConnected } = useAccount();
   const { disconnect } = useDisconnect();
-  const { login, logout, connectWallet } = usePrivy();
-
+  const { login, logout, connectWallet, authenticated, user } = usePrivy();
   const {
     seedAllowance,
     seedBalance,
@@ -51,11 +53,11 @@ export function StakeComponent() {
         await stakingApproveMutation.mutateAsync({ amount: stakeAmount });
       }
       await stakingStakeMutation.mutateAsync({ amount: stakeAmount });
-      setStakeAmount("");
-      setSuccessMessage("Staking successful!");
+      setStakeAmount('');
+      setSuccessMessage('Staking successful!');
     } catch (error) {
-      console.error("Staking failed:", error);
-      setError("Failed to stake. Please try again.");
+      console.error('Staking failed:', error);
+      setError('Failed to stake. Please try again.');
     }
   };
 
@@ -66,11 +68,11 @@ export function StakeComponent() {
 
     try {
       await stakingWithdrawMutation.mutateAsync({ amount: withdrawAmount });
-      setWithdrawAmount("");
-      setSuccessMessage("Withdrawal successful!");
+      setWithdrawAmount('');
+      setSuccessMessage('Withdrawal successful!');
     } catch (error) {
-      console.error("Withdrawal failed:", error);
-      setError("Failed to withdraw. Please try again.");
+      console.error('Withdrawal failed:', error);
+      setError('Failed to withdraw. Please try again.');
     }
   };
 
@@ -81,10 +83,10 @@ export function StakeComponent() {
 
     try {
       await stakingClaimMutation.mutateAsync();
-      setSuccessMessage("Claim successful!");
+      setSuccessMessage('Claim successful!');
     } catch (error) {
-      console.error("Claiming rewards failed:", error);
-      setError("Failed to claim rewards. Please try again.");
+      console.error('Claiming rewards failed:', error);
+      setError('Failed to claim rewards. Please try again.');
     }
   };
 
@@ -101,18 +103,27 @@ export function StakeComponent() {
     logout();
   };
 
+  useEffect(() => {
+    if (!isConnected) {
+      disconnect();
+      logout();
+    } else {
+      connectWallet();
+    }
+  }, [isConnected]);
+
   return (
     <div className="flex min-h-screen w-full flex-col bg-background text-foreground">
-      <Header 
-        isConnected={isConnected} 
+      <Header
+        isConnected={isConnected}
         address={address}
-        onConnect={handleConnectWallet} 
-        onDisconnect={handleDisconnect} 
+        onConnect={handleConnectWallet}
+        onDisconnect={handleDisconnect}
       />
       <main className="flex-1 px-4 py-8 sm:px-6">
         <AlertComponent error={error} successMessage={successMessage} />
         <div className="container mx-auto grid max-w-4xl grid-cols-1 gap-8 md:grid-cols-2">
-          <StakeCard 
+          <StakeCard
             stakeAmount={stakeAmount}
             setStakeAmount={setStakeAmount}
             isConnected={isConnected}
@@ -121,8 +132,12 @@ export function StakeComponent() {
             isApproving={stakingApproveMutation.isPending}
             isStaking={stakingStakeMutation.isPending}
             onStake={handleStake}
-            onMaxStake={() => setStakeAmount(formatBalanceWithTwoDecimals(seedBalance))}
-            onRemoveAllowance={() => stakingApproveMutation.mutate({ amount: "0" })}
+            onMaxStake={() =>
+              setStakeAmount(formatBalanceWithTwoDecimals(seedBalance))
+            }
+            onRemoveAllowance={() =>
+              stakingApproveMutation.mutate({ amount: '0' })
+            }
           />
           <StakeWithdraw
             withdrawAmount={withdrawAmount}
@@ -131,16 +146,18 @@ export function StakeComponent() {
             stakedBalance={stakedBalance}
             isWithdrawing={stakingWithdrawMutation.isPending}
             onWithdraw={handleWithdraw}
-            onMaxWithdraw={() => setWithdrawAmount(formatBalanceWithTwoDecimals(stakedBalance))}
+            onMaxWithdraw={() =>
+              setWithdrawAmount(formatBalanceWithTwoDecimals(stakedBalance))
+            }
           />
-          <ClaimCard 
+          <ClaimCard
             isConnected={isConnected}
-            leafBalance={leafBalance} 
+            leafBalance={leafBalance}
             leafClaimable={claimableRewards}
-            onClaim={handleClaim} 
-            isClaiming={stakingClaimMutation.isPending} 
+            onClaim={handleClaim}
+            isClaiming={stakingClaimMutation.isPending}
           />
-          <StakingInfoCard/>
+          <StakingInfoCard />
         </div>
       </main>
       <Footer />

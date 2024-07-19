@@ -8,15 +8,14 @@ const Card = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
-  <div
-    ref={ref}
-    className={cn(
-      'card rounded-md border-solid border-2 border-blacktext-card-foreground',
-      className
-    )}
-    {...props}
-  >
-    <div className="h-full w-full bg-card">{props.children}</div>
+  <div className="card border-solid border-4 border-black">
+    <div
+      ref={ref}
+      className={cn('bg-card rounded-md text-card-foreground', className)}
+      {...props}
+    >
+      {props.children}
+    </div>
   </div>
 ));
 Card.displayName = 'Card';
