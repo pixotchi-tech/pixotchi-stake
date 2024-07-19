@@ -1,4 +1,10 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/Card/Card';
 import { Button } from '@/components/ui';
 import { formatBalanceWithTwoDecimals } from '@/lib/utils';
 import { useWriteStakeContractClaimRewards } from '@/generated';

@@ -6,7 +6,7 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card';
+} from '@/components/ui/Card/Card';
 import { Button, Input, Label } from '@/components/ui';
 import { formatBalanceWithTwoDecimals } from '@/lib/utils';
 
