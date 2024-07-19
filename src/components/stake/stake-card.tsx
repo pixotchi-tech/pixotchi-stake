@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+
 import {
   Card,
   CardContent,
@@ -6,8 +7,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import { Label } from '@/components/ui/label';
-import { Button, Input } from '@/components/ui';
+import { Button, Input, Label } from '@/components/ui';
 import { formatBalanceWithTwoDecimals } from '@/lib/utils';
 
 interface StakeCardProps {
