@@ -16,6 +16,8 @@ import {
   parseBalanceToBigInt,
 } from '@/lib/utils';
 
+import './style.scss';
+
 export function StakeComponent() {
   const [stakeAmount, setStakeAmount] = useState('');
   const [withdrawAmount, setWithdrawAmount] = useState('');
@@ -103,15 +105,6 @@ export function StakeComponent() {
     logout();
   };
 
-  useEffect(() => {
-    if (!isConnected) {
-      disconnect();
-      logout();
-    } else {
-      connectWallet();
-    }
-  }, [isConnected]);
-
   return (
     <div className="flex min-h-screen w-full flex-col bg-background text-foreground">
       <Header
@@ -120,7 +113,7 @@ export function StakeComponent() {
         onConnect={handleConnectWallet}
         onDisconnect={handleDisconnect}
       />
-      <main className="flex-1 px-4 py-8 sm:px-6">
+      <section className="background-image flex-1 px-4 py-8 sm:px-6">
         <AlertComponent error={error} successMessage={successMessage} />
         <div className="container mx-auto grid max-w-4xl grid-cols-1 gap-8 md:grid-cols-2">
           <StakeCard
@@ -159,8 +152,7 @@ export function StakeComponent() {
           />
           <StakingInfoCard />
         </div>
-      </main>
-      <Footer />
+      </section>
     </div>
   );
 }

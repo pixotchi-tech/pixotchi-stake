@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 import {
   Card,
@@ -9,6 +10,7 @@ import {
 } from '@/components/ui/Card/Card';
 import { Button, Input, Label } from '@/components/ui';
 import { formatBalanceWithTwoDecimals } from '@/lib/utils';
+import seedLogo from '../../assets/images/seed-logo.webp';
 
 interface StakeCardProps {
   stakeAmount: string;
@@ -63,7 +65,7 @@ export function StakeCard({
           Stake your SEED tokens to earn LEAF rewards
         </CardDescription>
       </CardHeader>
-      <CardContent>
+      <CardContent className="flex-grow flex flex-col justify-between">
         <div className="space-y-4">
           <div className="space-y-2">
             <Label htmlFor="stake-amount">Stake Amount</Label>
@@ -75,7 +77,9 @@ export function StakeCard({
                 onChange={handleInputChange}
                 disabled={!isConnected}
               />
+              <Image src={seedLogo} alt="logo" width={24} height={24} />
               <Button
+                className="min-w-[64px]"
                 variant="outline"
                 onClick={onMaxStake}
                 disabled={!isConnected}
@@ -84,7 +88,7 @@ export function StakeCard({
               </Button>
             </div>
           </div>
-          <div className="flex justify-between text-sm">
+          <div className="flex justify-between text-sm gap-2">
             <span>Balance: {formattedBalance} SEED</span>
             <span>
               Allowance: {formattedAllowance} SEED
@@ -98,15 +102,15 @@ export function StakeCard({
               )}
             </span>
           </div>
-          <Button
-            className="w-full"
-            wrapperClassName="w-full"
-            onClick={onStake}
-            disabled={isApproving || isStaking || !isConnected}
-          >
-            {isApproving ? 'Approving...' : isStaking ? 'Staking...' : 'Stake'}
-          </Button>
         </div>
+        <Button
+          className="w-[150px]"
+          wrapperClassName="mt-4 mx-auto"
+          onClick={onStake}
+          disabled={isApproving || isStaking || !isConnected}
+        >
+          {isApproving ? 'Approving...' : isStaking ? 'Staking...' : 'Stake'}
+        </Button>
       </CardContent>
     </Card>
   );

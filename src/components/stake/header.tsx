@@ -1,7 +1,8 @@
-import Link from "next/link"
+import Link from 'next/link';
+import Image from 'next/image';
 
 import { Button } from '@/components/ui';
-import { LeafIcon } from "./leaf-icon"
+import logo from '../../assets/images/logo.webp';
 
 interface HeaderProps {
   isConnected: boolean;
@@ -10,12 +11,17 @@ interface HeaderProps {
   onDisconnect: () => void;
 }
 
-export function Header({ isConnected, address, onConnect, onDisconnect }: HeaderProps) {
+export function Header({
+  isConnected,
+  address,
+  onConnect,
+  onDisconnect,
+}: HeaderProps) {
   return (
     <header className="sticky top-0 z-20 border-b bg-background px-4 py-3 sm:px-6">
       <div className="container mx-auto flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2" prefetch={false}>
-          <LeafIcon className="h-6 w-6 text-primary" />
+          <Image src={logo} alt="logo" width={24} height={24} />
           <span className="font-bold">SEED Staking</span>
         </Link>
         <div className="flex items-center gap-4">

@@ -60,8 +60,8 @@ export function ClaimCard({
           </div>
         </div>
         <Button
-          className="w-full"
-          wrapperClassName="w-full mt-8"
+          className="w-[150px]"
+          wrapperClassName="mx-auto mt-8"
           onClick={handleClaim}
           disabled={leafClaimable === BigInt(0) || isClaiming || !isConnected}
         >

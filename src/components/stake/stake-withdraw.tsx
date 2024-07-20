@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import Image from 'next/image';
 
 import {
   Card,
@@ -9,6 +10,7 @@ import {
 } from '@/components/ui/Card/Card';
 import { Button, Input, Label } from '@/components/ui';
 import { formatBalanceWithTwoDecimals } from '@/lib/utils';
+import seedLogo from '../../assets/images/seed-logo.webp';
 
 interface StakeWithdrawProps {
   withdrawAmount: string;
@@ -60,7 +62,9 @@ export function StakeWithdraw({
                 onChange={handleInputChange}
                 disabled={!isConnected}
               />
+              <Image src={seedLogo} alt="logo" width={24} height={24} />
               <Button
+                className="min-w-[64px]"
                 variant="outline"
                 onClick={onMaxWithdraw}
                 disabled={!isConnected}
@@ -74,8 +78,8 @@ export function StakeWithdraw({
           </div>
         </div>
         <Button
-          className="w-full"
-          wrapperClassName="w-full mt-4"
+          className="w-[150px]"
+          wrapperClassName="mt-4 mx-auto"
           onClick={onWithdraw}
           disabled={isWithdrawing || !isConnected}
         >
