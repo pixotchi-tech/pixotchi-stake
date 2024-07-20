@@ -27,7 +27,11 @@ export function useStakingMutations() {
 
   const stakingApproveMutation = useMutation({
     mutationFn: async ({ amount }: { amount: string }) => {
-      const parsedAmount = parseEther(amount);
+      const cleanedAmount = amount.replace(/,/g, '');
+      if (isNaN(Number(cleanedAmount))) {
+        throw new Error('Invalid amount format');
+      }
+      const parsedAmount = parseEther(cleanedAmount);
       return approveToken({
         address: SEED_TOKEN_ADDRESS,
         args: [STAKING_CONTRACT_ADDRESS, parsedAmount],
@@ -38,7 +42,11 @@ export function useStakingMutations() {
 
   const stakingStakeMutation = useMutation({
     mutationFn: async ({ amount }: { amount: string }) => {
-      const parsedAmount = parseEther(amount);
+      const cleanedAmount = amount.replace(/,/g, '');
+      if (isNaN(Number(cleanedAmount))) {
+        throw new Error('Invalid amount format');
+      }
+      const parsedAmount = parseEther(cleanedAmount);
       return stakeTokens({
         args: [parsedAmount],
       });
@@ -48,7 +56,15 @@ export function useStakingMutations() {
 
   const stakingWithdrawMutation = useMutation({
     mutationFn: async ({ amount }: { amount: string }) => {
-      const parsedAmount = parseEther(amount);
+      const cleanedAmount = amount.replace(/,/g, '');
+      
+      let parsedAmount;
+      if (cleanedAmount.length > 18) {
+        parsedAmount = BigInt(cleanedAmount);
+      } else {
+        parsedAmount = parseEther(cleanedAmount);
+      }
+      
       return withdrawTokens({
         args: [parsedAmount],
       });
