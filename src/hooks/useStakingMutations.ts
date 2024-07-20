@@ -22,7 +22,11 @@ export function useStakingMutations() {
   const { writeContractAsync: withdrawTokens } = useWriteStakeContractWithdraw();
   const { writeContractAsync: claimRewards } = useWriteStakeContractClaimRewards();
 
-  const { data: simulateApprove } = useSimulateErc20Approve();
+  const { data: simulateApprove, error: simulateApproveError } = useSimulateErc20Approve({
+    address: SEED_TOKEN_ADDRESS,
+    args: [STAKING_CONTRACT_ADDRESS, parseEther('1')], // Use a sample amount for simulation
+  });
+  console.log('Simulate Approve Result:', simulateApprove);
   const { data: simulateStake } = useSimulateStakeContractStake();
   const { data: simulateWithdraw } = useSimulateStakeContractWithdraw();
   const { data: simulateClaim } = useSimulateStakeContractClaimRewards();
@@ -36,7 +40,10 @@ export function useStakingMutations() {
 
   const stakingApproveMutation = useMutation({
     mutationFn: async ({ amount }: { amount: string }) => {
-      if (!simulateApprove) throw new Error('Approve simulation failed');
+      if (!simulateApprove) {
+        console.error('Approve simulation failed or returned null/undefined');
+        throw new Error('Approve simulation failed');
+      }
       const parsedAmount = parseEther(amount);
       return approveToken({
         address: SEED_TOKEN_ADDRESS,
