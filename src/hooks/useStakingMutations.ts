@@ -47,7 +47,6 @@ export function useStakingMutations() {
         address: seedAddress,
         args: [stakeAddress, parsedAmount],
       });
-      // Wait for the approval transaction to be confirmed
       await waitForTransactionReceipt(wagmiConfig, { hash: tx });
       return tx;
     },
@@ -64,7 +63,6 @@ export function useStakingMutations() {
       const tx = await stakeTokens({
         args: [parsedAmount],
       });
-      // Wait for the stake transaction to be confirmed
       await waitForTransactionReceipt(wagmiConfig, { hash: tx });
       return tx;
     },
@@ -82,16 +80,20 @@ export function useStakingMutations() {
         parsedAmount = parseEther(cleanedAmount);
       }
       
-      return withdrawTokens({
+      const tx = await withdrawTokens({
         args: [parsedAmount],
       });
+      await waitForTransactionReceipt(wagmiConfig, { hash: tx });
+      return tx;
     },
     onSuccess: _stakingInvalidateQueries,
   });
 
   const stakingClaimMutation = useMutation({
     mutationFn: async () => {
-      return claimRewards({});
+      const tx = await claimRewards({});
+      await waitForTransactionReceipt(wagmiConfig, { hash: tx });
+      return tx;
     },
     onSuccess: _stakingInvalidateQueries,
   });
