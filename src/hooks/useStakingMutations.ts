@@ -1,17 +1,21 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { parseEther } from 'viem';
+import { waitForTransactionReceipt } from '@wagmi/core';
+import { usePublicClient, useChainId } from 'wagmi';
 import {
   useWriteErc20Approve,
   useWriteStakeContractStake,
   useWriteStakeContractWithdraw,
   useWriteStakeContractClaimRewards,
+  seedTokenConfig,
+  stakeContractConfig,
 } from "@/generated";
-
-const SEED_TOKEN_ADDRESS = process.env.NEXT_PUBLIC_SEED_TOKEN as `0x${string}`;
-const STAKING_CONTRACT_ADDRESS = process.env.NEXT_PUBLIC_STAKING_CONTRACT as `0x${string}`;
+import {wagmiConfig} from "@/app/providers";
 
 export function useStakingMutations() {
   const queryClient = useQueryClient();
+  const publicClient = usePublicClient();
+  const chainId = useChainId();
 
   const { writeContractAsync: approveToken } = useWriteErc20Approve();
   const { writeContractAsync: stakeTokens } = useWriteStakeContractStake();
@@ -32,10 +36,20 @@ export function useStakingMutations() {
         throw new Error('Invalid amount format');
       }
       const parsedAmount = parseEther(cleanedAmount);
-      return approveToken({
-        address: SEED_TOKEN_ADDRESS,
-        args: [STAKING_CONTRACT_ADDRESS, parsedAmount],
+      const seedAddress = seedTokenConfig.address[chainId as keyof typeof seedTokenConfig.address];
+      const stakeAddress = stakeContractConfig.address[chainId as keyof typeof stakeContractConfig.address];
+      
+      if (!seedAddress || !stakeAddress) {
+        throw new Error('Contract address not found for the current chain');
+      }
+
+      const tx = await approveToken({
+        address: seedAddress,
+        args: [stakeAddress, parsedAmount],
       });
+      // Wait for the approval transaction to be confirmed
+      await waitForTransactionReceipt(wagmiConfig, { hash: tx });
+      return tx;
     },
     onSuccess: _stakingInvalidateQueries,
   });
@@ -47,9 +61,12 @@ export function useStakingMutations() {
         throw new Error('Invalid amount format');
       }
       const parsedAmount = parseEther(cleanedAmount);
-      return stakeTokens({
+      const tx = await stakeTokens({
         args: [parsedAmount],
       });
+      // Wait for the stake transaction to be confirmed
+      await waitForTransactionReceipt(wagmiConfig, { hash: tx });
+      return tx;
     },
     onSuccess: _stakingInvalidateQueries,
   });
