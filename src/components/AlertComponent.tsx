@@ -24,16 +24,19 @@ export const AlertComponent: React.FC<AlertComponentProps> = ({
     <div className="mb-4">
       {error && (
         <Alert variant="destructive" side="right">
-          <ExclamationTriangleIcon className="h-4 w-4" />
-          <AlertTitle>Error</AlertTitle>
-          <AlertDescription>{error}</AlertDescription>
+         {/* <ExclamationTriangleIcon className="h-4 w-4" />*/}
+          <AlertTitle>{error}</AlertTitle>
+          {/*  <AlertTitle>Error</AlertTitle>
+          <AlertDescription>{error}</AlertDescription>*/}
         </Alert>
       )}
       {successMessage && (
         <Alert variant="default">
-          <CheckCircledIcon className="h-4 w-4" />
-          <AlertTitle>Success</AlertTitle>
-          <AlertDescription>{successMessage}</AlertDescription>
+          {/*<CheckCircledIcon className="h-4 w-4" />*/}
+                    <AlertTitle>{successMessage}</AlertTitle>
+          <AlertDescription></AlertDescription>
+{/*          <AlertTitle>Success</AlertTitle>
+          <AlertDescription>{successMessage}</AlertDescription>*/}
         </Alert>
       )}
     </div>
