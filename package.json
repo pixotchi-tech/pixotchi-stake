@@ -20,7 +20,6 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "dnum": "^2.13.1",
-    "nes-ui-react": "^0.3.0",
     "next": "^14.2.4",
     "react": "^18",
     "react-dom": "^18",

@@ -31,12 +31,12 @@ export const AlertComponent: React.FC<AlertComponentProps> = ({
         </Alert>
       )}
       {successMessage && (
-        <Alert variant="default">
-          {/*<CheckCircledIcon className="h-4 w-4" />*/}
-                    <AlertTitle>{successMessage}</AlertTitle>
-          <AlertDescription></AlertDescription>
-{/*          <AlertTitle>Success</AlertTitle>
-          <AlertDescription>{successMessage}</AlertDescription>*/}
+        <Alert>
+          <AlertTitle>
+            <CheckCircledIcon className="h-4 w-4" />
+            Success
+          </AlertTitle>
+          <AlertDescription>{successMessage}</AlertDescription>
         </Alert>
       )}
     </div>
