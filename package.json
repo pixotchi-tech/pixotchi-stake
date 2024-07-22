@@ -7,7 +7,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "wagmi generate": "wagmi generate"
+    "wagmi generate": "wagmi generate",
+    "vercel:env:main": "vercel env pull .env.local   --environment production",
+    "vercel:env:dev": "vercel env pull .env.local   --environment development",
+    "vercel:env:testnet": "vercel env pull .env.local   --environment preview --git-branch testnet"
   },
   "dependencies": {
     "@privy-io/react-auth": "^1.73.2",

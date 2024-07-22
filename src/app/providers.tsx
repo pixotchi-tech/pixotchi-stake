@@ -12,9 +12,11 @@ import {fallback} from "wagmi";
 
 const queryClient = new QueryClient();
 
+export const chainId = Number("process.env.NEXT_PUBLIC_CHAIN_ID") == 8453 ? 8453 : 84532;
+
 const chain = extractChain({
   chains: [baseSepolia, base], 
-  id: Number(process.env.NEXT_PUBLIC_CHAIN_ID) == 8453 ? 8453 : 84532
+  id: chainId
 })
 
 const ChainOverride = addRpcUrlOverrideToChain(chain, process.env.NEXT_PUBLIC_RPC_SERVER!);
