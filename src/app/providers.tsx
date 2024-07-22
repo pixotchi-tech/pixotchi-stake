@@ -1,10 +1,10 @@
 'use client';
 
 import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
-import {http, webSocket} from 'viem';
+import {Chain, ClientConfig, http, webSocket} from 'viem';
 import {baseSepolia, base} from "viem/chains";
-import { extractChain } from 'viem'
-import type { PrivyClientConfig} from '@privy-io/react-auth';
+import {extractChain} from 'viem'
+import type {PrivyClientConfig} from '@privy-io/react-auth';
 import {addRpcUrlOverrideToChain} from '@privy-io/react-auth';
 import {PrivyProvider} from '@privy-io/react-auth';
 import {WagmiProvider, createConfig} from '@privy-io/wagmi';
@@ -12,20 +12,20 @@ import {fallback} from "wagmi";
 
 const queryClient = new QueryClient();
 
-export const chainId = Number("process.env.NEXT_PUBLIC_CHAIN_ID") == 8453 ? 8453 : 84532;
+export const chainId = 8453;//= Number("process.env.NEXT_PUBLIC_CHAIN_ID") == 8453 ? 8453 : 84532;
 
 const chain = extractChain({
-  chains: [base, baseSepolia],
-  id: chainId
+  chains: [base],
+  id: chainId,
 })
 
 const ChainOverride = addRpcUrlOverrideToChain(chain, process.env.NEXT_PUBLIC_RPC_SERVER!);
 
 export const wagmiConfig = createConfig({ // this needs testing
-  chains: [ChainOverride],
+  chains: [base],
   transports: {
-    [ChainOverride.id]: fallback([
-      webSocket(process.env.NEXT_PUBLIC_RPC_SERVER_WS, {reconnect: true, retryCount: 100 }),
+    [base.id]: fallback([
+      webSocket(process.env.NEXT_PUBLIC_RPC_SERVER_WS, {reconnect: true, retryCount: 100}),
       http(process.env.NEXT_PUBLIC_RPC_SERVER, {batch: true}),
     ])
   },
@@ -51,8 +51,8 @@ export default function Providers({children}: {children: React.ReactNode}) {
       appId={process.env.NEXT_PUBLIC_PRIVY_APP_ID as string}
       config={{
         ...privyConfig,
-        defaultChain: chain,
-        supportedChains: [ChainOverride],
+        defaultChain: base,
+        supportedChains: [base],
       }}
     >
       <QueryClientProvider client={queryClient}>

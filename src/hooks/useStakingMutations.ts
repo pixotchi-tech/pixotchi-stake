@@ -36,16 +36,19 @@ export function useStakingMutations() {
         throw new Error('Invalid amount format');
       }
       const parsedAmount = parseEther(cleanedAmount);
-      const seedAddress = seedTokenConfig.address[chainId as keyof typeof seedTokenConfig.address];
-      const stakeAddress = stakeContractConfig.address[chainId as keyof typeof stakeContractConfig.address];
+      const SEED_TOKEN_ADDRESS = process.env.NEXT_PUBLIC_SEED_TOKEN as `0x${string}`;
+      //const LEAF_TOKEN_ADDRESS = process.env.NEXT_PUBLIC_LEAF_TOKEN as `0x${string}`;
+      const STAKING_CONTRACT_ADDRESS = process.env.NEXT_PUBLIC_STAKING_CONTRACT as `0x${string}`;
+      //const seedAddress = process.env.NEXT_PUBLIC_RPC_SERVER //seedTokenConfig.address[chainId  as keyof typeof seedTokenConfig.address];
+      //const stakeAddress = process.env.NEXT_PUBLIC_RPC_SERVER //stakeContractConfig.address[chainId as keyof typeof stakeContractConfig.address];
       
-      if (!seedAddress || !stakeAddress) {
+      if (!SEED_TOKEN_ADDRESS || !STAKING_CONTRACT_ADDRESS) {
         throw new Error('Contract address not found for the current chain');
       }
 
       const tx = await approveToken({
-        address: seedAddress,
-        args: [stakeAddress, parsedAmount],
+        address: SEED_TOKEN_ADDRESS,
+        args: [STAKING_CONTRACT_ADDRESS, parsedAmount],
       });
       await waitForTransactionReceipt(wagmiConfig, { hash: tx });
       return tx;
