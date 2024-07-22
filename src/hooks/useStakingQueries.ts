@@ -40,7 +40,7 @@ export function useStakingQueries(address: `0x${string}` | undefined) {
   });
 
   const stakeDetailsQuery = useReadStakeContractGetStakeInfo({
-    address: STAKING_CONTRACT_ADDRESS,
+    //address: STAKING_CONTRACT_ADDRESS,
     args: address ? [address] : undefined,
     query: {
       enabled: !!address,
