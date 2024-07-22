@@ -1,0 +1,10 @@
+  .background-image {
+    background-size: cover;
+    background-position: 50%;
+    background-attachment: fixed;
+  }
+  @media (min-width: 771px) {
+    .background-image {
+      background-image: url("../assets/images/bg-landscape.png");
+    }
+}

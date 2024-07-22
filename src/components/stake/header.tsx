@@ -1,8 +1,8 @@
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import Image from "next/image";
-import BtnTemplate from "../ui/btnTemplate";
-import { Logo  } from "../../../public/icons";
+import Link from 'next/link';
+import Image from 'next/image';
+
+import { Button } from '@/components/ui';
+import logo from '../../assets/images/logo.webp';
 
 interface HeaderProps {
   isConnected: boolean;
@@ -11,31 +11,36 @@ interface HeaderProps {
   onDisconnect: () => void;
 }
 
-export function Header({ isConnected, address, onConnect, onDisconnect }: HeaderProps) {
+export function Header({
+  isConnected,
+  address,
+  onConnect,
+  onDisconnect,
+}: HeaderProps) {
   return (
     <header className="sticky top-0 z-20 border-b bg-background px-4 py-3 sm:px-6">
       <div className="container mx-auto flex items-center justify-between">
-        <Link href="#" className="flex items-center gap-2" prefetch={false}>
-          <Image src={Logo} alt=""  className="h-10 w-10 text-primary" />
-          <span className="font-bold text-xs md:text-lg lg:text-lg xl:text-lg">SEED STAKING</span>
+        <Link href="/" className="flex items-center gap-2" prefetch={false}>
+          <Image src={logo} alt="logo" width={24} height={24} />
+          <span className="font-bold">SEED Staking</span>
         </Link>
         <div className="flex items-center gap-4">
           {isConnected ? (
             <>
-              <span className="font-medium text-xs md:text-md lg:text-md xl:text-md">{address && `${address.slice(0, 6)}...${address.slice(-4)}`}</span>
-              {/* <Button variant="outline" onClick={onDisconnect}>Disconnect</Button> */}
-              <div className="grid justify-items-end max-w-36 md:max-w-28 lg:max-w-28 xl:max-w-28 hover:cursor-pointer">
-              <BtnTemplate text={"Disconnect"} action={onDisconnect} />
-              </div>
+              <span className="font-medium">
+                {address && `${address.slice(0, 6)}...${address.slice(-4)}`}
+              </span>
+              <Button variant="outline" onClick={onDisconnect}>
+                Disconnect
+              </Button>
             </>
           ) : (
-            // <Button variant="outline" onClick={onConnect}>Connect Wallet</Button>
-            <div className="grid justify-items-end max-w-28 hover:cursor-pointer">
-            <BtnTemplate text={"CONNECT"} action={onConnect} />
-            </div>
+            <Button variant="outline" onClick={onConnect}>
+              Connect Wallet
+            </Button>
           )}
         </div>
       </div>
     </header>
-  )
+  );
 }

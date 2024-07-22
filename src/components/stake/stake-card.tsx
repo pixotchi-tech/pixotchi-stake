@@ -1,13 +1,16 @@
 import { useState, useEffect } from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Label } from "@/components/ui/label"
-import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
-import { formatBalanceWithTwoDecimals } from "@/lib/utils"
-import BtnTemplate from "@/components/ui/btnTemplate"
-import Image from "next/image";
-import { BtnBlue, SeedIcon } from "../../../public/icons";
-import { BorderTemplate } from '../ui/borderTemplate';
+import Image from 'next/image';
+
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/Card/Card';
+import { Button, Input, Label } from '@/components/ui';
+import { formatBalanceWithTwoDecimals } from '@/lib/utils';
+import seedLogo from '../../assets/images/seed-logo.webp';
 
 interface StakeCardProps {
   stakeAmount: string;
@@ -32,7 +35,7 @@ export function StakeCard({
   onStake,
   onMaxStake,
   onRemoveAllowance,
-  isConnected
+  isConnected,
 }: StakeCardProps) {
   const [showRemoveAllowance, setShowRemoveAllowance] = useState(false);
 
@@ -55,60 +58,60 @@ export function StakeCard({
   const formattedAllowance = formatBalanceWithTwoDecimals(seedAllowance);
 
   return (
-    <BorderTemplate>
-      <Card>
-        <CardHeader>
-          <CardTitle>Stake SEED</CardTitle>
-          <CardDescription>Stake your SEED tokens to earn LEAF rewards</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <div className="space-y-4">
-            <div className="space-y-2">
-              <Label htmlFor="stake-amount">Amount</Label>
-              <div className="flex items-center space-x-2">
-                <Input
-                  id="stake-amount"
-                  placeholder="0.0"
-                  value={stakeAmount}
-                  onChange={handleInputChange}
-                  disabled={!isConnected} 
-                  className='w-full'
-                />
-                <div className="flex flex-row ml-2">
-                  <div style={{ width: "30px" }}>
-                    <Image alt="" src={SeedIcon} />
-                  </div>
-                </div>
-                <div className="w-1/3 grid justify-items-center cursor-pointer">
-                  <BtnTemplate
-                  action={onMaxStake}
-                  disabled={!isConnected}
-                  text={'MAX'} />
-                </div>
-              </div>
-            </div>
-            <div className="flex justify-between text-xs">
-              <span>Balance: {formattedBalance} SEED</span>
-              <span>
-                Allowance: {formattedAllowance} SEED
-                {showRemoveAllowance && (
-                  <span className="underline cursor-pointer ml-1" onClick={onRemoveAllowance}>
-                    remove
-                  </span>
-                )}
-              </span>
-            </div>
-            <div className='grid justify-items-center w-full mt-6'>
-              <div className="max-w-28 hover:cursor-pointer">
-                <BtnTemplate
-                action={onStake}
-                disabled={isApproving || isStaking || !isConnected}
-                text={isApproving ? 'Approving...' : isStaking ? 'Staking...' : 'Stake'} />
-              </div>
+    <Card>
+      <CardHeader>
+        <CardTitle>Stake SEED</CardTitle>
+        <CardDescription>
+          Stake your SEED tokens to earn LEAF rewards
+        </CardDescription>
+      </CardHeader>
+      <CardContent className="flex-grow flex flex-col justify-between">
+        <div className="space-y-4">
+          <div className="space-y-2">
+            <Label htmlFor="stake-amount">Stake Amount</Label>
+            <div className="flex items-center space-x-2">
+              <Input
+                id="stake-amount"
+                placeholder="0.0"
+                value={stakeAmount}
+                onChange={handleInputChange}
+                disabled={!isConnected}
+              />
+              <Image src={seedLogo} alt="logo" width={24} height={24} />
+              <Button
+                className="min-w-[64px]"
+                variant="outline"
+                onClick={onMaxStake}
+                disabled={!isConnected}
+              >
+                Max
+              </Button>
             </div>
           </div>
-        </CardContent>
-      </Card>
-    </BorderTemplate>
-  )
+          <div className="flex justify-between text-sm gap-2">
+            <span>Balance: {formattedBalance} SEED</span>
+            <span>
+              Allowance: {formattedAllowance} SEED
+              {showRemoveAllowance && (
+                <span
+                  className="underline cursor-pointer ml-1"
+                  onClick={onRemoveAllowance}
+                >
+                  remove
+                </span>
+              )}
+            </span>
+          </div>
+        </div>
+        <Button
+          className="w-[150px]"
+          wrapperClassName="mt-4 mx-auto"
+          onClick={onStake}
+          disabled={isApproving || isStaking || !isConnected}
+        >
+          {isApproving ? 'Approving...' : isStaking ? 'Staking...' : 'Stake'}
+        </Button>
+      </CardContent>
+    </Card>
+  );
 }

@@ -1,13 +1,16 @@
-import { useState, useEffect } from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Label } from "@/components/ui/label"
-import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
-import { formatBalanceWithTwoDecimals } from "@/lib/utils"
-import BtnTemplate from "@/components/ui/btnTemplate"
-import Image from "next/image";
-import { BorderTemplate } from '../ui/borderTemplate';
-import { BtnBlue, SeedIcon } from "../../../public/icons";
+import { useEffect } from 'react';
+import Image from 'next/image';
+
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/Card/Card';
+import { Button, Input, Label } from '@/components/ui';
+import { formatBalanceWithTwoDecimals } from '@/lib/utils';
+import seedLogo from '../../assets/images/seed-logo.webp';
 
 interface StakeWithdrawProps {
   withdrawAmount: string;
@@ -26,7 +29,7 @@ export function StakeWithdraw({
   isWithdrawing,
   onWithdraw,
   onMaxWithdraw,
-  isConnected
+  isConnected,
 }: StakeWithdrawProps) {
   useEffect(() => {
     if (stakedBalance) {
@@ -42,53 +45,47 @@ export function StakeWithdraw({
   const formattedStakedBalance = formatBalanceWithTwoDecimals(stakedBalance);
 
   return (
-    <BorderTemplate>
-      <Card className="flex flex-col h-full">
-        <CardHeader>
-          <CardTitle>Withdraw SEED</CardTitle>
-          <CardDescription>Withdraw your staked SEED tokens</CardDescription>
-        </CardHeader>
-        <CardContent className="flex-grow flex flex-col justify-between ">
-          <div className="space-y-4 mt-1">
-            <div className="space-y-2">
-              <Label htmlFor="withdraw-amount">Amount</Label>
-              <div className="flex items-center space-x-2">
-                <Input
-                  id="withdraw-amount"
-                  placeholder="0.0"
-                  value={withdrawAmount}
-                  onChange={handleInputChange}
-                  disabled={!isConnected}
-                  className='w-full'
-                />
-
-                <div className="flex flex-row ml-2">
-                  <div style={{ width: "30px" }}>
-                    <Image alt="" src={SeedIcon} />
-                  </div>
-                </div>
-                <div className="w-1/3 grid justify-items-center cursor-pointer">
-                  <BtnTemplate
-                  action={onMaxWithdraw}
-                  disabled={!isConnected}
-                  text={'MAX'} />
-                </div>
-              </div>
-            </div>
-            <div className="flex justify-between text-xs">
-              <span>Staked Balance: {formattedStakedBalance} SEED</span>
+    <Card className="flex flex-col h-full">
+      <CardHeader>
+        <CardTitle>Withdraw SEED</CardTitle>
+        <CardDescription>Withdraw your staked SEED tokens</CardDescription>
+      </CardHeader>
+      <CardContent className="flex-grow flex flex-col justify-between">
+        <div className="space-y-4">
+          <div className="space-y-2">
+            <Label htmlFor="withdraw-amount">Withdraw Amount</Label>
+            <div className="flex items-center space-x-2">
+              <Input
+                id="withdraw-amount"
+                placeholder="0.0"
+                value={withdrawAmount}
+                onChange={handleInputChange}
+                disabled={!isConnected}
+              />
+              <Image src={seedLogo} alt="logo" width={24} height={24} />
+              <Button
+                className="min-w-[64px]"
+                variant="outline"
+                onClick={onMaxWithdraw}
+                disabled={!isConnected}
+              >
+                Max
+              </Button>
             </div>
           </div>
-          <div className='grid justify-items-center w-full mt-6'>
-            <div className="max-w-28 hover:cursor-pointer">
-              <BtnTemplate
-              action={onWithdraw}
-              disabled={isWithdrawing || !isConnected}
-              text={isWithdrawing ? 'Unstaking...' : 'Unstake'} />
-            </div>
+          <div className="flex justify-between text-sm">
+            <span>Staked Balance: {formattedStakedBalance} SEED</span>
           </div>
-        </CardContent>
-      </Card>
-    </BorderTemplate>
-  )
+        </div>
+        <Button
+          className="w-[150px]"
+          wrapperClassName="mt-4 mx-auto"
+          onClick={onWithdraw}
+          disabled={isWithdrawing || !isConnected}
+        >
+          {isWithdrawing ? 'Withdrawing...' : 'Withdraw'}
+        </Button>
+      </CardContent>
+    </Card>
+  );
 }

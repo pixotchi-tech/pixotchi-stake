@@ -1,31 +1,26 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { parseEther } from 'viem';
+import { waitForTransactionReceipt } from '@wagmi/core';
+import { usePublicClient, useChainId } from 'wagmi';
 import {
   useWriteErc20Approve,
   useWriteStakeContractStake,
   useWriteStakeContractWithdraw,
   useWriteStakeContractClaimRewards,
-  useSimulateErc20Approve,
-  useSimulateStakeContractStake,
-  useSimulateStakeContractWithdraw,
-  useSimulateStakeContractClaimRewards,
+  seedTokenConfig,
+  stakeContractConfig,
 } from "@/generated";
-
-const SEED_TOKEN_ADDRESS = process.env.NEXT_PUBLIC_SEED_TOKEN as `0x${string}`;
-const STAKING_CONTRACT_ADDRESS = process.env.NEXT_PUBLIC_STAKING_CONTRACT as `0x${string}`;
+import {wagmiConfig} from "@/app/providers";
 
 export function useStakingMutations() {
   const queryClient = useQueryClient();
+  const publicClient = usePublicClient();
+  const chainId = useChainId();
 
   const { writeContractAsync: approveToken } = useWriteErc20Approve();
   const { writeContractAsync: stakeTokens } = useWriteStakeContractStake();
   const { writeContractAsync: withdrawTokens } = useWriteStakeContractWithdraw();
   const { writeContractAsync: claimRewards } = useWriteStakeContractClaimRewards();
-
-  const { data: simulateApprove } = useSimulateErc20Approve();
-  const { data: simulateStake } = useSimulateStakeContractStake();
-  const { data: simulateWithdraw } = useSimulateStakeContractWithdraw();
-  const { data: simulateClaim } = useSimulateStakeContractClaimRewards();
 
   const _stakingInvalidateQueries = () => {
     queryClient.invalidateQueries({ queryKey: ['seedAllowance'] });
@@ -36,42 +31,69 @@ export function useStakingMutations() {
 
   const stakingApproveMutation = useMutation({
     mutationFn: async ({ amount }: { amount: string }) => {
-      if (!simulateApprove) throw new Error('Approve simulation failed');
-      const parsedAmount = parseEther(amount);
-      return approveToken({
-        address: SEED_TOKEN_ADDRESS,
-        args: [STAKING_CONTRACT_ADDRESS, parsedAmount],
+      const cleanedAmount = amount.replace(/,/g, '');
+      if (isNaN(Number(cleanedAmount))) {
+        throw new Error('Invalid amount format');
+      }
+      const parsedAmount = parseEther(cleanedAmount);
+      const seedAddress = seedTokenConfig.address[chainId as keyof typeof seedTokenConfig.address];
+      const stakeAddress = stakeContractConfig.address[chainId as keyof typeof stakeContractConfig.address];
+      
+      if (!seedAddress || !stakeAddress) {
+        throw new Error('Contract address not found for the current chain');
+      }
+
+      const tx = await approveToken({
+        address: seedAddress,
+        args: [stakeAddress, parsedAmount],
       });
+      await waitForTransactionReceipt(wagmiConfig, { hash: tx });
+      return tx;
     },
     onSuccess: _stakingInvalidateQueries,
   });
 
   const stakingStakeMutation = useMutation({
     mutationFn: async ({ amount }: { amount: string }) => {
-      if (!simulateStake) throw new Error('Stake simulation failed');
-      const parsedAmount = parseEther(amount);
-      return stakeTokens({
+      const cleanedAmount = amount.replace(/,/g, '');
+      if (isNaN(Number(cleanedAmount))) {
+        throw new Error('Invalid amount format');
+      }
+      const parsedAmount = parseEther(cleanedAmount);
+      const tx = await stakeTokens({
         args: [parsedAmount],
-    });
+      });
+      await waitForTransactionReceipt(wagmiConfig, { hash: tx });
+      return tx;
     },
     onSuccess: _stakingInvalidateQueries,
   });
 
   const stakingWithdrawMutation = useMutation({
     mutationFn: async ({ amount }: { amount: string }) => {
-      if (!simulateWithdraw) throw new Error('Withdraw simulation failed');
-      const parsedAmount = parseEther(amount);
-      return withdrawTokens({
+      const cleanedAmount = amount.replace(/,/g, '');
+      
+      let parsedAmount;
+      if (cleanedAmount.length > 18) {
+        parsedAmount = BigInt(cleanedAmount);
+      } else {
+        parsedAmount = parseEther(cleanedAmount);
+      }
+      
+      const tx = await withdrawTokens({
         args: [parsedAmount],
       });
+      await waitForTransactionReceipt(wagmiConfig, { hash: tx });
+      return tx;
     },
     onSuccess: _stakingInvalidateQueries,
   });
 
   const stakingClaimMutation = useMutation({
     mutationFn: async () => {
-      if (!simulateClaim) throw new Error('Claim simulation failed');
-      return claimRewards({});
+      const tx = await claimRewards({});
+      await waitForTransactionReceipt(wagmiConfig, { hash: tx });
+      return tx;
     },
     onSuccess: _stakingInvalidateQueries,
   });

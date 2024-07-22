@@ -1,4 +1,5 @@
-import {StakeComponent} from "@/components/stake-component";
+'use client';
+import { StakeComponent } from '@/components/StakeComponent';
 
 export default function Home() {
   return (
