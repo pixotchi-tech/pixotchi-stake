@@ -30,14 +30,10 @@ export function Header({
               <span className="font-medium">
                 {address && `${address.slice(0, 6)}...${address.slice(-4)}`}
               </span>
-              <Button variant="outline" onClick={onDisconnect}>
-                Disconnect
-              </Button>
+              <Button onClick={onDisconnect}>Disconnect</Button>
             </>
           ) : (
-            <Button variant="outline" onClick={onConnect}>
-              Connect Wallet
-            </Button>
+            <Button onClick={onConnect}>Connect Wallet</Button>
           )}
         </div>
       </div>

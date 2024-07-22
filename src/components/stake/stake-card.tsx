@@ -77,10 +77,9 @@ export function StakeCard({
                 onChange={handleInputChange}
                 disabled={!isConnected}
               />
-              <Image src={seedLogo} alt="logo" width={24} height={24} />
+              <Image src={seedLogo} alt="Seed logo" width={32} height={32} />
               <Button
                 className="min-w-[64px]"
-                variant="outline"
                 onClick={onMaxStake}
                 disabled={!isConnected}
               >

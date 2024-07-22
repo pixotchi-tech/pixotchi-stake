@@ -4,23 +4,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import Providers from "./providers";
 import localFont from 'next/font/local';
-//import { IBM_Plex_Mono } from 'next/font/google';
 
-/*
-const fontHeading = IBM_Plex_Mono({
-  weight: ['400'], // Add this line
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-heading',
-});
-
-const fontBody = IBM_Plex_Mono({
-  weight: ['400'], // Add this line
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-body',
-});
-*/
 
 const pixelMix = localFont({ src: './../../public/fonts/pixelmix.ttf',
     display: 'swap',
