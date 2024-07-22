@@ -19,10 +19,10 @@ button {
 
   &.shadow-primary {
     &::after {
-      box-shadow: inset -4px -4px hsl(var(--border));
+      box-shadow: inset -4px -4px hsl(var(--primary-foreground));
     }
     &:active::after {
-      box-shadow: inset 4px 4px hsl(var(--border));
+      box-shadow: inset 4px 4px hsl(var(--primary-foreground));
     }
   }
 
