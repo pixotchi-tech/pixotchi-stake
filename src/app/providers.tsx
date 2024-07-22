@@ -19,7 +19,18 @@ const chain = extractChain({
   id: chainId,
 })
 
-const ChainOverride = addRpcUrlOverrideToChain(chain, process.env.NEXT_PUBLIC_RPC_SERVER!);
+const ChainOverride = addRpcUrlOverrideToChain(base, process.env.NEXT_PUBLIC_RPC_SERVER!);
+
+
+const wagmiPrivyConfig = createConfig({ // this needs testing
+  chains: [ChainOverride],
+  transports: {
+    [ChainOverride.id]: fallback([
+      webSocket(process.env.NEXT_PUBLIC_RPC_SERVER_WS, {reconnect: true, retryCount: 100}),
+      http(process.env.NEXT_PUBLIC_RPC_SERVER, {batch: true}),
+    ])
+  },
+});
 
 export const wagmiConfig = createConfig({ // this needs testing
   chains: [base],
@@ -51,12 +62,12 @@ export default function Providers({children}: {children: React.ReactNode}) {
       appId={process.env.NEXT_PUBLIC_PRIVY_APP_ID as string}
       config={{
         ...privyConfig,
-        defaultChain: base,
-        supportedChains: [base],
+        defaultChain: ChainOverride,
+        supportedChains: [ChainOverride],
       }}
     >
       <QueryClientProvider client={queryClient}>
-        <WagmiProvider config={wagmiConfig} reconnectOnMount={false}>
+        <WagmiProvider config={wagmiPrivyConfig} reconnectOnMount={false}>
           {children}
         </WagmiProvider>
       </QueryClientProvider>
