@@ -10,7 +10,8 @@ import {
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /**
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const leafTokenAbi = [
   { type: 'constructor', inputs: [], stateMutability: 'nonpayable' },
@@ -829,14 +830,17 @@ export const leafTokenAbi = [
 ] as const
 
 /**
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const leafTokenAddress = {
+  8453: '0xE78ee52349D7b031E2A6633E07c037C3147DB116',
   84532: '0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4',
 } as const
 
 /**
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const leafTokenConfig = {
   address: leafTokenAddress,
@@ -848,7 +852,8 @@ export const leafTokenConfig = {
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /**
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const seedTokenAbi = [
   { type: 'constructor', inputs: [], stateMutability: 'nonpayable' },
@@ -1439,14 +1444,17 @@ export const seedTokenAbi = [
 ] as const
 
 /**
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const seedTokenAddress = {
+  8453: '0x546D239032b24eCEEE0cb05c92FC39090846adc7',
   84532: '0xc64F740D216B6ec49e435a8a08132529788e8DD0',
 } as const
 
 /**
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const seedTokenConfig = {
   address: seedTokenAddress,
@@ -1458,7 +1466,8 @@ export const seedTokenConfig = {
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /**
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xf15d93c3617525054af05338cc6ccf18886bd03a)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
  */
 export const stakeContractAbi = [
   {
@@ -2006,14 +2015,17 @@ export const stakeContractAbi = [
 ] as const
 
 /**
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xf15d93c3617525054af05338cc6ccf18886bd03a)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
  */
 export const stakeContractAddress = {
+  8453: '0xF15D93c3617525054aF05338CC6Ccf18886BD03A',
   84532: '0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce',
 } as const
 
 /**
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xf15d93c3617525054af05338cc6ccf18886bd03a)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
  */
 export const stakeContractConfig = {
   address: stakeContractAddress,
@@ -2128,7 +2140,8 @@ export const erc20Abi = [
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link leafTokenAbi}__
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useReadLeafToken = /*#__PURE__*/ createUseReadContract({
   abi: leafTokenAbi,
@@ -2138,7 +2151,8 @@ export const useReadLeafToken = /*#__PURE__*/ createUseReadContract({
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"CLOCK_MODE"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useReadLeafTokenClockMode = /*#__PURE__*/ createUseReadContract({
   abi: leafTokenAbi,
@@ -2149,7 +2163,8 @@ export const useReadLeafTokenClockMode = /*#__PURE__*/ createUseReadContract({
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"DEFAULT_ADMIN_ROLE"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useReadLeafTokenDefaultAdminRole =
   /*#__PURE__*/ createUseReadContract({
@@ -2161,7 +2176,8 @@ export const useReadLeafTokenDefaultAdminRole =
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"DOMAIN_SEPARATOR"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useReadLeafTokenDomainSeparator =
   /*#__PURE__*/ createUseReadContract({
@@ -2173,7 +2189,8 @@ export const useReadLeafTokenDomainSeparator =
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"allowance"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useReadLeafTokenAllowance = /*#__PURE__*/ createUseReadContract({
   abi: leafTokenAbi,
@@ -2184,7 +2201,8 @@ export const useReadLeafTokenAllowance = /*#__PURE__*/ createUseReadContract({
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"balanceOf"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useReadLeafTokenBalanceOf = /*#__PURE__*/ createUseReadContract({
   abi: leafTokenAbi,
@@ -2195,7 +2213,8 @@ export const useReadLeafTokenBalanceOf = /*#__PURE__*/ createUseReadContract({
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"checkpoints"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useReadLeafTokenCheckpoints = /*#__PURE__*/ createUseReadContract({
   abi: leafTokenAbi,
@@ -2206,7 +2225,8 @@ export const useReadLeafTokenCheckpoints = /*#__PURE__*/ createUseReadContract({
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"clock"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useReadLeafTokenClock = /*#__PURE__*/ createUseReadContract({
   abi: leafTokenAbi,
@@ -2217,7 +2237,8 @@ export const useReadLeafTokenClock = /*#__PURE__*/ createUseReadContract({
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"contractType"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useReadLeafTokenContractType = /*#__PURE__*/ createUseReadContract(
   {
@@ -2230,7 +2251,8 @@ export const useReadLeafTokenContractType = /*#__PURE__*/ createUseReadContract(
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"contractURI"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useReadLeafTokenContractUri = /*#__PURE__*/ createUseReadContract({
   abi: leafTokenAbi,
@@ -2241,7 +2263,8 @@ export const useReadLeafTokenContractUri = /*#__PURE__*/ createUseReadContract({
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"contractVersion"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useReadLeafTokenContractVersion =
   /*#__PURE__*/ createUseReadContract({
@@ -2253,7 +2276,8 @@ export const useReadLeafTokenContractVersion =
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"decimals"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useReadLeafTokenDecimals = /*#__PURE__*/ createUseReadContract({
   abi: leafTokenAbi,
@@ -2264,7 +2288,8 @@ export const useReadLeafTokenDecimals = /*#__PURE__*/ createUseReadContract({
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"delegates"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useReadLeafTokenDelegates = /*#__PURE__*/ createUseReadContract({
   abi: leafTokenAbi,
@@ -2275,7 +2300,8 @@ export const useReadLeafTokenDelegates = /*#__PURE__*/ createUseReadContract({
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"eip712Domain"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useReadLeafTokenEip712Domain = /*#__PURE__*/ createUseReadContract(
   {
@@ -2288,7 +2314,8 @@ export const useReadLeafTokenEip712Domain = /*#__PURE__*/ createUseReadContract(
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"getPastTotalSupply"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useReadLeafTokenGetPastTotalSupply =
   /*#__PURE__*/ createUseReadContract({
@@ -2300,7 +2327,8 @@ export const useReadLeafTokenGetPastTotalSupply =
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"getPastVotes"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useReadLeafTokenGetPastVotes = /*#__PURE__*/ createUseReadContract(
   {
@@ -2313,7 +2341,8 @@ export const useReadLeafTokenGetPastVotes = /*#__PURE__*/ createUseReadContract(
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"getPlatformFeeInfo"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useReadLeafTokenGetPlatformFeeInfo =
   /*#__PURE__*/ createUseReadContract({
@@ -2325,7 +2354,8 @@ export const useReadLeafTokenGetPlatformFeeInfo =
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"getRoleAdmin"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useReadLeafTokenGetRoleAdmin = /*#__PURE__*/ createUseReadContract(
   {
@@ -2338,7 +2368,8 @@ export const useReadLeafTokenGetRoleAdmin = /*#__PURE__*/ createUseReadContract(
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"getRoleMember"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useReadLeafTokenGetRoleMember =
   /*#__PURE__*/ createUseReadContract({
@@ -2350,7 +2381,8 @@ export const useReadLeafTokenGetRoleMember =
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"getRoleMemberCount"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useReadLeafTokenGetRoleMemberCount =
   /*#__PURE__*/ createUseReadContract({
@@ -2362,7 +2394,8 @@ export const useReadLeafTokenGetRoleMemberCount =
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"getVotes"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useReadLeafTokenGetVotes = /*#__PURE__*/ createUseReadContract({
   abi: leafTokenAbi,
@@ -2373,7 +2406,8 @@ export const useReadLeafTokenGetVotes = /*#__PURE__*/ createUseReadContract({
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"hasRole"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useReadLeafTokenHasRole = /*#__PURE__*/ createUseReadContract({
   abi: leafTokenAbi,
@@ -2384,7 +2418,8 @@ export const useReadLeafTokenHasRole = /*#__PURE__*/ createUseReadContract({
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"isTrustedForwarder"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useReadLeafTokenIsTrustedForwarder =
   /*#__PURE__*/ createUseReadContract({
@@ -2396,7 +2431,8 @@ export const useReadLeafTokenIsTrustedForwarder =
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"name"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useReadLeafTokenName = /*#__PURE__*/ createUseReadContract({
   abi: leafTokenAbi,
@@ -2407,7 +2443,8 @@ export const useReadLeafTokenName = /*#__PURE__*/ createUseReadContract({
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"nonces"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useReadLeafTokenNonces = /*#__PURE__*/ createUseReadContract({
   abi: leafTokenAbi,
@@ -2418,7 +2455,8 @@ export const useReadLeafTokenNonces = /*#__PURE__*/ createUseReadContract({
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"numCheckpoints"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useReadLeafTokenNumCheckpoints =
   /*#__PURE__*/ createUseReadContract({
@@ -2430,7 +2468,8 @@ export const useReadLeafTokenNumCheckpoints =
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"primarySaleRecipient"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useReadLeafTokenPrimarySaleRecipient =
   /*#__PURE__*/ createUseReadContract({
@@ -2442,7 +2481,8 @@ export const useReadLeafTokenPrimarySaleRecipient =
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"supportsInterface"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useReadLeafTokenSupportsInterface =
   /*#__PURE__*/ createUseReadContract({
@@ -2454,7 +2494,8 @@ export const useReadLeafTokenSupportsInterface =
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"symbol"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useReadLeafTokenSymbol = /*#__PURE__*/ createUseReadContract({
   abi: leafTokenAbi,
@@ -2465,7 +2506,8 @@ export const useReadLeafTokenSymbol = /*#__PURE__*/ createUseReadContract({
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"totalSupply"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useReadLeafTokenTotalSupply = /*#__PURE__*/ createUseReadContract({
   abi: leafTokenAbi,
@@ -2476,7 +2518,8 @@ export const useReadLeafTokenTotalSupply = /*#__PURE__*/ createUseReadContract({
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"verify"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useReadLeafTokenVerify = /*#__PURE__*/ createUseReadContract({
   abi: leafTokenAbi,
@@ -2487,7 +2530,8 @@ export const useReadLeafTokenVerify = /*#__PURE__*/ createUseReadContract({
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link leafTokenAbi}__
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useWriteLeafToken = /*#__PURE__*/ createUseWriteContract({
   abi: leafTokenAbi,
@@ -2497,7 +2541,8 @@ export const useWriteLeafToken = /*#__PURE__*/ createUseWriteContract({
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"approve"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useWriteLeafTokenApprove = /*#__PURE__*/ createUseWriteContract({
   abi: leafTokenAbi,
@@ -2508,7 +2553,8 @@ export const useWriteLeafTokenApprove = /*#__PURE__*/ createUseWriteContract({
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"burn"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useWriteLeafTokenBurn = /*#__PURE__*/ createUseWriteContract({
   abi: leafTokenAbi,
@@ -2519,7 +2565,8 @@ export const useWriteLeafTokenBurn = /*#__PURE__*/ createUseWriteContract({
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"burnFrom"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useWriteLeafTokenBurnFrom = /*#__PURE__*/ createUseWriteContract({
   abi: leafTokenAbi,
@@ -2530,7 +2577,8 @@ export const useWriteLeafTokenBurnFrom = /*#__PURE__*/ createUseWriteContract({
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"decreaseAllowance"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useWriteLeafTokenDecreaseAllowance =
   /*#__PURE__*/ createUseWriteContract({
@@ -2542,7 +2590,8 @@ export const useWriteLeafTokenDecreaseAllowance =
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"delegate"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useWriteLeafTokenDelegate = /*#__PURE__*/ createUseWriteContract({
   abi: leafTokenAbi,
@@ -2553,7 +2602,8 @@ export const useWriteLeafTokenDelegate = /*#__PURE__*/ createUseWriteContract({
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"delegateBySig"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useWriteLeafTokenDelegateBySig =
   /*#__PURE__*/ createUseWriteContract({
@@ -2565,7 +2615,8 @@ export const useWriteLeafTokenDelegateBySig =
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"grantRole"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useWriteLeafTokenGrantRole = /*#__PURE__*/ createUseWriteContract({
   abi: leafTokenAbi,
@@ -2576,7 +2627,8 @@ export const useWriteLeafTokenGrantRole = /*#__PURE__*/ createUseWriteContract({
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"increaseAllowance"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useWriteLeafTokenIncreaseAllowance =
   /*#__PURE__*/ createUseWriteContract({
@@ -2588,7 +2640,8 @@ export const useWriteLeafTokenIncreaseAllowance =
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"initialize"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useWriteLeafTokenInitialize = /*#__PURE__*/ createUseWriteContract(
   { abi: leafTokenAbi, address: leafTokenAddress, functionName: 'initialize' },
@@ -2597,7 +2650,8 @@ export const useWriteLeafTokenInitialize = /*#__PURE__*/ createUseWriteContract(
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"mintTo"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useWriteLeafTokenMintTo = /*#__PURE__*/ createUseWriteContract({
   abi: leafTokenAbi,
@@ -2608,7 +2662,8 @@ export const useWriteLeafTokenMintTo = /*#__PURE__*/ createUseWriteContract({
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"mintWithSignature"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useWriteLeafTokenMintWithSignature =
   /*#__PURE__*/ createUseWriteContract({
@@ -2620,7 +2675,8 @@ export const useWriteLeafTokenMintWithSignature =
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"multicall"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useWriteLeafTokenMulticall = /*#__PURE__*/ createUseWriteContract({
   abi: leafTokenAbi,
@@ -2631,7 +2687,8 @@ export const useWriteLeafTokenMulticall = /*#__PURE__*/ createUseWriteContract({
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"permit"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useWriteLeafTokenPermit = /*#__PURE__*/ createUseWriteContract({
   abi: leafTokenAbi,
@@ -2642,7 +2699,8 @@ export const useWriteLeafTokenPermit = /*#__PURE__*/ createUseWriteContract({
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"renounceRole"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useWriteLeafTokenRenounceRole =
   /*#__PURE__*/ createUseWriteContract({
@@ -2654,7 +2712,8 @@ export const useWriteLeafTokenRenounceRole =
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"revokeRole"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useWriteLeafTokenRevokeRole = /*#__PURE__*/ createUseWriteContract(
   { abi: leafTokenAbi, address: leafTokenAddress, functionName: 'revokeRole' },
@@ -2663,7 +2722,8 @@ export const useWriteLeafTokenRevokeRole = /*#__PURE__*/ createUseWriteContract(
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"setContractURI"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useWriteLeafTokenSetContractUri =
   /*#__PURE__*/ createUseWriteContract({
@@ -2675,7 +2735,8 @@ export const useWriteLeafTokenSetContractUri =
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"setPlatformFeeInfo"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useWriteLeafTokenSetPlatformFeeInfo =
   /*#__PURE__*/ createUseWriteContract({
@@ -2687,7 +2748,8 @@ export const useWriteLeafTokenSetPlatformFeeInfo =
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"setPrimarySaleRecipient"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useWriteLeafTokenSetPrimarySaleRecipient =
   /*#__PURE__*/ createUseWriteContract({
@@ -2699,7 +2761,8 @@ export const useWriteLeafTokenSetPrimarySaleRecipient =
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"transfer"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useWriteLeafTokenTransfer = /*#__PURE__*/ createUseWriteContract({
   abi: leafTokenAbi,
@@ -2710,7 +2773,8 @@ export const useWriteLeafTokenTransfer = /*#__PURE__*/ createUseWriteContract({
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"transferFrom"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useWriteLeafTokenTransferFrom =
   /*#__PURE__*/ createUseWriteContract({
@@ -2722,7 +2786,8 @@ export const useWriteLeafTokenTransferFrom =
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link leafTokenAbi}__
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useSimulateLeafToken = /*#__PURE__*/ createUseSimulateContract({
   abi: leafTokenAbi,
@@ -2732,7 +2797,8 @@ export const useSimulateLeafToken = /*#__PURE__*/ createUseSimulateContract({
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"approve"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useSimulateLeafTokenApprove =
   /*#__PURE__*/ createUseSimulateContract({
@@ -2744,7 +2810,8 @@ export const useSimulateLeafTokenApprove =
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"burn"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useSimulateLeafTokenBurn = /*#__PURE__*/ createUseSimulateContract(
   { abi: leafTokenAbi, address: leafTokenAddress, functionName: 'burn' },
@@ -2753,7 +2820,8 @@ export const useSimulateLeafTokenBurn = /*#__PURE__*/ createUseSimulateContract(
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"burnFrom"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useSimulateLeafTokenBurnFrom =
   /*#__PURE__*/ createUseSimulateContract({
@@ -2765,7 +2833,8 @@ export const useSimulateLeafTokenBurnFrom =
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"decreaseAllowance"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useSimulateLeafTokenDecreaseAllowance =
   /*#__PURE__*/ createUseSimulateContract({
@@ -2777,7 +2846,8 @@ export const useSimulateLeafTokenDecreaseAllowance =
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"delegate"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useSimulateLeafTokenDelegate =
   /*#__PURE__*/ createUseSimulateContract({
@@ -2789,7 +2859,8 @@ export const useSimulateLeafTokenDelegate =
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"delegateBySig"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useSimulateLeafTokenDelegateBySig =
   /*#__PURE__*/ createUseSimulateContract({
@@ -2801,7 +2872,8 @@ export const useSimulateLeafTokenDelegateBySig =
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"grantRole"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useSimulateLeafTokenGrantRole =
   /*#__PURE__*/ createUseSimulateContract({
@@ -2813,7 +2885,8 @@ export const useSimulateLeafTokenGrantRole =
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"increaseAllowance"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useSimulateLeafTokenIncreaseAllowance =
   /*#__PURE__*/ createUseSimulateContract({
@@ -2825,7 +2898,8 @@ export const useSimulateLeafTokenIncreaseAllowance =
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"initialize"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useSimulateLeafTokenInitialize =
   /*#__PURE__*/ createUseSimulateContract({
@@ -2837,7 +2911,8 @@ export const useSimulateLeafTokenInitialize =
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"mintTo"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useSimulateLeafTokenMintTo =
   /*#__PURE__*/ createUseSimulateContract({
@@ -2849,7 +2924,8 @@ export const useSimulateLeafTokenMintTo =
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"mintWithSignature"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useSimulateLeafTokenMintWithSignature =
   /*#__PURE__*/ createUseSimulateContract({
@@ -2861,7 +2937,8 @@ export const useSimulateLeafTokenMintWithSignature =
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"multicall"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useSimulateLeafTokenMulticall =
   /*#__PURE__*/ createUseSimulateContract({
@@ -2873,7 +2950,8 @@ export const useSimulateLeafTokenMulticall =
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"permit"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useSimulateLeafTokenPermit =
   /*#__PURE__*/ createUseSimulateContract({
@@ -2885,7 +2963,8 @@ export const useSimulateLeafTokenPermit =
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"renounceRole"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useSimulateLeafTokenRenounceRole =
   /*#__PURE__*/ createUseSimulateContract({
@@ -2897,7 +2976,8 @@ export const useSimulateLeafTokenRenounceRole =
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"revokeRole"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useSimulateLeafTokenRevokeRole =
   /*#__PURE__*/ createUseSimulateContract({
@@ -2909,7 +2989,8 @@ export const useSimulateLeafTokenRevokeRole =
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"setContractURI"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useSimulateLeafTokenSetContractUri =
   /*#__PURE__*/ createUseSimulateContract({
@@ -2921,7 +3002,8 @@ export const useSimulateLeafTokenSetContractUri =
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"setPlatformFeeInfo"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useSimulateLeafTokenSetPlatformFeeInfo =
   /*#__PURE__*/ createUseSimulateContract({
@@ -2933,7 +3015,8 @@ export const useSimulateLeafTokenSetPlatformFeeInfo =
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"setPrimarySaleRecipient"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useSimulateLeafTokenSetPrimarySaleRecipient =
   /*#__PURE__*/ createUseSimulateContract({
@@ -2945,7 +3028,8 @@ export const useSimulateLeafTokenSetPrimarySaleRecipient =
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"transfer"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useSimulateLeafTokenTransfer =
   /*#__PURE__*/ createUseSimulateContract({
@@ -2957,7 +3041,8 @@ export const useSimulateLeafTokenTransfer =
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link leafTokenAbi}__ and `functionName` set to `"transferFrom"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useSimulateLeafTokenTransferFrom =
   /*#__PURE__*/ createUseSimulateContract({
@@ -2969,7 +3054,8 @@ export const useSimulateLeafTokenTransferFrom =
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link leafTokenAbi}__
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useWatchLeafTokenEvent = /*#__PURE__*/ createUseWatchContractEvent(
   { abi: leafTokenAbi, address: leafTokenAddress },
@@ -2978,7 +3064,8 @@ export const useWatchLeafTokenEvent = /*#__PURE__*/ createUseWatchContractEvent(
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link leafTokenAbi}__ and `eventName` set to `"Approval"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useWatchLeafTokenApprovalEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
@@ -2990,7 +3077,8 @@ export const useWatchLeafTokenApprovalEvent =
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link leafTokenAbi}__ and `eventName` set to `"DelegateChanged"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useWatchLeafTokenDelegateChangedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
@@ -3002,7 +3090,8 @@ export const useWatchLeafTokenDelegateChangedEvent =
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link leafTokenAbi}__ and `eventName` set to `"DelegateVotesChanged"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useWatchLeafTokenDelegateVotesChangedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
@@ -3014,7 +3103,8 @@ export const useWatchLeafTokenDelegateVotesChangedEvent =
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link leafTokenAbi}__ and `eventName` set to `"EIP712DomainChanged"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useWatchLeafTokenEip712DomainChangedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
@@ -3026,7 +3116,8 @@ export const useWatchLeafTokenEip712DomainChangedEvent =
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link leafTokenAbi}__ and `eventName` set to `"FlatPlatformFeeUpdated"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useWatchLeafTokenFlatPlatformFeeUpdatedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
@@ -3038,7 +3129,8 @@ export const useWatchLeafTokenFlatPlatformFeeUpdatedEvent =
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link leafTokenAbi}__ and `eventName` set to `"Initialized"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useWatchLeafTokenInitializedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
@@ -3050,7 +3142,8 @@ export const useWatchLeafTokenInitializedEvent =
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link leafTokenAbi}__ and `eventName` set to `"PlatformFeeInfoUpdated"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useWatchLeafTokenPlatformFeeInfoUpdatedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
@@ -3062,7 +3155,8 @@ export const useWatchLeafTokenPlatformFeeInfoUpdatedEvent =
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link leafTokenAbi}__ and `eventName` set to `"PlatformFeeTypeUpdated"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useWatchLeafTokenPlatformFeeTypeUpdatedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
@@ -3074,7 +3168,8 @@ export const useWatchLeafTokenPlatformFeeTypeUpdatedEvent =
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link leafTokenAbi}__ and `eventName` set to `"PrimarySaleRecipientUpdated"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useWatchLeafTokenPrimarySaleRecipientUpdatedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
@@ -3086,7 +3181,8 @@ export const useWatchLeafTokenPrimarySaleRecipientUpdatedEvent =
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link leafTokenAbi}__ and `eventName` set to `"RoleAdminChanged"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useWatchLeafTokenRoleAdminChangedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
@@ -3098,7 +3194,8 @@ export const useWatchLeafTokenRoleAdminChangedEvent =
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link leafTokenAbi}__ and `eventName` set to `"RoleGranted"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useWatchLeafTokenRoleGrantedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
@@ -3110,7 +3207,8 @@ export const useWatchLeafTokenRoleGrantedEvent =
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link leafTokenAbi}__ and `eventName` set to `"RoleRevoked"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useWatchLeafTokenRoleRevokedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
@@ -3122,7 +3220,8 @@ export const useWatchLeafTokenRoleRevokedEvent =
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link leafTokenAbi}__ and `eventName` set to `"TokensMinted"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useWatchLeafTokenTokensMintedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
@@ -3134,7 +3233,8 @@ export const useWatchLeafTokenTokensMintedEvent =
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link leafTokenAbi}__ and `eventName` set to `"TokensMintedWithSignature"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useWatchLeafTokenTokensMintedWithSignatureEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
@@ -3146,7 +3246,8 @@ export const useWatchLeafTokenTokensMintedWithSignatureEvent =
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link leafTokenAbi}__ and `eventName` set to `"Transfer"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe78ee52349d7b031e2a6633e07c037c3147db116)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x33feeD5a3eD803dc03BBF4B6041bB2b86FACD6C4)
  */
 export const useWatchLeafTokenTransferEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
@@ -3158,7 +3259,8 @@ export const useWatchLeafTokenTransferEvent =
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link seedTokenAbi}__
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useReadSeedToken = /*#__PURE__*/ createUseReadContract({
   abi: seedTokenAbi,
@@ -3168,7 +3270,8 @@ export const useReadSeedToken = /*#__PURE__*/ createUseReadContract({
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"_isExcludedMaxTransactionAmount"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useReadSeedTokenIsExcludedMaxTransactionAmount =
   /*#__PURE__*/ createUseReadContract({
@@ -3180,7 +3283,8 @@ export const useReadSeedTokenIsExcludedMaxTransactionAmount =
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"acknowledgement"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useReadSeedTokenAcknowledgement =
   /*#__PURE__*/ createUseReadContract({
@@ -3192,7 +3296,8 @@ export const useReadSeedTokenAcknowledgement =
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"allowance"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useReadSeedTokenAllowance = /*#__PURE__*/ createUseReadContract({
   abi: seedTokenAbi,
@@ -3203,7 +3308,8 @@ export const useReadSeedTokenAllowance = /*#__PURE__*/ createUseReadContract({
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"automatedMarketMakerPairs"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useReadSeedTokenAutomatedMarketMakerPairs =
   /*#__PURE__*/ createUseReadContract({
@@ -3215,7 +3321,8 @@ export const useReadSeedTokenAutomatedMarketMakerPairs =
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"balanceOf"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useReadSeedTokenBalanceOf = /*#__PURE__*/ createUseReadContract({
   abi: seedTokenAbi,
@@ -3226,7 +3333,8 @@ export const useReadSeedTokenBalanceOf = /*#__PURE__*/ createUseReadContract({
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"buyLiquidityFee"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useReadSeedTokenBuyLiquidityFee =
   /*#__PURE__*/ createUseReadContract({
@@ -3238,7 +3346,8 @@ export const useReadSeedTokenBuyLiquidityFee =
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"buyRevShareFee"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useReadSeedTokenBuyRevShareFee =
   /*#__PURE__*/ createUseReadContract({
@@ -3250,7 +3359,8 @@ export const useReadSeedTokenBuyRevShareFee =
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"buyTeamFee"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useReadSeedTokenBuyTeamFee = /*#__PURE__*/ createUseReadContract({
   abi: seedTokenAbi,
@@ -3261,7 +3371,8 @@ export const useReadSeedTokenBuyTeamFee = /*#__PURE__*/ createUseReadContract({
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"buyTotalFees"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useReadSeedTokenBuyTotalFees = /*#__PURE__*/ createUseReadContract(
   {
@@ -3274,7 +3385,8 @@ export const useReadSeedTokenBuyTotalFees = /*#__PURE__*/ createUseReadContract(
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"decimals"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useReadSeedTokenDecimals = /*#__PURE__*/ createUseReadContract({
   abi: seedTokenAbi,
@@ -3285,7 +3397,8 @@ export const useReadSeedTokenDecimals = /*#__PURE__*/ createUseReadContract({
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"isExcludedFromFees"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useReadSeedTokenIsExcludedFromFees =
   /*#__PURE__*/ createUseReadContract({
@@ -3297,7 +3410,8 @@ export const useReadSeedTokenIsExcludedFromFees =
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"limitsInEffect"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useReadSeedTokenLimitsInEffect =
   /*#__PURE__*/ createUseReadContract({
@@ -3309,7 +3423,8 @@ export const useReadSeedTokenLimitsInEffect =
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"maxTransactionAmount"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useReadSeedTokenMaxTransactionAmount =
   /*#__PURE__*/ createUseReadContract({
@@ -3321,7 +3436,8 @@ export const useReadSeedTokenMaxTransactionAmount =
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"maxWallet"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useReadSeedTokenMaxWallet = /*#__PURE__*/ createUseReadContract({
   abi: seedTokenAbi,
@@ -3332,7 +3448,8 @@ export const useReadSeedTokenMaxWallet = /*#__PURE__*/ createUseReadContract({
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"name"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useReadSeedTokenName = /*#__PURE__*/ createUseReadContract({
   abi: seedTokenAbi,
@@ -3343,7 +3460,8 @@ export const useReadSeedTokenName = /*#__PURE__*/ createUseReadContract({
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"owner"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useReadSeedTokenOwner = /*#__PURE__*/ createUseReadContract({
   abi: seedTokenAbi,
@@ -3354,7 +3472,8 @@ export const useReadSeedTokenOwner = /*#__PURE__*/ createUseReadContract({
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"revShareWallet"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useReadSeedTokenRevShareWallet =
   /*#__PURE__*/ createUseReadContract({
@@ -3366,7 +3485,8 @@ export const useReadSeedTokenRevShareWallet =
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"risks"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useReadSeedTokenRisks = /*#__PURE__*/ createUseReadContract({
   abi: seedTokenAbi,
@@ -3377,7 +3497,8 @@ export const useReadSeedTokenRisks = /*#__PURE__*/ createUseReadContract({
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"sellLiquidityFee"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useReadSeedTokenSellLiquidityFee =
   /*#__PURE__*/ createUseReadContract({
@@ -3389,7 +3510,8 @@ export const useReadSeedTokenSellLiquidityFee =
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"sellRevShareFee"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useReadSeedTokenSellRevShareFee =
   /*#__PURE__*/ createUseReadContract({
@@ -3401,7 +3523,8 @@ export const useReadSeedTokenSellRevShareFee =
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"sellTeamFee"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useReadSeedTokenSellTeamFee = /*#__PURE__*/ createUseReadContract({
   abi: seedTokenAbi,
@@ -3412,7 +3535,8 @@ export const useReadSeedTokenSellTeamFee = /*#__PURE__*/ createUseReadContract({
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"sellTotalFees"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useReadSeedTokenSellTotalFees =
   /*#__PURE__*/ createUseReadContract({
@@ -3424,7 +3548,8 @@ export const useReadSeedTokenSellTotalFees =
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"swapEnabled"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useReadSeedTokenSwapEnabled = /*#__PURE__*/ createUseReadContract({
   abi: seedTokenAbi,
@@ -3435,7 +3560,8 @@ export const useReadSeedTokenSwapEnabled = /*#__PURE__*/ createUseReadContract({
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"swapTokensAtAmount"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useReadSeedTokenSwapTokensAtAmount =
   /*#__PURE__*/ createUseReadContract({
@@ -3447,7 +3573,8 @@ export const useReadSeedTokenSwapTokensAtAmount =
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"symbol"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useReadSeedTokenSymbol = /*#__PURE__*/ createUseReadContract({
   abi: seedTokenAbi,
@@ -3458,7 +3585,8 @@ export const useReadSeedTokenSymbol = /*#__PURE__*/ createUseReadContract({
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"teamWallet"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useReadSeedTokenTeamWallet = /*#__PURE__*/ createUseReadContract({
   abi: seedTokenAbi,
@@ -3469,7 +3597,8 @@ export const useReadSeedTokenTeamWallet = /*#__PURE__*/ createUseReadContract({
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"tokensForLiquidity"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useReadSeedTokenTokensForLiquidity =
   /*#__PURE__*/ createUseReadContract({
@@ -3481,7 +3610,8 @@ export const useReadSeedTokenTokensForLiquidity =
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"tokensForRevShare"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useReadSeedTokenTokensForRevShare =
   /*#__PURE__*/ createUseReadContract({
@@ -3493,7 +3623,8 @@ export const useReadSeedTokenTokensForRevShare =
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"tokensForTeam"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useReadSeedTokenTokensForTeam =
   /*#__PURE__*/ createUseReadContract({
@@ -3505,7 +3636,8 @@ export const useReadSeedTokenTokensForTeam =
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"totalSupply"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useReadSeedTokenTotalSupply = /*#__PURE__*/ createUseReadContract({
   abi: seedTokenAbi,
@@ -3516,7 +3648,8 @@ export const useReadSeedTokenTotalSupply = /*#__PURE__*/ createUseReadContract({
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"uniswapV2Pair"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useReadSeedTokenUniswapV2Pair =
   /*#__PURE__*/ createUseReadContract({
@@ -3528,7 +3661,8 @@ export const useReadSeedTokenUniswapV2Pair =
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"uniswapV2Router"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useReadSeedTokenUniswapV2Router =
   /*#__PURE__*/ createUseReadContract({
@@ -3540,7 +3674,8 @@ export const useReadSeedTokenUniswapV2Router =
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link seedTokenAbi}__
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useWriteSeedToken = /*#__PURE__*/ createUseWriteContract({
   abi: seedTokenAbi,
@@ -3550,7 +3685,8 @@ export const useWriteSeedToken = /*#__PURE__*/ createUseWriteContract({
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"approve"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useWriteSeedTokenApprove = /*#__PURE__*/ createUseWriteContract({
   abi: seedTokenAbi,
@@ -3561,7 +3697,8 @@ export const useWriteSeedTokenApprove = /*#__PURE__*/ createUseWriteContract({
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"decreaseAllowance"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useWriteSeedTokenDecreaseAllowance =
   /*#__PURE__*/ createUseWriteContract({
@@ -3573,7 +3710,8 @@ export const useWriteSeedTokenDecreaseAllowance =
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"excludeFromFees"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useWriteSeedTokenExcludeFromFees =
   /*#__PURE__*/ createUseWriteContract({
@@ -3585,7 +3723,8 @@ export const useWriteSeedTokenExcludeFromFees =
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"excludeFromMaxTransaction"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useWriteSeedTokenExcludeFromMaxTransaction =
   /*#__PURE__*/ createUseWriteContract({
@@ -3597,7 +3736,8 @@ export const useWriteSeedTokenExcludeFromMaxTransaction =
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"increaseAllowance"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useWriteSeedTokenIncreaseAllowance =
   /*#__PURE__*/ createUseWriteContract({
@@ -3609,7 +3749,8 @@ export const useWriteSeedTokenIncreaseAllowance =
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"removeLimits"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useWriteSeedTokenRemoveLimits =
   /*#__PURE__*/ createUseWriteContract({
@@ -3621,7 +3762,8 @@ export const useWriteSeedTokenRemoveLimits =
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"renounceOwnership"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useWriteSeedTokenRenounceOwnership =
   /*#__PURE__*/ createUseWriteContract({
@@ -3633,7 +3775,8 @@ export const useWriteSeedTokenRenounceOwnership =
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"setAutomatedMarketMakerPair"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useWriteSeedTokenSetAutomatedMarketMakerPair =
   /*#__PURE__*/ createUseWriteContract({
@@ -3645,7 +3788,8 @@ export const useWriteSeedTokenSetAutomatedMarketMakerPair =
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"transfer"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useWriteSeedTokenTransfer = /*#__PURE__*/ createUseWriteContract({
   abi: seedTokenAbi,
@@ -3656,7 +3800,8 @@ export const useWriteSeedTokenTransfer = /*#__PURE__*/ createUseWriteContract({
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"transferFrom"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useWriteSeedTokenTransferFrom =
   /*#__PURE__*/ createUseWriteContract({
@@ -3668,7 +3813,8 @@ export const useWriteSeedTokenTransferFrom =
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"transferOwnership"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useWriteSeedTokenTransferOwnership =
   /*#__PURE__*/ createUseWriteContract({
@@ -3680,7 +3826,8 @@ export const useWriteSeedTokenTransferOwnership =
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"updateBuyFees"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useWriteSeedTokenUpdateBuyFees =
   /*#__PURE__*/ createUseWriteContract({
@@ -3692,7 +3839,8 @@ export const useWriteSeedTokenUpdateBuyFees =
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"updateMaxTxnAmount"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useWriteSeedTokenUpdateMaxTxnAmount =
   /*#__PURE__*/ createUseWriteContract({
@@ -3704,7 +3852,8 @@ export const useWriteSeedTokenUpdateMaxTxnAmount =
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"updateMaxWalletAmount"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useWriteSeedTokenUpdateMaxWalletAmount =
   /*#__PURE__*/ createUseWriteContract({
@@ -3716,7 +3865,8 @@ export const useWriteSeedTokenUpdateMaxWalletAmount =
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"updateRevShareWallet"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useWriteSeedTokenUpdateRevShareWallet =
   /*#__PURE__*/ createUseWriteContract({
@@ -3728,7 +3878,8 @@ export const useWriteSeedTokenUpdateRevShareWallet =
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"updateSellFees"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useWriteSeedTokenUpdateSellFees =
   /*#__PURE__*/ createUseWriteContract({
@@ -3740,7 +3891,8 @@ export const useWriteSeedTokenUpdateSellFees =
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"updateSwapEnabled"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useWriteSeedTokenUpdateSwapEnabled =
   /*#__PURE__*/ createUseWriteContract({
@@ -3752,7 +3904,8 @@ export const useWriteSeedTokenUpdateSwapEnabled =
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"updateSwapTokensAtAmount"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useWriteSeedTokenUpdateSwapTokensAtAmount =
   /*#__PURE__*/ createUseWriteContract({
@@ -3764,7 +3917,8 @@ export const useWriteSeedTokenUpdateSwapTokensAtAmount =
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"updateTeamWallet"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useWriteSeedTokenUpdateTeamWallet =
   /*#__PURE__*/ createUseWriteContract({
@@ -3776,7 +3930,8 @@ export const useWriteSeedTokenUpdateTeamWallet =
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"withdrawStuckEth"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useWriteSeedTokenWithdrawStuckEth =
   /*#__PURE__*/ createUseWriteContract({
@@ -3788,7 +3943,8 @@ export const useWriteSeedTokenWithdrawStuckEth =
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"withdrawStuckToken"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useWriteSeedTokenWithdrawStuckToken =
   /*#__PURE__*/ createUseWriteContract({
@@ -3800,7 +3956,8 @@ export const useWriteSeedTokenWithdrawStuckToken =
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link seedTokenAbi}__
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useSimulateSeedToken = /*#__PURE__*/ createUseSimulateContract({
   abi: seedTokenAbi,
@@ -3810,7 +3967,8 @@ export const useSimulateSeedToken = /*#__PURE__*/ createUseSimulateContract({
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"approve"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useSimulateSeedTokenApprove =
   /*#__PURE__*/ createUseSimulateContract({
@@ -3822,7 +3980,8 @@ export const useSimulateSeedTokenApprove =
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"decreaseAllowance"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useSimulateSeedTokenDecreaseAllowance =
   /*#__PURE__*/ createUseSimulateContract({
@@ -3834,7 +3993,8 @@ export const useSimulateSeedTokenDecreaseAllowance =
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"excludeFromFees"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useSimulateSeedTokenExcludeFromFees =
   /*#__PURE__*/ createUseSimulateContract({
@@ -3846,7 +4006,8 @@ export const useSimulateSeedTokenExcludeFromFees =
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"excludeFromMaxTransaction"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useSimulateSeedTokenExcludeFromMaxTransaction =
   /*#__PURE__*/ createUseSimulateContract({
@@ -3858,7 +4019,8 @@ export const useSimulateSeedTokenExcludeFromMaxTransaction =
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"increaseAllowance"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useSimulateSeedTokenIncreaseAllowance =
   /*#__PURE__*/ createUseSimulateContract({
@@ -3870,7 +4032,8 @@ export const useSimulateSeedTokenIncreaseAllowance =
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"removeLimits"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useSimulateSeedTokenRemoveLimits =
   /*#__PURE__*/ createUseSimulateContract({
@@ -3882,7 +4045,8 @@ export const useSimulateSeedTokenRemoveLimits =
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"renounceOwnership"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useSimulateSeedTokenRenounceOwnership =
   /*#__PURE__*/ createUseSimulateContract({
@@ -3894,7 +4058,8 @@ export const useSimulateSeedTokenRenounceOwnership =
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"setAutomatedMarketMakerPair"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useSimulateSeedTokenSetAutomatedMarketMakerPair =
   /*#__PURE__*/ createUseSimulateContract({
@@ -3906,7 +4071,8 @@ export const useSimulateSeedTokenSetAutomatedMarketMakerPair =
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"transfer"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useSimulateSeedTokenTransfer =
   /*#__PURE__*/ createUseSimulateContract({
@@ -3918,7 +4084,8 @@ export const useSimulateSeedTokenTransfer =
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"transferFrom"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useSimulateSeedTokenTransferFrom =
   /*#__PURE__*/ createUseSimulateContract({
@@ -3930,7 +4097,8 @@ export const useSimulateSeedTokenTransferFrom =
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"transferOwnership"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useSimulateSeedTokenTransferOwnership =
   /*#__PURE__*/ createUseSimulateContract({
@@ -3942,7 +4110,8 @@ export const useSimulateSeedTokenTransferOwnership =
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"updateBuyFees"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useSimulateSeedTokenUpdateBuyFees =
   /*#__PURE__*/ createUseSimulateContract({
@@ -3954,7 +4123,8 @@ export const useSimulateSeedTokenUpdateBuyFees =
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"updateMaxTxnAmount"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useSimulateSeedTokenUpdateMaxTxnAmount =
   /*#__PURE__*/ createUseSimulateContract({
@@ -3966,7 +4136,8 @@ export const useSimulateSeedTokenUpdateMaxTxnAmount =
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"updateMaxWalletAmount"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useSimulateSeedTokenUpdateMaxWalletAmount =
   /*#__PURE__*/ createUseSimulateContract({
@@ -3978,7 +4149,8 @@ export const useSimulateSeedTokenUpdateMaxWalletAmount =
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"updateRevShareWallet"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useSimulateSeedTokenUpdateRevShareWallet =
   /*#__PURE__*/ createUseSimulateContract({
@@ -3990,7 +4162,8 @@ export const useSimulateSeedTokenUpdateRevShareWallet =
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"updateSellFees"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useSimulateSeedTokenUpdateSellFees =
   /*#__PURE__*/ createUseSimulateContract({
@@ -4002,7 +4175,8 @@ export const useSimulateSeedTokenUpdateSellFees =
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"updateSwapEnabled"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useSimulateSeedTokenUpdateSwapEnabled =
   /*#__PURE__*/ createUseSimulateContract({
@@ -4014,7 +4188,8 @@ export const useSimulateSeedTokenUpdateSwapEnabled =
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"updateSwapTokensAtAmount"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useSimulateSeedTokenUpdateSwapTokensAtAmount =
   /*#__PURE__*/ createUseSimulateContract({
@@ -4026,7 +4201,8 @@ export const useSimulateSeedTokenUpdateSwapTokensAtAmount =
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"updateTeamWallet"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useSimulateSeedTokenUpdateTeamWallet =
   /*#__PURE__*/ createUseSimulateContract({
@@ -4038,7 +4214,8 @@ export const useSimulateSeedTokenUpdateTeamWallet =
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"withdrawStuckEth"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useSimulateSeedTokenWithdrawStuckEth =
   /*#__PURE__*/ createUseSimulateContract({
@@ -4050,7 +4227,8 @@ export const useSimulateSeedTokenWithdrawStuckEth =
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link seedTokenAbi}__ and `functionName` set to `"withdrawStuckToken"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useSimulateSeedTokenWithdrawStuckToken =
   /*#__PURE__*/ createUseSimulateContract({
@@ -4062,7 +4240,8 @@ export const useSimulateSeedTokenWithdrawStuckToken =
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link seedTokenAbi}__
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useWatchSeedTokenEvent = /*#__PURE__*/ createUseWatchContractEvent(
   { abi: seedTokenAbi, address: seedTokenAddress },
@@ -4071,7 +4250,8 @@ export const useWatchSeedTokenEvent = /*#__PURE__*/ createUseWatchContractEvent(
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link seedTokenAbi}__ and `eventName` set to `"Approval"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useWatchSeedTokenApprovalEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
@@ -4083,7 +4263,8 @@ export const useWatchSeedTokenApprovalEvent =
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link seedTokenAbi}__ and `eventName` set to `"ExcludeFromFees"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useWatchSeedTokenExcludeFromFeesEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
@@ -4095,7 +4276,8 @@ export const useWatchSeedTokenExcludeFromFeesEvent =
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link seedTokenAbi}__ and `eventName` set to `"OwnershipTransferred"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useWatchSeedTokenOwnershipTransferredEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
@@ -4107,7 +4289,8 @@ export const useWatchSeedTokenOwnershipTransferredEvent =
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link seedTokenAbi}__ and `eventName` set to `"SetAutomatedMarketMakerPair"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useWatchSeedTokenSetAutomatedMarketMakerPairEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
@@ -4119,7 +4302,8 @@ export const useWatchSeedTokenSetAutomatedMarketMakerPairEvent =
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link seedTokenAbi}__ and `eventName` set to `"SwapAndLiquify"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useWatchSeedTokenSwapAndLiquifyEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
@@ -4131,7 +4315,8 @@ export const useWatchSeedTokenSwapAndLiquifyEvent =
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link seedTokenAbi}__ and `eventName` set to `"Transfer"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useWatchSeedTokenTransferEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
@@ -4143,7 +4328,8 @@ export const useWatchSeedTokenTransferEvent =
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link seedTokenAbi}__ and `eventName` set to `"UpdateUniswapV2Router"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useWatchSeedTokenUpdateUniswapV2RouterEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
@@ -4155,7 +4341,8 @@ export const useWatchSeedTokenUpdateUniswapV2RouterEvent =
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link seedTokenAbi}__ and `eventName` set to `"revShareWalletUpdated"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useWatchSeedTokenRevShareWalletUpdatedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
@@ -4167,7 +4354,8 @@ export const useWatchSeedTokenRevShareWalletUpdatedEvent =
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link seedTokenAbi}__ and `eventName` set to `"teamWalletUpdated"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0x546D239032b24eCEEE0cb05c92FC39090846adc7)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xc64F740D216B6ec49e435a8a08132529788e8DD0)
  */
 export const useWatchSeedTokenTeamWalletUpdatedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
@@ -4179,7 +4367,8 @@ export const useWatchSeedTokenTeamWalletUpdatedEvent =
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link stakeContractAbi}__
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xf15d93c3617525054af05338cc6ccf18886bd03a)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
  */
 export const useReadStakeContract = /*#__PURE__*/ createUseReadContract({
   abi: stakeContractAbi,
@@ -4189,7 +4378,8 @@ export const useReadStakeContract = /*#__PURE__*/ createUseReadContract({
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link stakeContractAbi}__ and `functionName` set to `"DEFAULT_ADMIN_ROLE"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xf15d93c3617525054af05338cc6ccf18886bd03a)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
  */
 export const useReadStakeContractDefaultAdminRole =
   /*#__PURE__*/ createUseReadContract({
@@ -4201,7 +4391,8 @@ export const useReadStakeContractDefaultAdminRole =
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link stakeContractAbi}__ and `functionName` set to `"contractType"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xf15d93c3617525054af05338cc6ccf18886bd03a)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
  */
 export const useReadStakeContractContractType =
   /*#__PURE__*/ createUseReadContract({
@@ -4213,7 +4404,8 @@ export const useReadStakeContractContractType =
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link stakeContractAbi}__ and `functionName` set to `"contractURI"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xf15d93c3617525054af05338cc6ccf18886bd03a)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
  */
 export const useReadStakeContractContractUri =
   /*#__PURE__*/ createUseReadContract({
@@ -4225,7 +4417,8 @@ export const useReadStakeContractContractUri =
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link stakeContractAbi}__ and `functionName` set to `"contractVersion"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xf15d93c3617525054af05338cc6ccf18886bd03a)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
  */
 export const useReadStakeContractContractVersion =
   /*#__PURE__*/ createUseReadContract({
@@ -4237,7 +4430,8 @@ export const useReadStakeContractContractVersion =
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link stakeContractAbi}__ and `functionName` set to `"getRewardRatio"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xf15d93c3617525054af05338cc6ccf18886bd03a)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
  */
 export const useReadStakeContractGetRewardRatio =
   /*#__PURE__*/ createUseReadContract({
@@ -4249,7 +4443,8 @@ export const useReadStakeContractGetRewardRatio =
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link stakeContractAbi}__ and `functionName` set to `"getRewardTokenBalance"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xf15d93c3617525054af05338cc6ccf18886bd03a)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
  */
 export const useReadStakeContractGetRewardTokenBalance =
   /*#__PURE__*/ createUseReadContract({
@@ -4261,7 +4456,8 @@ export const useReadStakeContractGetRewardTokenBalance =
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link stakeContractAbi}__ and `functionName` set to `"getRoleAdmin"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xf15d93c3617525054af05338cc6ccf18886bd03a)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
  */
 export const useReadStakeContractGetRoleAdmin =
   /*#__PURE__*/ createUseReadContract({
@@ -4273,7 +4469,8 @@ export const useReadStakeContractGetRoleAdmin =
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link stakeContractAbi}__ and `functionName` set to `"getRoleMember"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xf15d93c3617525054af05338cc6ccf18886bd03a)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
  */
 export const useReadStakeContractGetRoleMember =
   /*#__PURE__*/ createUseReadContract({
@@ -4285,7 +4482,8 @@ export const useReadStakeContractGetRoleMember =
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link stakeContractAbi}__ and `functionName` set to `"getRoleMemberCount"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xf15d93c3617525054af05338cc6ccf18886bd03a)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
  */
 export const useReadStakeContractGetRoleMemberCount =
   /*#__PURE__*/ createUseReadContract({
@@ -4297,19 +4495,21 @@ export const useReadStakeContractGetRoleMemberCount =
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link stakeContractAbi}__ and `functionName` set to `"getStakeInfo"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xf15d93c3617525054af05338cc6ccf18886bd03a)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
  */
 export const useReadStakeContractGetStakeInfo =
   /*#__PURE__*/ createUseReadContract({
     abi: stakeContractAbi,
-    //address: stakeContractAddress,
+    address: stakeContractAddress,
     functionName: 'getStakeInfo',
   })
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link stakeContractAbi}__ and `functionName` set to `"getTimeUnit"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xf15d93c3617525054af05338cc6ccf18886bd03a)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
  */
 export const useReadStakeContractGetTimeUnit =
   /*#__PURE__*/ createUseReadContract({
@@ -4321,7 +4521,8 @@ export const useReadStakeContractGetTimeUnit =
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link stakeContractAbi}__ and `functionName` set to `"hasRole"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xf15d93c3617525054af05338cc6ccf18886bd03a)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
  */
 export const useReadStakeContractHasRole = /*#__PURE__*/ createUseReadContract({
   abi: stakeContractAbi,
@@ -4332,7 +4533,8 @@ export const useReadStakeContractHasRole = /*#__PURE__*/ createUseReadContract({
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link stakeContractAbi}__ and `functionName` set to `"hasRoleWithSwitch"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xf15d93c3617525054af05338cc6ccf18886bd03a)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
  */
 export const useReadStakeContractHasRoleWithSwitch =
   /*#__PURE__*/ createUseReadContract({
@@ -4344,7 +4546,8 @@ export const useReadStakeContractHasRoleWithSwitch =
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link stakeContractAbi}__ and `functionName` set to `"isTrustedForwarder"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xf15d93c3617525054af05338cc6ccf18886bd03a)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
  */
 export const useReadStakeContractIsTrustedForwarder =
   /*#__PURE__*/ createUseReadContract({
@@ -4356,7 +4559,8 @@ export const useReadStakeContractIsTrustedForwarder =
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link stakeContractAbi}__ and `functionName` set to `"rewardToken"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xf15d93c3617525054af05338cc6ccf18886bd03a)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
  */
 export const useReadStakeContractRewardToken =
   /*#__PURE__*/ createUseReadContract({
@@ -4368,7 +4572,8 @@ export const useReadStakeContractRewardToken =
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link stakeContractAbi}__ and `functionName` set to `"rewardTokenDecimals"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xf15d93c3617525054af05338cc6ccf18886bd03a)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
  */
 export const useReadStakeContractRewardTokenDecimals =
   /*#__PURE__*/ createUseReadContract({
@@ -4380,7 +4585,8 @@ export const useReadStakeContractRewardTokenDecimals =
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link stakeContractAbi}__ and `functionName` set to `"stakers"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xf15d93c3617525054af05338cc6ccf18886bd03a)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
  */
 export const useReadStakeContractStakers = /*#__PURE__*/ createUseReadContract({
   abi: stakeContractAbi,
@@ -4391,7 +4597,8 @@ export const useReadStakeContractStakers = /*#__PURE__*/ createUseReadContract({
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link stakeContractAbi}__ and `functionName` set to `"stakersArray"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xf15d93c3617525054af05338cc6ccf18886bd03a)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
  */
 export const useReadStakeContractStakersArray =
   /*#__PURE__*/ createUseReadContract({
@@ -4403,7 +4610,8 @@ export const useReadStakeContractStakersArray =
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link stakeContractAbi}__ and `functionName` set to `"stakingToken"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xf15d93c3617525054af05338cc6ccf18886bd03a)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
  */
 export const useReadStakeContractStakingToken =
   /*#__PURE__*/ createUseReadContract({
@@ -4415,7 +4623,8 @@ export const useReadStakeContractStakingToken =
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link stakeContractAbi}__ and `functionName` set to `"stakingTokenBalance"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xf15d93c3617525054af05338cc6ccf18886bd03a)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
  */
 export const useReadStakeContractStakingTokenBalance =
   /*#__PURE__*/ createUseReadContract({
@@ -4427,7 +4636,8 @@ export const useReadStakeContractStakingTokenBalance =
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link stakeContractAbi}__ and `functionName` set to `"stakingTokenDecimals"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xf15d93c3617525054af05338cc6ccf18886bd03a)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
  */
 export const useReadStakeContractStakingTokenDecimals =
   /*#__PURE__*/ createUseReadContract({
@@ -4439,7 +4649,8 @@ export const useReadStakeContractStakingTokenDecimals =
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link stakeContractAbi}__
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xf15d93c3617525054af05338cc6ccf18886bd03a)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
  */
 export const useWriteStakeContract = /*#__PURE__*/ createUseWriteContract({
   abi: stakeContractAbi,
@@ -4449,7 +4660,8 @@ export const useWriteStakeContract = /*#__PURE__*/ createUseWriteContract({
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link stakeContractAbi}__ and `functionName` set to `"claimRewards"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xf15d93c3617525054af05338cc6ccf18886bd03a)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
  */
 export const useWriteStakeContractClaimRewards =
   /*#__PURE__*/ createUseWriteContract({
@@ -4461,7 +4673,8 @@ export const useWriteStakeContractClaimRewards =
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link stakeContractAbi}__ and `functionName` set to `"depositRewardTokens"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xf15d93c3617525054af05338cc6ccf18886bd03a)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
  */
 export const useWriteStakeContractDepositRewardTokens =
   /*#__PURE__*/ createUseWriteContract({
@@ -4473,7 +4686,8 @@ export const useWriteStakeContractDepositRewardTokens =
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link stakeContractAbi}__ and `functionName` set to `"grantRole"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xf15d93c3617525054af05338cc6ccf18886bd03a)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
  */
 export const useWriteStakeContractGrantRole =
   /*#__PURE__*/ createUseWriteContract({
@@ -4485,7 +4699,8 @@ export const useWriteStakeContractGrantRole =
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link stakeContractAbi}__ and `functionName` set to `"initialize"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xf15d93c3617525054af05338cc6ccf18886bd03a)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
  */
 export const useWriteStakeContractInitialize =
   /*#__PURE__*/ createUseWriteContract({
@@ -4497,7 +4712,8 @@ export const useWriteStakeContractInitialize =
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link stakeContractAbi}__ and `functionName` set to `"multicall"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xf15d93c3617525054af05338cc6ccf18886bd03a)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
  */
 export const useWriteStakeContractMulticall =
   /*#__PURE__*/ createUseWriteContract({
@@ -4509,7 +4725,8 @@ export const useWriteStakeContractMulticall =
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link stakeContractAbi}__ and `functionName` set to `"renounceRole"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xf15d93c3617525054af05338cc6ccf18886bd03a)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
  */
 export const useWriteStakeContractRenounceRole =
   /*#__PURE__*/ createUseWriteContract({
@@ -4521,7 +4738,8 @@ export const useWriteStakeContractRenounceRole =
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link stakeContractAbi}__ and `functionName` set to `"revokeRole"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xf15d93c3617525054af05338cc6ccf18886bd03a)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
  */
 export const useWriteStakeContractRevokeRole =
   /*#__PURE__*/ createUseWriteContract({
@@ -4533,7 +4751,8 @@ export const useWriteStakeContractRevokeRole =
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link stakeContractAbi}__ and `functionName` set to `"setContractURI"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xf15d93c3617525054af05338cc6ccf18886bd03a)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
  */
 export const useWriteStakeContractSetContractUri =
   /*#__PURE__*/ createUseWriteContract({
@@ -4545,7 +4764,8 @@ export const useWriteStakeContractSetContractUri =
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link stakeContractAbi}__ and `functionName` set to `"setRewardRatio"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xf15d93c3617525054af05338cc6ccf18886bd03a)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
  */
 export const useWriteStakeContractSetRewardRatio =
   /*#__PURE__*/ createUseWriteContract({
@@ -4557,7 +4777,8 @@ export const useWriteStakeContractSetRewardRatio =
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link stakeContractAbi}__ and `functionName` set to `"setTimeUnit"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xf15d93c3617525054af05338cc6ccf18886bd03a)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
  */
 export const useWriteStakeContractSetTimeUnit =
   /*#__PURE__*/ createUseWriteContract({
@@ -4569,7 +4790,8 @@ export const useWriteStakeContractSetTimeUnit =
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link stakeContractAbi}__ and `functionName` set to `"stake"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xf15d93c3617525054af05338cc6ccf18886bd03a)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
  */
 export const useWriteStakeContractStake = /*#__PURE__*/ createUseWriteContract({
   abi: stakeContractAbi,
@@ -4580,7 +4802,8 @@ export const useWriteStakeContractStake = /*#__PURE__*/ createUseWriteContract({
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link stakeContractAbi}__ and `functionName` set to `"withdraw"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xf15d93c3617525054af05338cc6ccf18886bd03a)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
  */
 export const useWriteStakeContractWithdraw =
   /*#__PURE__*/ createUseWriteContract({
@@ -4592,7 +4815,8 @@ export const useWriteStakeContractWithdraw =
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link stakeContractAbi}__ and `functionName` set to `"withdrawRewardTokens"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xf15d93c3617525054af05338cc6ccf18886bd03a)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
  */
 export const useWriteStakeContractWithdrawRewardTokens =
   /*#__PURE__*/ createUseWriteContract({
@@ -4604,7 +4828,8 @@ export const useWriteStakeContractWithdrawRewardTokens =
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link stakeContractAbi}__
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xf15d93c3617525054af05338cc6ccf18886bd03a)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
  */
 export const useSimulateStakeContract = /*#__PURE__*/ createUseSimulateContract(
   { abi: stakeContractAbi, address: stakeContractAddress },
@@ -4613,7 +4838,8 @@ export const useSimulateStakeContract = /*#__PURE__*/ createUseSimulateContract(
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link stakeContractAbi}__ and `functionName` set to `"claimRewards"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xf15d93c3617525054af05338cc6ccf18886bd03a)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
  */
 export const useSimulateStakeContractClaimRewards =
   /*#__PURE__*/ createUseSimulateContract({
@@ -4625,7 +4851,8 @@ export const useSimulateStakeContractClaimRewards =
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link stakeContractAbi}__ and `functionName` set to `"depositRewardTokens"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xf15d93c3617525054af05338cc6ccf18886bd03a)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
  */
 export const useSimulateStakeContractDepositRewardTokens =
   /*#__PURE__*/ createUseSimulateContract({
@@ -4637,7 +4864,8 @@ export const useSimulateStakeContractDepositRewardTokens =
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link stakeContractAbi}__ and `functionName` set to `"grantRole"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xf15d93c3617525054af05338cc6ccf18886bd03a)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
  */
 export const useSimulateStakeContractGrantRole =
   /*#__PURE__*/ createUseSimulateContract({
@@ -4649,7 +4877,8 @@ export const useSimulateStakeContractGrantRole =
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link stakeContractAbi}__ and `functionName` set to `"initialize"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xf15d93c3617525054af05338cc6ccf18886bd03a)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
  */
 export const useSimulateStakeContractInitialize =
   /*#__PURE__*/ createUseSimulateContract({
@@ -4661,7 +4890,8 @@ export const useSimulateStakeContractInitialize =
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link stakeContractAbi}__ and `functionName` set to `"multicall"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xf15d93c3617525054af05338cc6ccf18886bd03a)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
  */
 export const useSimulateStakeContractMulticall =
   /*#__PURE__*/ createUseSimulateContract({
@@ -4673,7 +4903,8 @@ export const useSimulateStakeContractMulticall =
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link stakeContractAbi}__ and `functionName` set to `"renounceRole"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xf15d93c3617525054af05338cc6ccf18886bd03a)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
  */
 export const useSimulateStakeContractRenounceRole =
   /*#__PURE__*/ createUseSimulateContract({
@@ -4685,7 +4916,8 @@ export const useSimulateStakeContractRenounceRole =
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link stakeContractAbi}__ and `functionName` set to `"revokeRole"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xf15d93c3617525054af05338cc6ccf18886bd03a)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
  */
 export const useSimulateStakeContractRevokeRole =
   /*#__PURE__*/ createUseSimulateContract({
@@ -4697,7 +4929,8 @@ export const useSimulateStakeContractRevokeRole =
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link stakeContractAbi}__ and `functionName` set to `"setContractURI"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xf15d93c3617525054af05338cc6ccf18886bd03a)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
  */
 export const useSimulateStakeContractSetContractUri =
   /*#__PURE__*/ createUseSimulateContract({
@@ -4709,7 +4942,8 @@ export const useSimulateStakeContractSetContractUri =
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link stakeContractAbi}__ and `functionName` set to `"setRewardRatio"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xf15d93c3617525054af05338cc6ccf18886bd03a)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
  */
 export const useSimulateStakeContractSetRewardRatio =
   /*#__PURE__*/ createUseSimulateContract({
@@ -4721,7 +4955,8 @@ export const useSimulateStakeContractSetRewardRatio =
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link stakeContractAbi}__ and `functionName` set to `"setTimeUnit"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xf15d93c3617525054af05338cc6ccf18886bd03a)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
  */
 export const useSimulateStakeContractSetTimeUnit =
   /*#__PURE__*/ createUseSimulateContract({
@@ -4733,7 +4968,8 @@ export const useSimulateStakeContractSetTimeUnit =
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link stakeContractAbi}__ and `functionName` set to `"stake"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xf15d93c3617525054af05338cc6ccf18886bd03a)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
  */
 export const useSimulateStakeContractStake =
   /*#__PURE__*/ createUseSimulateContract({
@@ -4745,7 +4981,8 @@ export const useSimulateStakeContractStake =
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link stakeContractAbi}__ and `functionName` set to `"withdraw"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xf15d93c3617525054af05338cc6ccf18886bd03a)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
  */
 export const useSimulateStakeContractWithdraw =
   /*#__PURE__*/ createUseSimulateContract({
@@ -4757,7 +4994,8 @@ export const useSimulateStakeContractWithdraw =
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link stakeContractAbi}__ and `functionName` set to `"withdrawRewardTokens"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xf15d93c3617525054af05338cc6ccf18886bd03a)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
  */
 export const useSimulateStakeContractWithdrawRewardTokens =
   /*#__PURE__*/ createUseSimulateContract({
@@ -4769,7 +5007,8 @@ export const useSimulateStakeContractWithdrawRewardTokens =
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link stakeContractAbi}__
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xf15d93c3617525054af05338cc6ccf18886bd03a)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
  */
 export const useWatchStakeContractEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
@@ -4780,7 +5019,8 @@ export const useWatchStakeContractEvent =
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link stakeContractAbi}__ and `eventName` set to `"ContractURIUpdated"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xf15d93c3617525054af05338cc6ccf18886bd03a)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
  */
 export const useWatchStakeContractContractUriUpdatedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
@@ -4792,7 +5032,8 @@ export const useWatchStakeContractContractUriUpdatedEvent =
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link stakeContractAbi}__ and `eventName` set to `"Initialized"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xf15d93c3617525054af05338cc6ccf18886bd03a)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
  */
 export const useWatchStakeContractInitializedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
@@ -4804,7 +5045,8 @@ export const useWatchStakeContractInitializedEvent =
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link stakeContractAbi}__ and `eventName` set to `"RewardTokensDepositedByAdmin"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xf15d93c3617525054af05338cc6ccf18886bd03a)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
  */
 export const useWatchStakeContractRewardTokensDepositedByAdminEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
@@ -4816,7 +5058,8 @@ export const useWatchStakeContractRewardTokensDepositedByAdminEvent =
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link stakeContractAbi}__ and `eventName` set to `"RewardTokensWithdrawnByAdmin"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xf15d93c3617525054af05338cc6ccf18886bd03a)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
  */
 export const useWatchStakeContractRewardTokensWithdrawnByAdminEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
@@ -4828,7 +5071,8 @@ export const useWatchStakeContractRewardTokensWithdrawnByAdminEvent =
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link stakeContractAbi}__ and `eventName` set to `"RewardsClaimed"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xf15d93c3617525054af05338cc6ccf18886bd03a)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
  */
 export const useWatchStakeContractRewardsClaimedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
@@ -4840,7 +5084,8 @@ export const useWatchStakeContractRewardsClaimedEvent =
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link stakeContractAbi}__ and `eventName` set to `"RoleAdminChanged"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xf15d93c3617525054af05338cc6ccf18886bd03a)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
  */
 export const useWatchStakeContractRoleAdminChangedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
@@ -4852,7 +5097,8 @@ export const useWatchStakeContractRoleAdminChangedEvent =
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link stakeContractAbi}__ and `eventName` set to `"RoleGranted"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xf15d93c3617525054af05338cc6ccf18886bd03a)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
  */
 export const useWatchStakeContractRoleGrantedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
@@ -4864,7 +5110,8 @@ export const useWatchStakeContractRoleGrantedEvent =
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link stakeContractAbi}__ and `eventName` set to `"RoleRevoked"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xf15d93c3617525054af05338cc6ccf18886bd03a)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
  */
 export const useWatchStakeContractRoleRevokedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
@@ -4876,7 +5123,8 @@ export const useWatchStakeContractRoleRevokedEvent =
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link stakeContractAbi}__ and `eventName` set to `"TokensStaked"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xf15d93c3617525054af05338cc6ccf18886bd03a)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
  */
 export const useWatchStakeContractTokensStakedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
@@ -4888,7 +5136,8 @@ export const useWatchStakeContractTokensStakedEvent =
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link stakeContractAbi}__ and `eventName` set to `"TokensWithdrawn"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xf15d93c3617525054af05338cc6ccf18886bd03a)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
  */
 export const useWatchStakeContractTokensWithdrawnEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
@@ -4900,7 +5149,8 @@ export const useWatchStakeContractTokensWithdrawnEvent =
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link stakeContractAbi}__ and `eventName` set to `"UpdatedMinStakeAmount"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xf15d93c3617525054af05338cc6ccf18886bd03a)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
  */
 export const useWatchStakeContractUpdatedMinStakeAmountEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
@@ -4912,7 +5162,8 @@ export const useWatchStakeContractUpdatedMinStakeAmountEvent =
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link stakeContractAbi}__ and `eventName` set to `"UpdatedRewardRatio"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xf15d93c3617525054af05338cc6ccf18886bd03a)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
  */
 export const useWatchStakeContractUpdatedRewardRatioEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
@@ -4924,7 +5175,8 @@ export const useWatchStakeContractUpdatedRewardRatioEvent =
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link stakeContractAbi}__ and `eventName` set to `"UpdatedTimeUnit"`
  *
- * [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xf15d93c3617525054af05338cc6ccf18886bd03a)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xEA6fBFDb8c846323f56cd819350fB63f1D8aFdce)
  */
 export const useWatchStakeContractUpdatedTimeUnitEvent =
   /*#__PURE__*/ createUseWatchContractEvent({

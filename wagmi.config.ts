@@ -2,8 +2,11 @@ import { defineConfig } from '@wagmi/cli'
 import { etherscan, react } from '@wagmi/cli/plugins'
 import { erc20Abi } from 'viem'
 import { baseSepolia } from 'wagmi/chains'
-import {chainId} from "@/app/providers";
+//import {chainId} from "@/app/providers";
 import {base} from "viem/chains";
+
+export const chainId = Number("process.env.NEXT_PUBLIC_CHAIN_ID") == 8453 ? 8453 : 84532;
+
 
 export default defineConfig({
   out: 'src/generated.ts',
