@@ -1,3 +1,18 @@
+.background-image {
+  background-size: cover;
+  background-position: bottom center; // This ensures the image starts from the bottom
+  background-attachment: fixed;
+  background-image: url("../assets/images/bg-landscape.png");
+}
+
+@media (max-width: 770px) {
+  .background-image {
+    background-attachment: fixed;
+  }
+}
+
+// Original code (commented out)
+/*
   .background-image {
     background-size: cover;
     background-position: 50%;
@@ -7,4 +22,5 @@
     .background-image {
       background-image: url("../assets/images/bg-landscape.png");
     }
-}
+  }
+*/
