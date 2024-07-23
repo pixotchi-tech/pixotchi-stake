@@ -100,9 +100,9 @@ export function StakeComponent() {
     }
   };
 
-  const handleDisconnect = async () => {
+  const handleDisconnect = () => {
     disconnect();
-    await logout();
+    logout();
   };
 
   return (
