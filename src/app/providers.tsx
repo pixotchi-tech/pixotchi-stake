@@ -64,6 +64,15 @@ export default function Providers({children}: {children: React.ReactNode}) {
         ...privyConfig,
         defaultChain: ChainOverride,
         supportedChains: [ChainOverride],
+        embeddedWallets: {
+          createOnLogin: 'users-without-wallets'
+        },
+        externalWallets: {
+          coinbaseWallet: {
+            // Valid connection options include 'eoaOnly' (default), 'smartWalletOnly', or 'all'
+            connectionOptions: 'smartWalletOnly',
+          },
+        },
       }}
     >
       <QueryClientProvider client={queryClient}>
