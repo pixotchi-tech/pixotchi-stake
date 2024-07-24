@@ -22,12 +22,16 @@ export const AlertComponent: React.FC<AlertComponentProps> = ({
 
   return (
     <div className="mb-4">
+      <Alert variant="destructive" side="right">
+        {/* <ExclamationTriangleIcon className="h-4 w-4" />*/}
+        {/*  <AlertTitle>Error</AlertTitle> */}
+        <AlertDescription>{error}</AlertDescription>
+      </Alert>
       {error && (
         <Alert variant="destructive" side="right">
-         {/* <ExclamationTriangleIcon className="h-4 w-4" />*/}
-         <AlertDescription>{error}</AlertDescription>
-          {/*  <AlertTitle>Error</AlertTitle>
-          <AlertDescription>{error}</AlertDescription>*/}
+          {/* <ExclamationTriangleIcon className="h-4 w-4" />*/}
+          {/*  <AlertTitle>Error</AlertTitle> */}
+          <AlertDescription>{error}</AlertDescription>
         </Alert>
       )}
       {successMessage && (

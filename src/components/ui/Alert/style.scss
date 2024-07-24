@@ -1,11 +1,12 @@
 .alert-wrapper {
-  border-image-slice: 2;
-  border-image-width: 1;
+  border-image-slice: 4;
+  border-image-width: 2;
   border-image-outset: 0;
-  border-image-source: var(--pixel-borders-image-1-default-color-normal);
+  border-image-source: var(--pixel-borders-image-2-default-color-normal);
 
   &.destructive {
-    border-image-source: var(--pixel-borders-image-1-error-color-normal);
+    border-color: hsl(var(--destructive));
+    border-image-source: var(--pixel-borders-image-2-error-color-normal);
   }
 
 }

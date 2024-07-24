@@ -7,7 +7,7 @@ import { cn } from '@/lib/utils';
 import './style.scss';
 
 const buttonVariants = cva(
-  `relative select-none m-0 text-center align-middle border-solid border-4 inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-colors
+  `nesui-rounded-border relative select-none m-0 text-center align-middle border-solid border-4 inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-colors
     after:absolute after:top-[-4px] after:right-[-4px] after:bottom-[-4px] after:left-[-4px]
     focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed`,
   {
