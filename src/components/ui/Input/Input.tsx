@@ -10,7 +10,7 @@ export interface InputProps
 }
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ className, type, error = 'error', ...props }, ref) => {
+  ({ className, type, error, ...props }, ref) => {
     return (
       <div className="w-full flex flex-col items-start relative">
         <div
