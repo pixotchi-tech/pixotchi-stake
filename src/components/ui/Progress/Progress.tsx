@@ -61,3 +61,7 @@ const Progress = React.forwardRef<
 Progress.displayName = ProgressPrimitive.Root.displayName;
 
 export { Progress };
+
+
+// example how to use
+//  <Progress value={30} color='secondary'/>

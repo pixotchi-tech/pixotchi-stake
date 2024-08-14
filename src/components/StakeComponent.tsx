@@ -1,9 +1,8 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useAccount, useDisconnect } from 'wagmi';
 import { usePrivy } from '@privy-io/react-auth';
 import { Header } from './stake/header';
-import { Footer } from './stake/footer';
 import { StakeCard } from './stake/stake-card';
 import { ClaimCard } from './stake/claim-card';
 import { StakingInfoCard } from './stake/staking-info-card';
