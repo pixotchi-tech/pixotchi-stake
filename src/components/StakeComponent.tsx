@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
-import { useAccount, useDisconnect } from 'wagmi';
+import { useAccount, useChainId, useDisconnect } from 'wagmi';
 import { usePrivy } from '@privy-io/react-auth';
 import { Header } from './stake/header';
 import { Footer } from './stake/footer';
@@ -27,6 +27,8 @@ export function StakeComponent() {
   const { address, isConnected } = useAccount();
   const { disconnect } = useDisconnect();
   const { login, logout, connectWallet, authenticated, user } = usePrivy();
+  const chainId = useChainId();
+
   const {
     seedAllowance,
     seedBalance,
@@ -117,36 +119,41 @@ export function StakeComponent() {
         <AlertComponent error={error} successMessage={successMessage} />
         <div className="container mx-auto grid max-w-4xl grid-cols-1 gap-8 md:grid-cols-2">
           <StakeCard
+            address={address as `0x${string}`}
             stakeAmount={stakeAmount}
             setStakeAmount={setStakeAmount}
-            isConnected={isConnected}
             seedBalance={seedBalance}
             seedAllowance={seedAllowance}
+            onStakeSuccess={() => setSuccessMessage('Staking successful!')}
+            onStakeError={setError}
+            onMaxStake={() => setStakeAmount(formatBalanceWithTwoDecimals(seedBalance))}
+            onRemoveAllowance={() => stakingApproveMutation.mutate({ amount: '0' })}
+            isConnected={isConnected}
             isApproving={stakingApproveMutation.isPending}
             isStaking={stakingStakeMutation.isPending}
             onStake={handleStake}
-            onMaxStake={() =>
-              setStakeAmount(formatBalanceWithTwoDecimals(seedBalance))
-            }
-            onRemoveAllowance={() =>
-              stakingApproveMutation.mutate({ amount: '0' })
-            }
           />
           <StakeWithdraw
+            address={address as `0x${string}`}
             withdrawAmount={withdrawAmount}
             setWithdrawAmount={setWithdrawAmount}
             isConnected={isConnected}
             stakedBalance={stakedBalance}
-            isWithdrawing={stakingWithdrawMutation.isPending}
-            onWithdraw={handleWithdraw}
+            onWithdrawSuccess={() => setSuccessMessage('Withdrawal successful!')}
+            onWithdrawError={setError}
             onMaxWithdraw={() =>
               setWithdrawAmount(formatBalanceWithTwoDecimals(stakedBalance))
             }
+            isWithdrawing={stakingWithdrawMutation.isPending}
+            onWithdraw={handleWithdraw}
           />
           <ClaimCard
+            address={address as `0x${string}`}
             isConnected={isConnected}
             leafBalance={leafBalance}
             leafClaimable={claimableRewards}
+            onClaimSuccess={() => setSuccessMessage('Claim successful!')}
+            onClaimError={setError}
             onClaim={handleClaim}
             isClaiming={stakingClaimMutation.isPending}
           />

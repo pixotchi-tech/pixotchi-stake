@@ -2,8 +2,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { cn } from "@/lib/utils";
-import Providers from "./providers";
 import localFont from 'next/font/local';
+import { Providers } from "./providers";
+// import Providers from "./providers";
 
 
 const pixelMix = localFont({ src: './../../public/fonts/pixelmix.ttf',

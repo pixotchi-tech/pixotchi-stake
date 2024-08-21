@@ -21,12 +21,7 @@ export const AlertComponent: React.FC<AlertComponentProps> = ({
   if (!error && !successMessage) return null;
 
   return (
-    <div className="mb-4">
-      <Alert variant="destructive" side="right">
-        {/* <ExclamationTriangleIcon className="h-4 w-4" />*/}
-        {/*  <AlertTitle>Error</AlertTitle> */}
-        <AlertDescription>{error}</AlertDescription>
-      </Alert>
+    <div className="mb-4 w-full lg:max-w-[900px] mx-auto">
       {error && (
         <Alert variant="destructive" side="right">
           {/* <ExclamationTriangleIcon className="h-4 w-4" />*/}

@@ -1,6 +1,6 @@
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
-
+import { useChainId } from 'wagmi';
 import {
   Card,
   CardContent,
@@ -11,44 +11,78 @@ import {
 import { Button, Input, Label } from '@/components/ui';
 import { formatBalanceWithTwoDecimals } from '@/lib/utils';
 import seedLogo from '../../assets/images/seed-logo.webp';
+import type { TransactionError } from '@coinbase/onchainkit/transaction';
+import TransactionWrapperWithdraw from '../onchainkit/TransactionWrapperWithdraw';
+import { usePrivy, useWallets } from '@privy-io/react-auth';
 
 interface StakeWithdrawProps {
+  address: `0x${string}`;
   withdrawAmount: string;
   setWithdrawAmount: (amount: string) => void;
+  isConnected: boolean;
   stakedBalance: bigint | undefined;
+  onWithdrawSuccess: () => void;
+  onWithdrawError: (error: string) => void;
+  onMaxWithdraw: () => void;
+
+  //EOA accounts
   isWithdrawing: boolean;
   onWithdraw: () => void;
-  onMaxWithdraw: () => void;
-  isConnected: boolean;
 }
 
 export function StakeWithdraw({
+  address,
   withdrawAmount,
   setWithdrawAmount,
+  isConnected,
   stakedBalance,
+  onWithdrawSuccess,
+  onWithdrawError,
+  onMaxWithdraw,
   isWithdrawing,
   onWithdraw,
-  onMaxWithdraw,
-  isConnected,
 }: StakeWithdrawProps) {
+  const chainId = useChainId();
+  console.log('chainId:', chainId);
+  const { user } = usePrivy();
+  console.log('user:', user);
+  const { wallets } = useWallets();
+
+  const [isSmartWallet, setIsSmartWallet] = useState(false);
+
   useEffect(() => {
-    if (stakedBalance) {
-      setWithdrawAmount(formatBalanceWithTwoDecimals(stakedBalance));
+    if (address && wallets) {
+      const currentWallet = wallets.find(wallet => wallet.address.toLowerCase() === address.toLowerCase());
+      setIsSmartWallet(currentWallet?.connectorType === 'coinbase_wallet');
     }
-  }, [stakedBalance, setWithdrawAmount]);
+  }, [address, wallets]);
+
+  console.log('isSmartWallet:', isSmartWallet);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value.replace(/[^0-9.]/g, '');
     setWithdrawAmount(value);
   };
 
+  const handleWithdrawSuccess = () => {
+    setWithdrawAmount('');
+    onWithdrawSuccess();
+  };
+
+  const handleWithdrawError = (error: TransactionError) => {
+    console.error('Withdrawal error:', error);
+    onWithdrawError('Failed to withdraw. Please try again.');
+  };
+
   const formattedStakedBalance = formatBalanceWithTwoDecimals(stakedBalance);
 
   return (
-    <Card className="flex flex-col h-full">
+    <Card className='h-full'>
       <CardHeader>
         <CardTitle>Withdraw SEED</CardTitle>
-        <CardDescription>Withdraw your staked SEED tokens</CardDescription>
+        <CardDescription>
+          Withdraw your staked SEED tokens <br /> from the staking contract.
+        </CardDescription>
       </CardHeader>
       <CardContent className="flex-grow flex flex-col justify-between">
         <div className="space-y-4">
@@ -62,7 +96,7 @@ export function StakeWithdraw({
                 onChange={handleInputChange}
                 disabled={!isConnected}
               />
-              <Image src={seedLogo} alt="logo" width={32} height={32} />
+              <Image src={seedLogo} alt="Seed logo" width={32} height={32} />
               <Button
                 className="min-w-[64px]"
                 onClick={onMaxWithdraw}
@@ -72,18 +106,38 @@ export function StakeWithdraw({
               </Button>
             </div>
           </div>
-          <div className="flex justify-between text-sm">
-            <span>Staked Balance: {formattedStakedBalance} SEED</span>
+          <div className="flex flex-col items-start text-sm gap-2">
+            <span>Staked Balance: </span>
+            <span className='-mt-2'>{formattedStakedBalance} SEED</span>
           </div>
         </div>
-        <Button
-          className="w-[150px]"
-          wrapperClassName="mt-4 mx-auto"
-          onClick={onWithdraw}
-          disabled={isWithdrawing || !isConnected}
-        >
-          {isWithdrawing ? 'Withdrawing...' : 'Withdraw'}
-        </Button>
+        {isConnected && (
+          <div className='max-w-fit mx-auto mt-8'>
+            { isSmartWallet ?
+              <TransactionWrapperWithdraw
+                address={address}
+                amount={withdrawAmount}
+                seedTokenAddress={process.env.NEXT_PUBLIC_SEED_TOKEN as `0x${string}`}
+                stakeContractAddress={process.env.NEXT_PUBLIC_STAKING_CONTRACT as `0x${string}`}
+                seedAllowance={0n} // Not needed for withdraw
+                onSuccess={handleWithdrawSuccess}
+                onError={handleWithdrawError}
+                chainId={chainId}
+              />
+              :
+              <Button
+                className="w-[150px]"
+                wrapperClassName="mt-4 mx-auto"
+                onClick={onWithdraw}
+                disabled={isWithdrawing || !isConnected}
+              >
+                {isWithdrawing ? 'Withdrawing...' : 'Withdraw'}
+              </Button>
+            }
+          </div>
+
+
+        )}
       </CardContent>
     </Card>
   );
