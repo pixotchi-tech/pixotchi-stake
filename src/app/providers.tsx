@@ -116,7 +116,7 @@ const chain = extractChain({
 
 const ChainOverride = addRpcUrlOverrideToChain(base, process.env.NEXT_PUBLIC_RPC_SERVER!);
 
-const rpcOverride = addRpcUrlOverrideToChain(baseSepolia, process.env.NEXT_PUBLIC_RPC_SERVER || "");
+const rpcOverride = addRpcUrlOverrideToChain(base, process.env.NEXT_PUBLIC_RPC_SERVER || "");
 
 
 
