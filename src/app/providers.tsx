@@ -99,23 +99,46 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { WagmiProvider } from '@privy-io/wagmi';
 import { PrivyClientConfig, PrivyProvider } from '@privy-io/react-auth';
 import { useRouter } from "next/navigation";
-import { http } from 'wagmi';
+import {http, webSocket} from 'wagmi';
 import {createConfig} from '@privy-io/wagmi';
 import { OnchainKitProvider } from '@coinbase/onchainkit';
+import {extractChain, fallback} from 'viem'
 
 
 import {addRpcUrlOverrideToChain} from '@privy-io/react-auth';
 
+export const chainId = 8453;//= Number("process.env.NEXT_PUBLIC_CHAIN_ID") == 8453 ? 8453 : 84532;
+
+const chain = extractChain({
+  chains: [base],
+  id: chainId,
+})
+
+const ChainOverride = addRpcUrlOverrideToChain(base, process.env.NEXT_PUBLIC_RPC_SERVER!);
+
 const rpcOverride = addRpcUrlOverrideToChain(baseSepolia, process.env.NEXT_PUBLIC_RPC_SERVER || "");
 
-export const wagmiConfig = createConfig({
-  chains: [mainnet, base, baseSepolia],
+
+
+export const wagmiPrivyConfig = createConfig({ // this needs testing
+  chains: [ChainOverride],
   transports: {
-    [mainnet.id]: http(),
-    [baseSepolia.id]: http(),
-    [base.id]: http(),
+    [ChainOverride.id]: fallback([
+      webSocket(process.env.NEXT_PUBLIC_RPC_SERVER_WS, {reconnect: true, retryCount: 100}),
+      http(process.env.NEXT_PUBLIC_RPC_SERVER, {batch: true}),
+    ])
   },
 });
+
+// export const wagmiConfig = createConfig({ // this needs testing
+//   chains: [base],
+//   transports: {
+//     [base.id]: fallback([
+//       webSocket(process.env.NEXT_PUBLIC_RPC_SERVER_WS, {reconnect: true, retryCount: 100}),
+//       http(process.env.NEXT_PUBLIC_RPC_SERVER, {batch: true}),
+//     ])
+//   },
+// });
 
 const privyConfig: PrivyClientConfig = {
   embeddedWallets: {
@@ -129,7 +152,7 @@ const privyConfig: PrivyClientConfig = {
     showWalletLoginFirst: true,
     walletList: [ 'coinbase_wallet', 'metamask', 'rainbow', 'detected_wallets'],
     accentColor: "#2A3D55",
-    logo : "/favicon.ico"
+    logo : "/icons/logo.png"
   },
   externalWallets: {
     coinbaseWallet: {
@@ -150,16 +173,16 @@ export function Providers({ children }: { children: React.ReactNode }) {
       onSuccess={() => router.push("/")}
       config={{
         ...privyConfig,
-        defaultChain: baseSepolia,
-        supportedChains: [rpcOverride,],
+        defaultChain: ChainOverride,
+        supportedChains: [ChainOverride],
       }}
 
     >
       <QueryClientProvider client={queryClient}>
-        <WagmiProvider config={wagmiConfig} reconnectOnMount={false}>
+        <WagmiProvider config={wagmiPrivyConfig} reconnectOnMount={false}>
           <OnchainKitProvider
             apiKey={process.env.NEXT_PUBLIC_CDP_API_KEY || ""}
-            chain={rpcOverride}
+            chain={ChainOverride}
           >
           {children}
           </OnchainKitProvider>

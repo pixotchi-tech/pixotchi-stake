@@ -10,7 +10,7 @@ import {
   seedTokenConfig,
   stakeContractConfig,
 } from "@/generated";
-import {wagmiConfig} from "@/app/providers";
+import {wagmiPrivyConfig} from "@/app/providers";
 
 export function useStakingMutations() {
   const queryClient = useQueryClient();
@@ -50,7 +50,7 @@ export function useStakingMutations() {
         address: SEED_TOKEN_ADDRESS,
         args: [STAKING_CONTRACT_ADDRESS, parsedAmount],
       });
-      await waitForTransactionReceipt(wagmiConfig, { hash: tx });
+      await waitForTransactionReceipt(wagmiPrivyConfig, { hash: tx });
       return tx;
     },
     onSuccess: _stakingInvalidateQueries,
@@ -66,7 +66,7 @@ export function useStakingMutations() {
       const tx = await stakeTokens({
         args: [parsedAmount],
       });
-      await waitForTransactionReceipt(wagmiConfig, { hash: tx });
+      await waitForTransactionReceipt(wagmiPrivyConfig, { hash: tx });
       return tx;
     },
     onSuccess: _stakingInvalidateQueries,
@@ -86,7 +86,7 @@ export function useStakingMutations() {
       const tx = await withdrawTokens({
         args: [parsedAmount],
       });
-      await waitForTransactionReceipt(wagmiConfig, { hash: tx });
+      await waitForTransactionReceipt(wagmiPrivyConfig, { hash: tx });
       return tx;
     },
     onSuccess: _stakingInvalidateQueries,
@@ -95,7 +95,7 @@ export function useStakingMutations() {
   const stakingClaimMutation = useMutation({
     mutationFn: async () => {
       const tx = await claimRewards({});
-      await waitForTransactionReceipt(wagmiConfig, { hash: tx });
+      await waitForTransactionReceipt(wagmiPrivyConfig, { hash: tx });
       return tx;
     },
     onSuccess: _stakingInvalidateQueries,
