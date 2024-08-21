@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-
 import {
   Card,
   CardContent,
@@ -11,54 +10,81 @@ import {
 import { Button, Input, Label } from '@/components/ui';
 import { formatBalanceWithTwoDecimals } from '@/lib/utils';
 import seedLogo from '../../assets/images/seed-logo.webp';
+import type { TransactionError } from '@coinbase/onchainkit/transaction';
+import TransactionWrapperStake from '../onchainkit/TransactionWrapperStake';
+import { useChainId } from 'wagmi';
+import { useWallets } from '@privy-io/react-auth';
 
 interface StakeCardProps {
+  address: `0x${string}`;
   stakeAmount: string;
   setStakeAmount: (amount: string) => void;
   seedBalance: bigint | undefined;
   seedAllowance: bigint | undefined;
-  isApproving: boolean;
-  isStaking: boolean;
-  onStake: () => void;
+  onStakeSuccess: () => void;
+  onStakeError: (error: string) => void;
   onMaxStake: () => void;
   onRemoveAllowance: () => void;
   isConnected: boolean;
+
+  //EOA accounts
+  isApproving: boolean;
+  isStaking: boolean;
+  onStake: () => void;
 }
 
 export function StakeCard({
+  address,
   stakeAmount,
   setStakeAmount,
   seedBalance,
   seedAllowance,
-  isApproving,
-  isStaking,
-  onStake,
+  onStakeSuccess,
+  onStakeError,
   onMaxStake,
   onRemoveAllowance,
   isConnected,
+  isApproving,
+  isStaking,
+  onStake,
 }: StakeCardProps) {
   const [showRemoveAllowance, setShowRemoveAllowance] = useState(false);
+  const chainId = useChainId();
+  const { wallets } = useWallets();
+
+  const [isSmartWallet, setIsSmartWallet] = useState(false);
 
   useEffect(() => {
-    setShowRemoveAllowance(Boolean(seedAllowance && seedAllowance > 0));
-  }, [seedAllowance]);
-
-  useEffect(() => {
-    if (seedBalance) {
-      setStakeAmount(formatBalanceWithTwoDecimals(seedBalance));
+    if (address && wallets) {
+      const currentWallet = wallets.find(wallet => wallet.address.toLowerCase() === address.toLowerCase());
+      setIsSmartWallet(currentWallet?.connectorType === 'coinbase_wallet');
     }
-  }, [seedBalance, setStakeAmount]);
+  }, [address, wallets]);
+
+  useEffect(() => {
+    setShowRemoveAllowance(Boolean(seedAllowance && seedAllowance > 0n));
+  }, [seedAllowance]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value.replace(/[^0-9.]/g, '');
     setStakeAmount(value);
   };
 
+  const handleStakeSuccess = () => {
+    setStakeAmount('');
+    onStakeSuccess();
+  };
+
+  const handleStakeError = (error: TransactionError) => {
+    console.error('Staking error:', error);
+    onStakeError('Failed to stake. Please try again.');
+  };
+
   const formattedBalance = formatBalanceWithTwoDecimals(seedBalance);
   const formattedAllowance = formatBalanceWithTwoDecimals(seedAllowance);
-
+console.log("STAKE CARD", seedBalance, seedAllowance);
   return (
-    <Card>
+    <Card className='h-full'>
       <CardHeader>
         <CardTitle>Stake SEED</CardTitle>
         <CardDescription>
@@ -102,7 +128,21 @@ export function StakeCard({
             </span>
           </div>
         </div>
-        <Button
+        {isConnected && (
+          <div className='max-w-fit mx-auto mt-8'>
+          { isSmartWallet ?
+          <TransactionWrapperStake
+            address={address}
+            amount={stakeAmount}
+            chainId={chainId}
+            seedTokenAddress={process.env.NEXT_PUBLIC_SEED_TOKEN as `0x${string}`}
+            stakeContractAddress={process.env.NEXT_PUBLIC_STAKING_CONTRACT as `0x${string}`}
+            seedAllowance={seedAllowance || 0n}
+            onSuccess={handleStakeSuccess}
+            onError={handleStakeError}
+          />
+          :
+          <Button
           className="w-[150px]"
           wrapperClassName="mt-4 mx-auto"
           onClick={onStake}
@@ -110,6 +150,9 @@ export function StakeCard({
         >
           {isApproving ? 'Approving...' : isStaking ? 'Staking...' : 'Stake'}
         </Button>
+}
+          </div>
+        )}
       </CardContent>
     </Card>
   );

@@ -1,5 +1,4 @@
-import Image from 'next/image';
-
+import { useChainId } from 'wagmi';
 import {
   Card,
   CardContent,
@@ -7,28 +6,64 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/Card/Card';
-import { Button } from '@/components/ui';
 import { formatBalanceWithTwoDecimals } from '@/lib/utils';
-import { useWriteStakeContractClaimRewards } from '@/generated';
+import type { TransactionError } from '@coinbase/onchainkit/transaction';
+import TransactionWrapperClaim from '../onchainkit/TransactionWrapperClaim';
+import Image from 'next/image';
 import leafLogo from '../../assets/images/leaf-logo.webp';
+import { Button } from '../ui/Button/Button';
+import { usePrivy, useWallets } from '@privy-io/react-auth';
+import { useEffect, useState } from 'react';
+import { useWriteStakeContractClaimRewards } from '@/generated';
 
 interface ClaimCardProps {
+  address: `0x${string}`;
+  isConnected: boolean;
   leafBalance: bigint | undefined;
   leafClaimable: bigint | undefined;
+  onClaimSuccess: () => void;
+  onClaimError: (error: string) => void;
+
+  //EOA accounts
   onClaim?: () => void;
   isClaiming?: boolean;
-  isConnected: boolean;
 }
 
 export function ClaimCard({
+  address,
+  isConnected,
   leafBalance,
   leafClaimable,
+  onClaimSuccess,
+  onClaimError,
   onClaim,
-  isClaiming = false,
-  isConnected,
+  isClaiming,
 }: ClaimCardProps) {
-  const { writeContractAsync: claimRewards } =
-    useWriteStakeContractClaimRewards();
+  const chainId = useChainId();
+  const { user } = usePrivy();
+  const { wallets } = useWallets();
+
+  const [isSmartWallet, setIsSmartWallet] = useState(false);
+
+  useEffect(() => {
+    if (address && wallets) {
+      const currentWallet = wallets.find(wallet => wallet.address.toLowerCase() === address.toLowerCase());
+      setIsSmartWallet(currentWallet?.connectorType === 'coinbase_wallet');
+    }
+  }, [address, wallets]);
+
+  const handleClaimSuccess = () => {
+    onClaimSuccess();
+  };
+
+  const handleClaimError = (error: TransactionError) => {
+    console.error('Claim error:', error);
+    onClaimError('Failed to claim rewards. Please try again.');
+  };
+
+  //EOA accounts
+
+  const { writeContractAsync: claimRewards } = useWriteStakeContractClaimRewards();
 
   const handleClaim = async () => {
     if (onClaim) {
@@ -65,14 +100,31 @@ export function ClaimCard({
             <p className="text-xs text-muted-foreground">Balance</p>
           </div>
         </div>
-        <Button
-          className="w-[150px]"
-          wrapperClassName="mx-auto mt-8"
-          onClick={handleClaim}
-          disabled={leafClaimable === BigInt(0) || isClaiming || !isConnected}
-        >
-          {isClaiming ? 'Claiming...' : 'Claim Rewards'}
-        </Button>
+        {isConnected && (
+          <div className='max-w-fit mx-auto mt-8'>
+          { isSmartWallet ?
+            <TransactionWrapperClaim
+              address={address}
+              amount="0" // Not needed for claim
+              seedTokenAddress={process.env.NEXT_PUBLIC_SEED_TOKEN as `0x${string}`}
+              stakeContractAddress={process.env.NEXT_PUBLIC_STAKING_CONTRACT as `0x${string}`}
+              seedAllowance={0n} // Not needed for claim
+              onSuccess={handleClaimSuccess}
+              onError={handleClaimError}
+              chainId={chainId}
+            />
+            :
+            <Button
+              className="w-[150px]"
+              wrapperClassName="mx-auto mt-8"
+              onClick={handleClaim}
+              disabled={leafClaimable === BigInt(0) || isClaiming || !isConnected}
+              >
+              {isClaiming ? 'Claiming...' : 'Claim Rewards'}
+            </Button>
+          }
+          </div>
+        )}
       </CardContent>
     </Card>
   );
