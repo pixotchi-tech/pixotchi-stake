@@ -43,9 +43,9 @@ export function StakeWithdraw({
   onWithdraw,
 }: StakeWithdrawProps) {
   const chainId = useChainId();
-  console.log('chainId:', chainId);
+  // console.log('chainId:', chainId);
   const { user } = usePrivy();
-  console.log('user:', user);
+  // console.log('user:', user);
   const { wallets } = useWallets();
 
   const [isSmartWallet, setIsSmartWallet] = useState(false);
@@ -57,7 +57,7 @@ export function StakeWithdraw({
     }
   }, [address, wallets]);
 
-  console.log('isSmartWallet:', isSmartWallet);
+  // console.log('isSmartWallet:', isSmartWallet);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value.replace(/[^0-9.]/g, '');

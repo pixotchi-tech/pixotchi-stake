@@ -7,6 +7,7 @@ import {
   TransactionStatusLabel,
 } from '@coinbase/onchainkit/transaction';
 import type {
+  LifeCycleStatus,
   TransactionError,
   TransactionResponse,
 } from '@coinbase/onchainkit/transaction';
@@ -38,6 +39,7 @@ export default function TransactionWrapperStake({
   chainId
 }: TransactionWrapperStakeProps) {
   const [contracts, setContracts] = useState<ContractFunctionParameters[]>([]);
+  const [isPending, setIsPending] = useState(false);
 
   useEffect(() => {
     const cleanAmount = amount.replace(/,/g, '');
@@ -75,12 +77,18 @@ export default function TransactionWrapperStake({
     onSuccess();
   };
 
+  const handleStatus = (lifeCycleStatus: LifeCycleStatus) => {
+    console.log('Transaction status:', lifeCycleStatus);
+    setIsPending(lifeCycleStatus.statusName === "transactionPending");
+  };
+
   return (
     <Transaction
       address={address}
       contracts={contracts}
       onError={onError}
       onSuccess={handleSuccess}
+      onStatus={handleStatus}
       capabilities={{
         paymasterService: {
           url: process.env.NEXT_PUBLIC_CDP_API_KEY!,
@@ -88,9 +96,11 @@ export default function TransactionWrapperStake({
       }}
       chainId={chainId}
     >
+      { !isPending && (
       <StyledTransactionButton
         text="Stake">
       </StyledTransactionButton>
+      )}
       {/* <TransactionButton
         className={"nesui-rounded-border relative border-solid border-4  bg-border text-primary-foreground hover:bg-accent "}
         text="Stake">
