@@ -82,7 +82,7 @@ export function StakeCard({
 
   const formattedBalance = formatBalanceWithTwoDecimals(seedBalance);
   const formattedAllowance = formatBalanceWithTwoDecimals(seedAllowance);
-console.log("STAKE CARD", seedBalance, seedAllowance);
+// console.log("STAKE CARD", seedBalance, seedAllowance);
   return (
     <Card className='h-full'>
       <CardHeader>

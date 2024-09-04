@@ -7,6 +7,7 @@ import {
   TransactionStatusLabel,
 } from '@coinbase/onchainkit/transaction';
 import type {
+  LifeCycleStatus,
   TransactionError,
   TransactionResponse,
 } from '@coinbase/onchainkit/transaction';
@@ -38,6 +39,7 @@ export default function TransactionWrapperWithdraw({
   chainId
 }: TransactionWrapperWithdrawProps) {
   const [contracts, setContracts] = useState<ContractFunctionParameters[]>([]);
+  const [isPending, setIsPending] = useState(false);
 
   useEffect(() => {
     const cleanAmount = amount.replace(/,/g, '');
@@ -60,8 +62,13 @@ export default function TransactionWrapperWithdraw({
   }, [address, amount, stakeContractAddress]);
 
   const handleSuccess = (response: TransactionResponse) => {
-    console.log('Transaction successful', response);
+    // console.log('Transaction successful', response);
     onSuccess();
+  };
+
+  const handleStatus = (lifeCycleStatus: LifeCycleStatus) => {
+    // console.log('Transaction status:', lifeCycleStatus);
+    setIsPending(lifeCycleStatus.statusName === "transactionPending");
   };
 
   return (
@@ -71,6 +78,7 @@ export default function TransactionWrapperWithdraw({
       chainId={chainId}
       onError={onError}
       onSuccess={handleSuccess}
+      onStatus={handleStatus}
       capabilities={{
         paymasterService: {
           url: process.env.NEXT_PUBLIC_CDP_API_KEY!,
@@ -80,9 +88,11 @@ export default function TransactionWrapperWithdraw({
       {/* <TransactionButton className="w-full min-h-[48px] -mt-0 text-black hover:bg-black hover:text-white"
       text="Withdraw">
       </TransactionButton> */}
+      { !isPending && (
       <StyledTransactionButton
         text="Withdraw">
       </StyledTransactionButton>
+      )}
       <TransactionStatus>
         <TransactionStatusLabel />
         <TransactionStatusAction />
